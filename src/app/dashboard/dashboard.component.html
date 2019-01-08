@@ -3,24 +3,18 @@
     <div class="col">
       <div>
         <ul class="unorder-list">
-          <li class="icons">
-            <i class="material-icons"> 
-              school
-            </i>
-            <div class="context"> 
-              <div class="text-flow" matTooltip="Learning">Learning</div>
-           </div>
-          </li>
-
-          <li class="icons">
+          <li *ngFor="let dashboard of dashboards" class="icons">
             <a href="{{url}}/portal/assessments/" target="_blank" class="navigation">
-            <i class="material-icons">
-                assignment_turned_in
-            </i>
-            <div class="context">
-              <div class="text-flow" matTooltip="Assessments">Assessments</div>
-            </div>
-          </a>
+              <i class="material-icons">
+                {{dashboard.icon}}
+              </i>
+              <div class="context">
+                <div class="text-flow" matTooltip="Learning">
+                  {{dashboard.tooltip}}
+                </div>
+              </div>
+            </a>
+
           </li>
         </ul>
       </div>
