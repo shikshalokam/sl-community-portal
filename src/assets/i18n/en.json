@@ -1,0 +1,69 @@
+{
+    "brand" : "School Development Index",
+    "brandResponsive": "SDI",
+    "message" :{
+        "alertHeading" : "ALERT !!",
+        "imageHeading" : "Images",
+        "alertMessage" : "Mark as complete will be updated 'Are you sure to submit' ? ",
+        "noData" :"No data found",
+        "addCriteria" : "Adding a new Criteria"
+    },
+
+    
+    "buttons": {
+        "download" : "Download",
+        "update" : "Update",
+        "markasComplete" : "Mark As Complete",
+        "complete" : "Complete",
+        "cancel" : "Cancel",
+        "next": "Next",
+        "back":"Back",
+        "submit": "Submit",
+        "save": "Save",
+        "ok": "Ok",
+        "saveSurvey": "Save Survey",
+        "cancelSurvey": "Cancel Survey"
+    },
+    "downloadReport":"Select a Evendince Method to Download",
+    "search": "Search",
+    "headings": {
+        "parentInfoHeading" : "Parent Information",
+        "parentListHeading" : "Parent List",
+        "schoolListHeading" : "School List",
+        "ecmReportsHeading" : "ECM Reports",
+        "parentInterview":"Parent Intereview",
+        "features" : "Features",
+        "survey": "Survey",
+        "reports" : "Reports",
+        "downloadReport" : "Download Evedince Report",
+        "configurations" : "Configurations"
+    },
+    "labels": {
+
+    },
+    "sideNavLinks": {
+        
+    },
+    "menuDropdown" : {
+        "myApps" : "My Apps",
+        "signOut" :"Sign Out"
+
+    },
+    "tableLabel":{
+        "name" :"Name",
+        "studentName" : "Student Name",
+        "phone" : "Phone",
+        "gender":"Gender",
+        "grade":"Grade",
+        "address":"Address",
+        "city":"City",
+        "state":"State",
+        "externalId":"External-Id",
+        "buttons":{
+            "clickHere" : "Click Here",
+            "edit" : "Profile Edit",
+            "startSurvey" : "Start Survey",
+            "complete" : "Completed"
+        }
+    }
+}

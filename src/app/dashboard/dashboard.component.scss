@@ -1,0 +1,75 @@
+@import "../../assets/scss/varibles.scss";
+.icons{
+    margin:50px 0px;
+    height:150px;
+    width:150px;
+    text-align:center;
+    color:$white-color;
+    border-radius:30px;
+    cursor: pointer;
+    word-wrap: break-word;
+    background: -webkit-gradient(linear, 0% 60%, 0% 100%, from($blue-gradient), to($dark-blue));
+    .context{
+        color:$black-color;
+        font-size:1.3em;
+        margin:-45px 0 10px;
+        word-wrap: break-word;
+        width:150px;
+        margin-top:20px;
+    }
+}
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding:0px;
+    flex-wrap: wrap;
+    li{
+       margin-right:5%;
+       margin-left:5%;
+    vertical-align: middle;
+
+        i{
+            font-size:5em;
+            vertical-align: middle;
+            line-height: 150px;
+        }
+    }
+}
+.text-flow{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+//     &:hover{
+//         color:red;
+//         .tooltip{
+//             display: block;
+//             position: absolute;
+//             width: 150px;
+//             height: auto;
+//             word-wrap: auto;
+//             background: black;
+//             color: white;
+//             padding: 10px;
+//             white-space: normal;
+//         }
+// }
+
+
+.tooltip{
+    display: none;
+    overflow: visible;
+  }
+}
+
+
+.text-flow:hover .tooltip{
+    color:red;
+}
+
+
+
+
+
+
