@@ -12,7 +12,8 @@ import { ApiInterceptor } from 'src/app/core/services/interceptor-service/interc
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { DashboardComponent } from './dashboard/dashboard.component';
-export function setupTranslateFactory(
+import{ MatCardModule, MatTooltipModule} from '@angular/material'
+export function  setupTranslateFactory(
   service: TranslateService): Function {
   return () => service.use('od');
 }
@@ -31,6 +32,8 @@ export function authFactory(authService: AuthService) {
     SharedModule,
     CoreModule,
     MatDividerModule,
+    MatCardModule,
+    MatTooltipModule,
     CoreModule.forRoot(),
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })

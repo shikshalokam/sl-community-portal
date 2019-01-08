@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../src/environments/environment'
 
 @Component({
   selector: 'app-dashboard',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  url = environment.base_url;
+  constructor() {
+  }
 
   ngOnInit() {
   }
