@@ -17,13 +17,20 @@ export class DashboardComponent implements OnInit {
       dashboards:[
         {
           icon:"school",
-          tooltip:"Learning"
+          tooltip:"Learning",
+          url:""
         },{
           icon:" assignment_turned_in",
-          tooltip:"Assessments"
+          tooltip:"Assessments",
+          url:this.url+"/portal/assessments"
         }
       ]
     }
+  }
+
+  navigate(url) {
+    if(url)
+    window.open(url, "_blank");
   }
 
   ngOnInit() {
