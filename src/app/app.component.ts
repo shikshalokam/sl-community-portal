@@ -18,18 +18,7 @@ export class AppComponent {
           { 
             linkHeading : "headings.features",
             options:[ 
-                      // {
-                      //   value : "headings.parentInterview",
-                      //   anchorLink : "/parent"
-                      // },
-                      // {
-                      //   value :"headings.reports",
-                      //   anchorLink : "/report"
-                      // },
-                      // {
-                      //   value :"headings.configurations",
-                      //   anchorLink :"/configuration"
-                      // }
+                      
                       
                     ]  
             }
