@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-
 const routes: Routes = [
-  { path:'', redirectTo:'/dashboard', pathMatch:'full'},
-  { path:'dashboard', component:DashboardComponent},
+ 
+  {
+    path:'',
+    loadChildren: './modules/landing/landing.module#LandingModule'
+  },
+  {
+    path:'',
+    redirectTo:'',
+    pathMatch:'full'
+  }
 ];
 
 @NgModule({

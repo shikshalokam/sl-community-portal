@@ -11,7 +11,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { ApiInterceptor } from 'src/app/core/services/interceptor-service/interceptor.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import{ MatCardModule, MatTooltipModule} from '@angular/material'
 export function  setupTranslateFactory(
   service: TranslateService): Function {
@@ -24,7 +23,7 @@ export function authFactory(authService: AuthService) {
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    
   ],
   imports: [
     BrowserModule,
