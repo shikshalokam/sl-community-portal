@@ -11,9 +11,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { ApiInterceptor } from 'src/app/core/services/interceptor-service/interceptor.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import {DashboardComponent} from './modules/landing/dashboard/dashboard.component';
 import{ MatCardModule, MatTooltipModule} from '@angular/material'
-import {LandingModule} from '../../src/app/modules/landing/landing.module';
 export function  setupTranslateFactory(
   service: TranslateService): Function {
   return () => service.use('od');
@@ -25,8 +23,7 @@ export function authFactory(authService: AuthService) {
 @NgModule({
   declarations: [
     AppComponent,
-    // DashboardComponent 
-    // declare it in landing 
+    
   ],
   imports: [
     BrowserModule,
@@ -36,7 +33,6 @@ export function authFactory(authService: AuthService) {
     MatDividerModule,
     MatCardModule,
     MatTooltipModule,
-    // LandingModule,
     CoreModule.forRoot(),
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
