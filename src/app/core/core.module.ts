@@ -16,6 +16,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ResponsiveNavbarComponent } from './components/responsive-navbar/responsive-navbar.component';
 import { AuthGuard } from '../core/auth-gaurd/auth.gaurd'
+import { MatTooltip } from '@angular/material';
 @NgModule({
   declarations: [
     TranslatePipe,
@@ -27,7 +28,7 @@ import { AuthGuard } from '../core/auth-gaurd/auth.gaurd'
     NgxSpinnerModule,
     CommonModule,
     HttpClientModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
@@ -41,7 +42,8 @@ import { AuthGuard } from '../core/auth-gaurd/auth.gaurd'
     TranslatePipe,
     NavbarComponent,
     ResponsiveNavbarComponent,
-    CamelCasePipe
+    CamelCasePipe,
+    CommonModule,
   ]
 })
 export class CoreModule {

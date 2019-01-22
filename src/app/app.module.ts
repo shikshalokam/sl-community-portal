@@ -12,6 +12,8 @@ import { ApiInterceptor } from 'src/app/core/services/interceptor-service/interc
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import{ MatCardModule, MatTooltipModule} from '@angular/material'
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export function  setupTranslateFactory(
   service: TranslateService): Function {
   return () => service.use('od');
@@ -27,14 +29,14 @@ export function authFactory(authService: AuthService) {
   ],
   imports: [
     BrowserModule,
+    // CommonModule,
     AppRoutingModule,
     SharedModule,
     CoreModule,
     MatDividerModule,
-    MatCardModule,
-    MatTooltipModule,
     CoreModule.forRoot(),
     HttpClientModule,
+    BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [

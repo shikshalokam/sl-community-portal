@@ -36,7 +36,9 @@
         "survey": "Survey",
         "reports" : "Reports",
         "downloadReport" : "Download Evedince Report",
-        "configurations" : "Configurations"
+        "configurations" : "Configurations",
+        "learning":"Learning",
+        "assessments":"Assessments"
     },
     "labels": {
 

@@ -18,12 +18,12 @@ export class DashboardComponent implements OnInit {
       dashboards:[
         {
           icon:"school",
-          tooltip:"Learning",
-          url:""
+          tooltip:"headings.learning",
+          url:"/learning"
         },{
           icon:" assignment_turned_in",
-          tooltip:"Assessments",
-          url:this.url+"/portal/assessments"
+          tooltip:"headings.assessments",
+          url:this.url+"/assessments"
         }
       ]
     }
@@ -36,7 +36,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.dashboards=this.obj.dashboards;
-    console.log(this.dashboards, "this.dashboard");
   }
 
 }

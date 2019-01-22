@@ -22,19 +22,19 @@
     width: 250px;
     float: left;
     display: block;
-    height: calc(100vh - 52px);
+    height: calc(100vh - 61px);
 }
 
 .routingDiv {
     position: relative;
-    height: calc(100vh - 52px);
+    height: calc(100vh - 61px);
     width: 100%;
     float: right;
     overflow-y: auto;
 }
 
 .headerDiv {
-    height: 52px;
+    height: 60px;
 }
 
 .completeDiv {
@@ -42,5 +42,8 @@
 }
 
 .bodyDiv {
-    height: calc(100vh - 52px) !important;
+    height: calc(100vh - 61px) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
