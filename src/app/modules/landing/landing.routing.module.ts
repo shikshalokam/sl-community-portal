@@ -10,12 +10,12 @@ const routes: Routes = [
        data:{},
        children:[
         {
-            path:'dashboard',
+            path:'',
             component:DashboardComponent
         },
         {
-            path:'',
-            redirectTo: 'dashboard'
+            path:"**",
+            redirectTo: ''
         }
        ]
    }
