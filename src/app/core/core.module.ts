@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { TranslateService, AuthService,ParentService,UtilityService,ApiInterceptor, ReportService } from './services';
 import { TranslatePipe } from './pipes';
 import { CamelCasePipe } from './pipes'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -16,7 +15,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ResponsiveNavbarComponent } from './components/responsive-navbar/responsive-navbar.component';
 import { AuthGuard } from '../core/auth-gaurd/auth.gaurd'
-import { MatTooltip } from '@angular/material';
 @NgModule({
   declarations: [
     TranslatePipe,
