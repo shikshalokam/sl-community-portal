@@ -12,12 +12,9 @@ export class ResponsiveNavbarComponent implements OnInit {
   constructor(private authService: AuthService) {
   }
   ngOnInit() {
-    this.currentUser = this.authService.getCurrentUserDetails();
+    // this.currentUser = this.authService.getCurrentUserDetails();
   }
   
-  onSignout()
-  {
-    return this.authService.getLogout();
-  }
+  
 
 }
