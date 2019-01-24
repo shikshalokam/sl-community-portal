@@ -29,10 +29,10 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  navigate(url) {
-    if(url)
-    window.open(url, "_blank");
-  }
+  // navigate(url) {
+  //   if(url)
+  //   window.open(url, "_blank");
+  // }
 
   ngOnInit() {
     this.dashboards=this.obj.dashboards;
