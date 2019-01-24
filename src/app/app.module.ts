@@ -8,11 +8,11 @@ import { SharedModule } from './shared/shared.module';
 import { TranslateService } from './core/services/translate-service/translate.service';
 // import { AuthService } from './core/services/auth/auth.service';
 import { MatDividerModule } from '@angular/material/divider';
-import { ApiInterceptor } from 'src/app/core/services/interceptor-service/interceptor.service';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import{ MatCardModule, MatTooltipModule} from '@angular/material'
-import { CommonModule } from '@angular/common';
+// import { ApiInterceptor } from 'src/app/core/services/interceptor-service/interceptor.service';
+// import { ServiceWorkerModule } from '@angular/service-worker';
+// import { environment } from '../environments/environment';
+// import{ MatCardModule, MatTooltipModule} from '@angular/material'
+// import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export function  setupTranslateFactory(
   service: TranslateService): Function {
@@ -38,7 +38,7 @@ export function  setupTranslateFactory(
     CoreModule.forRoot(),
     HttpClientModule,
     BrowserAnimationsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     TranslateService,
