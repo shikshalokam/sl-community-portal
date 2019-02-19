@@ -24,6 +24,11 @@ export class DashboardComponent implements OnInit {
           icon:" assignment_turned_in",
           tooltip:"headings.assessments",
           url:this.url+"/assessments"
+        },
+        {
+          icon:"dashboard",
+          tooltip:"headings.programs",
+          url:this.url+"/programs"
         }
       ]
     }

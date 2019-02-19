@@ -38,7 +38,8 @@
         "downloadReport" : "Download Evedince Report",
         "configurations" : "Configurations",
         "learning":"Learning",
-        "assessments":"Assessments"
+        "assessments":"Assessments",
+        "programs":"Programs"
     },
     "labels": {
 
