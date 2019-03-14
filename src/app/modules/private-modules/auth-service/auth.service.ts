@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import * as jwt_decode from "jwt-decode";
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 declare var Keycloak: any;
 
@@ -11,7 +12,7 @@ export class AuthService {
   isLoggedIn =false;
   redirectUrl:string;
   userName : string;
-  constructor() { }
+  constructor( private jwtHelper :JwtHelperService) { }
 
   
   private keycloakAuth: any;
@@ -24,8 +25,12 @@ export class AuthService {
         'clientId': environment.keycloak.clientId
       };
       this.keycloakAuth = new Keycloak(config);
-      this.keycloakAuth.init({ onLoad: 'login-required' })
+      this.keycloakAuth.init()
         .success(() => {
+          console.log(this.keycloakAuth)
+          localStorage.setItem('auth-token',this.keycloakAuth.token)
+          localStorage.setItem('downloadReport-token',environment.downloadReportHeaderValue)
+
           resolve();
         })
         .error(() => {
@@ -39,15 +44,22 @@ export class AuthService {
   }
 
   getCurrentUserDetails() {
-    console.log(jwt_decode(this.keycloakAuth.token).name)
-    this.userName = jwt_decode(this.keycloakAuth.token).name;
-    return jwt_decode(this.keycloakAuth.token);
+    // console.log(jwt_decode(this.keycloakAuth.token).name)
+    // this.userName = jwt_decode(this.keycloakAuth.token).name;
+    // return jwt_decode(this.keycloakAuth.token);
+
+    this.userName =this.getToken()? this.jwtHelper.decodeToken(this.getToken()).name : '';
+
+   return this.jwtHelper.decodeToken(this.getToken());
   }
 
   getLogout(){
+    localStorage.clear();
    return this.keycloakAuth.logout();
   }
 
-
+getLogin(){
+  this.keycloakAuth.login();
+}
 
 }
