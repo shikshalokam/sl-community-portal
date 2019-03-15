@@ -12,9 +12,7 @@
         // float: right;
         // overflow-y: auto;
     }
-    .sideDiv{
-        display :none !important;
-    }
+   
     .navbar{
         display : none !important;
     }
@@ -96,6 +94,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .navbar{
+        display : none !important;
+    }
     .bigTabel{
         display: none !important;
     }
@@ -144,7 +145,7 @@
     ._halfWidth{
         width: 100%;
     }
-        
+     
    
 }
 
