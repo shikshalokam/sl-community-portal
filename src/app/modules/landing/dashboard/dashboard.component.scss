@@ -32,7 +32,7 @@
             font-size:5em;
             vertical-align: middle;
             line-height: 150px;
-            padding: 0 35px;
+            // padding: 0 35px;
         }
     }
 }
@@ -44,8 +44,14 @@
 
 .navigation{
     color:$white-color;
+    display: block;
 }
 
+.dashboard{
+    width:100%;
+    overflow-y: auto;
+    height: 709px;
+}
 
 
 

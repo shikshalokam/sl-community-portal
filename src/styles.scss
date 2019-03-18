@@ -52,15 +52,27 @@ $primary-color: #46a9ff;
 $black-color: #4c4c4c;
 $blue-gradient: #1AC6FC;
 $grey-color: #bababa;
+$white-color: #fff;
 $regular-font: 'SF-ui-text-regular';
 $light-font: 'SF-ui-text-light';
 $italic-font: 'SF-ui-text-italic';
 $border-color: #e5e5e5;
 $light-grey-color:#e0e0e0;
+$dark-blue:var(--dark-blue-color);
+$app-blue-color:var(--app-blue-color);
+$app-darkBlue-color:var(--app-darkBlue-color);
 
 
 :root{
     --light-grey-color:#e0e0e0;
+    --dark-blue-color:#1d73f0;
+--darkBlack-color:#000;
+--app-blue-color:#1cdffe;
+--app-darkBlue-color:#2462e9;
+--background-color:#f2f2f2;
+--white-color:#fff;
+
+
 
 }
 
