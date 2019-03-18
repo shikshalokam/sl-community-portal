@@ -1,18 +1,14 @@
 <div class="container-fluid">
     <div class="row completeDiv">
-        <div class="headerDiv">
-            <app-navbar [currentUser]="currentUser" (Logout)="onLogout()" [logo]="logo" [isLoggedIn]="!isLoggedIn" (LogIn)="onLogin()" ></app-navbar>
-                  <app-responsive-navbar [currentUser]="currentUser" (Logout)="onLogout()" [logo]="logo" ></app-responsive-navbar>
-            <mat-divider class="noMarginPadding"></mat-divider>
-        </div>
+        <mat-toolbar class="toolBar noMarginPadding">
+            <div class="col-xs-12 ">
+                  <app-navbar [currentUser]="currentUser" (Logout)="onLogout()" [logo]="logo" [isLoggedIn]="isLoggedIn" [url]="baseUrl" [portal]="portalName"></app-navbar>
+                  <app-responsive-navbar [currentUser]="currentUser" (Logout)="onLogout()" [logo]="logo" [url]="baseUrl" [portal]="portalName"></app-responsive-navbar>
+            </div>
+        </mat-toolbar>
         <div class="bodyDiv">
             <router-outlet></router-outlet>
         </div>
-        <div class="footerDiv">
             <app-footer ></app-footer>
-        </div>
-
     </div>
 </div>
-
-

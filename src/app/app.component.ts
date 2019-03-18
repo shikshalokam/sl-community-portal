@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateService, GlobalConfigurationService } from 'shikshalokam';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from './modules/private-modules/auth-service/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -33,6 +34,7 @@ export class AppComponent {
   opened = true;
   pushMode = 'side';
   currentUser;
+  baseUrl
   logo =" ./assets/shikshalokam.png";
   roleAcess=[];
   constructor(private translate: TranslateService,private route : ActivatedRoute,private authService :AuthService , private globalConfigService:GlobalConfigurationService) {
@@ -44,6 +46,8 @@ export class AppComponent {
       this.pushMode = 'push';
     }
     this.currentUser = this.authService.getCurrentUserDetails();
+    this.baseUrl=environment.base_url;
+
     if(this.currentUser){
       this.isLoggedIn = true;
     }else{
