@@ -90,6 +90,11 @@
         justify-content: center !important;
         width:100%;
     }
+
+    .dropdownDiv{
+        width:200px !important;
+        display: flex !important;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -187,9 +192,9 @@
 @media only screen and (min-width: 1200px) {
 }
 
-// @media only screen and (min-width: 480px) {
-//     .dashboard{
-//         width:100% !important;
-//         display: flex !important;
-//     }
-// }
+@media only screen and (max-width: 320px) {
+    .dropdownDiv{
+        width:200px !important;
+        display:flex !important;
+    }
+}
