@@ -164,7 +164,12 @@
         .dropdownFeature{
            width:100% !important;
             justify-content: center !important;
+            padding-left:0px !important;
         }
+
+        .dropdownDiv:before {
+            right: 20px !important;
+          }
 
         .dashboard{
             width:100% !important;
