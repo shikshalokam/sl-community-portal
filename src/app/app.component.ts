@@ -30,6 +30,7 @@ export class AppComponent {
   isLoggedIn:boolean;
   programId;
   assessmentId;
+  portalName;
   // links ;
   opened = true;
   pushMode = 'side';
