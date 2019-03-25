@@ -163,7 +163,7 @@
 
         .dropdownDiv{
             width:300px !important;
-            display: flex;
+            display: flex !important;
         }
 
         .dropdownFeature{
@@ -173,7 +173,10 @@
         }
 
         .dropdownDiv:before {
-            right: 20px !important;
+            right: 21px !important;
+          }
+        .dropdownDiv:after {
+            right: 21px !important;
           }
 
         .dashboard{
