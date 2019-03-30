@@ -36,7 +36,6 @@ export class AppComponent {
   pushMode = 'side';
   currentUser;
   baseUrl;
-  portalName;
   logo =" ./assets/shikshalokam.png";
   roleAcess=[];
   constructor(private translate: TranslateService,private route : ActivatedRoute,private authService :AuthService , private globalConfigService:GlobalConfigurationService) {
