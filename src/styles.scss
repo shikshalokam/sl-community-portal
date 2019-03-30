@@ -5,6 +5,7 @@
 
 
 @font-face {
+    
     font-family: 'SF-ui-text-regular';
     font-style: normal;
     font-weight: normal;
@@ -48,14 +49,7 @@
     -webkit-font-smoothing: antialiased;
 }
 
-$primary-color: #46a9ff;
-$black-color: #4c4c4c;
-$blue-gradient: #1AC6FC;
-$grey-color: #bababa;
-$regular-font: 'SF-ui-text-regular';
-$light-font: 'SF-ui-text-light';
-$italic-font: 'SF-ui-text-italic';
-$border-color: #e5e5e5;
+
 body {
     font-family: $regular-font
 }
