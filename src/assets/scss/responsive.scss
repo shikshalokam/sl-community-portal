@@ -85,13 +85,23 @@
     ._halfWidth{
         width: 100%;
     }
-        
-    
+    .dashboard{
+        display: flex !important;
+        justify-content: center !important;
+        width:100%;
+    }
+
+    .dropdownDiv{
+        width:200px !important;
+        display: flex !important;
+    }
 }
 
 @media only screen and (min-width: 600px) {
-   
+    
 }
+
+
 
 @media only screen and (max-width: 768px) {
     .navbar{
@@ -145,8 +155,37 @@
     ._halfWidth{
         width: 100%;
     }
-     
-   
+
+    .nextButton{
+        width: 100 !important;
+            right: 20px;
+        }
+
+        .dropdownDiv{
+            width:300px !important;
+            display: flex !important;
+        }
+
+        .dropdownFeature{
+           width:100% !important;
+            justify-content: center !important;
+            padding-left:0px !important;
+        }
+
+        .dropdownDiv:before {
+            right: 21px !important;
+          }
+        .dropdownDiv:after {
+            right: 21px !important;
+          }
+
+        .dashboard{
+            width:100% !important;
+            display: flex !important;
+            padding:0px 26%;
+        }
+
+        
 }
 
 @media only screen and (min-width: 992px) {
@@ -154,4 +193,11 @@
 }
 
 @media only screen and (min-width: 1200px) {
+}
+
+@media only screen and (max-width: 320px) {
+    .dropdownDiv{
+        width:200px !important;
+        display:flex !important;
+    }
 }

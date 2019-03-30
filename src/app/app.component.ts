@@ -35,7 +35,8 @@ export class AppComponent {
   opened = true;
   pushMode = 'side';
   currentUser;
-  baseUrl
+  baseUrl;
+  portalName;
   logo =" ./assets/shikshalokam.png";
   roleAcess=[];
   constructor(private translate: TranslateService,private route : ActivatedRoute,private authService :AuthService , private globalConfigService:GlobalConfigurationService) {
@@ -48,6 +49,8 @@ export class AppComponent {
     }
     this.currentUser = this.authService.getCurrentUserDetails();
     this.baseUrl=environment.base_url;
+    this.portalName = environment.portal_name;
+
 
     if(this.currentUser){
       this.isLoggedIn = true;
