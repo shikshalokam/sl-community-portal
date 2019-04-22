@@ -1,0 +1,42 @@
+##!/bin/sh
+#
+# An example hook script to verify what is about to be committed.
+# Called by "git commit" with no arguments.  The hook should
+# exit with non-zero status after issuing an appropriate message if
+# it wants to stop the commit.
+#
+# To enable this hook, rename this file to "pre-commit".
+
+red=`tput setaf 1`
+green=`tput setaf 2`
+NC='\033[0m'
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then
+	against=HEAD
+else
+	# Initial commit: diff against an empty tree object
+	against=4b825dc642cb6eb9a060e54bf8d69288fbee4904
+fi
+#Check is the build is success
+
+if [[ `git status --porcelain` ]];
+ then
+echo "--------------------------"
+echo "Checking the build"
+echo "--------------------------"
+if ng build --prod
+then
+	echo " "
+        echo  "${green}Build success and code committed ${NC}"
+	echo " " 
+else
+	echo " "
+        echo  "${red}Build failed. Please resolve the issue to commit the changes ${NC}"
+        echo ""
+	exit 0
+fi
+else
+  echo " No change "
+exit 0
+fi
+
