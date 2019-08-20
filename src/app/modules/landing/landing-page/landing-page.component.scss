@@ -1,0 +1,43 @@
+@import "../../../../assets/scss/varibles.scss";
+
+.wrapper {
+    padding: 10px 15px;
+    margin: 15px auto;
+    max-width: 1200px;
+    color: $light-black-color;
+}
+
+.aboutSL {
+    flex: 4;
+    margin-right: 20px;
+}
+.aboutSLBanner {
+    flex: 5;
+    img {
+        width: 100%;
+    }
+}
+
+.aboutText {
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: $light-black-color
+}
+
+.patnersWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap
+}
+
+.patnerCard {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    img{
+        width: 100%;
+    }
+}

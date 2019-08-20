@@ -16,6 +16,8 @@ import { environment } from 'src/environments/environment';
 import { AuthService } from './modules/private-modules/auth-service/auth.service';
 import { JwtModule } from '@auth0/angular-jwt';
 import { MatToolbarModule } from '@angular/material';
+import { CommunitySharedModule } from './modules/community-shared/community-shared.module';
+
 export function  setupTranslateFactory(
   service: TranslateService): Function {
   return () => service.use('en');
@@ -50,6 +52,7 @@ export function authFactory(authService: AuthService) {
     HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    CommunitySharedModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

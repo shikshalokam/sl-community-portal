@@ -2,8 +2,9 @@
     <div class="row completeDiv">
         <mat-toolbar class="toolBar noMarginPadding">
             <div class="col-xs-12 ">
-                  <app-navbar [currentUser]="currentUser" (Logout)="onLogout()" [logo]="logo" [isLoggedIn]="isLoggedIn" [url]="baseUrl" [portal]="portalName"></app-navbar>
-                  <app-responsive-navbar [currentUser]="currentUser" (Logout)="onLogout()" [logo]="logo"  [url]="baseUrl" [portal]="portalName"></app-responsive-navbar>
+                <app-community-header></app-community-header>
+                  <!-- <app-navbar [currentUser]="currentUser" (Logout)="onLogout()" [logo]="logo" [isLoggedIn]="isLoggedIn" [url]="baseUrl" [portal]="portalName"></app-navbar>
+                  <app-responsive-navbar [currentUser]="currentUser" (Logout)="onLogout()" [logo]="logo"  [url]="baseUrl" [portal]="portalName"></app-responsive-navbar> -->
             </div>
         </mat-toolbar>
         <mat-divider class="noMarginPadding"></mat-divider>
