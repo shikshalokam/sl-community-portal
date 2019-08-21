@@ -3,7 +3,7 @@
     <p innerHTML="{{description}}">
     </p>
     <div class="actionContainer">
-      <a href="https://dev.shikshalokam.org/home"  *ngIf="!hideStartNow">
+      <a href="{{keyclockBaseUrl}}"  *ngIf="!hideStartNow">
         <button mat-flat-button color="primary" class="startNow">Start now</button>
       </a>
       <a href="{{link}}" matRipple target="_blank">

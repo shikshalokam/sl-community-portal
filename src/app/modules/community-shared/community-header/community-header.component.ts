@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 export class CommunityHeaderComponent implements OnInit {
 
   @Output() linkClick  = new EventEmitter();
-  baseUrl = environment.base_url + '/home';
+  baseUrl = environment.keycloakBaseUrl + '/home';
 
   constructor() { }
 

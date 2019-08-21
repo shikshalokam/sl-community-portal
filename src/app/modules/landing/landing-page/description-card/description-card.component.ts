@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-description-card',
@@ -15,6 +16,8 @@ export class DescriptionCardComponent implements OnInit {
   @Input() imagFirst;
   @Input() hideStartNow;
   @Input() link;
+
+  keyclockBaseUrl = environment.keycloakBaseUrl + '/home';
 
 
 
