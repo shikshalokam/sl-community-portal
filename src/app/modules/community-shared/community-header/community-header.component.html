@@ -4,14 +4,16 @@
   </div>
   <div  class="rightContainer">
     <div class="login">
+      <a href="https://dev.shikshalokam.org/home">
         <button mat-flat-button  color="primary">Login</button>
+      </a>
     </div>
     <div class="links">
       <ul>
-        <li><a>About Us</a></li>
-        <li><a>Explore</a></li>
-        <li><a>Our Partners</a></li>
-        <li><a>Contact Us</a></li>
+        <li (click)="goTo('aboutSl')"><a>About Us</a></li>
+        <li (click)="goTo('explore')"><a>Explore</a></li>
+        <li (click)="goTo('partners')"><a>Our Partners</a></li>
+        <li (click)="goTo('footer')"><a>Contact Us</a></li>
       </ul>
     </div>
   </div>

@@ -8,6 +8,7 @@ import { CommunitySharedModule } from '../community-shared/community-shared.modu
 import { DescriptionCardComponent } from './landing-page/description-card/description-card.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRippleModule} from '@angular/material/core';
+import { MatToolbarModule } from '@angular/material';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {MatRippleModule} from '@angular/material/core';
     CoreModule,
     CommunitySharedModule,
     MatButtonModule,
-    MatRippleModule
+    MatRippleModule,
+    MatToolbarModule
   ]
 })
 export class LandingModule { }

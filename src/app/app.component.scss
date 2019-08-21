@@ -45,7 +45,7 @@ $light-grey-color: #E7E8E9;
 }
 
 .bodyDiv {
-    margin-top: 130px;
+    // margin-top: 130px;
     // height: calc(100vh - 93px) !important;
 
 }
@@ -55,4 +55,5 @@ $light-grey-color: #E7E8E9;
     background-color: $light-grey-color;
     position: fixed;
     z-index: 10;
+    top: 0;
 }

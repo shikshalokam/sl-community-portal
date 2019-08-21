@@ -17,6 +17,7 @@ import { AuthService } from './modules/private-modules/auth-service/auth.service
 import { JwtModule } from '@auth0/angular-jwt';
 import { MatToolbarModule } from '@angular/material';
 import { CommunitySharedModule } from './modules/community-shared/community-shared.module';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 export function  setupTranslateFactory(
   service: TranslateService): Function {
@@ -53,6 +54,7 @@ export function authFactory(authService: AuthService) {
     BrowserAnimationsModule,
     MatToolbarModule,
     CommunitySharedModule,
+    AngularFontAwesomeModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

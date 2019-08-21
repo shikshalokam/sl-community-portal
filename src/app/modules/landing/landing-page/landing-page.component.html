@@ -1,6 +1,13 @@
+<mat-toolbar class="toolBar noMarginPadding">
+  <div class="col-xs-12 ">
+    <app-community-header (linkClick)="scrollToView($event)"></app-community-header>
+    <!-- <app-navbar [currentUser]="currentUser" (Logout)="onLogout()" [logo]="logo" [isLoggedIn]="isLoggedIn" [url]="baseUrl" [portal]="portalName"></app-navbar>
+                <app-responsive-navbar [currentUser]="currentUser" (Logout)="onLogout()" [logo]="logo"  [url]="baseUrl" [portal]="portalName"></app-responsive-navbar> -->
+  </div>
+</mat-toolbar>
 <div class="wrapper">
   <div class="_flex-box">
-    <div class="aboutSL">
+    <div class="aboutSL" #aboutSl>
       <h1 class="aboutText">About Shikshalokam</h1>
       <p>
         ShikshaLokam enables and amplifies leadership development opportunities for individuals and institutions engaged
@@ -22,19 +29,27 @@
 
     </div>
   </div>
-  <div *ngFor="let card of cardsData">
-    <app-description-card [description]="card?.description" [image]="card?.image" [hideStartNow]="card?.hideStartNow"
-      [logo]="card?.logo" [title]="card?.title" [appName]="card?.appName" [imagFirst]="card?.imagFirst">
-    </app-description-card>
-  </div>
-  
-  <div>
-      <h1 class="aboutText">About Shikshalokam</h1>
-      <div class="patnersWrapper">
-        <div class="patnerCard" *ngFor="let partner of partnrs">
-          <img src="{{partner}}">
-        </div>
-      </div>
+
+  <div #explore>
+    <div *ngFor="let card of cardsData">
+      <app-description-card [link]="card?.link" [description]="card?.description" [image]="card?.image"
+        [hideStartNow]="card?.hideStartNow" [logo]="card?.logo" [title]="card?.title" [appName]="card?.appName"
+        [imagFirst]="card?.imagFirst">
+      </app-description-card>
+    </div>
+
   </div>
 
+  <div #partners>
+    <h1 class="aboutText">Partners</h1>
+    <div class="patnersWrapper">
+      <div class="patnerCard" *ngFor="let partner of partnrs">
+        <img src="{{partner}}">
+      </div>
+    </div>
+  </div>
+
+</div>
+<div #footer>
+  <app-community-footer></app-community-footer>
 </div>

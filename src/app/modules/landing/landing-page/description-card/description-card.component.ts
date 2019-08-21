@@ -13,7 +13,8 @@ export class DescriptionCardComponent implements OnInit {
   @Input() appName;
   @Input() logo;
   @Input() imagFirst;
-  @Input() hideStartNow
+  @Input() hideStartNow;
+  @Input() link;
 
 
 

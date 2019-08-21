@@ -12,6 +12,8 @@
     margin-right: 20px;
 }
 .aboutSLBanner {
+    margin-top: 130px;
+
     flex: 5;
     img {
         width: 100%;
@@ -40,4 +42,12 @@
     img{
         width: 100%;
     }
+}
+
+.toolBar {
+    height: auto;
+    background-color: $light-grey-color;
+    position: fixed;
+    z-index: 10;
+    top: 0
 }

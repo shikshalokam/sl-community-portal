@@ -14,8 +14,8 @@ export class CommunityHeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  onLinkClick() {
-    this.linkClick.emit();
+  goTo(id) {
+    this.linkClick.emit(id)
   }
 
 }

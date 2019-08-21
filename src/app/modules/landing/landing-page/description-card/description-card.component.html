@@ -3,14 +3,19 @@
     <p innerHTML="{{description}}">
     </p>
     <div class="actionContainer">
-        <button mat-flat-button *ngIf="!hideStartNow" color="primary" class="startNow">Start now</button>
-        <div matRipple class="downloadButton">
-            <img src="{{logo}}" class="buttonImage"> 
-            <div class="btnText">
-              <div>Download</div>
-              <div>{{appName}}</div>
+      <a href="https://dev.shikshalokam.org/home"  *ngIf="!hideStartNow">
+        <button mat-flat-button color="primary" class="startNow">Start now</button>
+      </a>
+      <a href="{{link}}" matRipple target="_blank">
+          <div  class="downloadButton">
+              <img src="{{logo}}" class="buttonImage">
+              <div class="btnText">
+                <div>Download</div>
+                <div>{{appName}}</div>
+              </div>
             </div>
-          </div>
+      </a>
+ 
     </div>
   </div>
 
