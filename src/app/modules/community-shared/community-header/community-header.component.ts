@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-community-header',
@@ -8,6 +9,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class CommunityHeaderComponent implements OnInit {
 
   @Output() linkClick  = new EventEmitter();
+  baseUrl = environment.base_url + '/home';
 
   constructor() { }
 
