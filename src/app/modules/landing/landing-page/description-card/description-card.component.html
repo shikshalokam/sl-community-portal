@@ -1,0 +1,27 @@
+<div class=" _flex-box wrpper">
+  <div class="descriptionSection" [ngStyle]="{'order': imagFirst ? 2 :1}">
+    <p innerHTML="{{description}}">
+    </p>
+    <div class="actionContainer">
+      <a href="https://dev.shikshalokam.org/home"  *ngIf="!hideStartNow">
+        <button mat-flat-button color="primary" class="startNow">Start now</button>
+      </a>
+      <a href="{{link}}" matRipple target="_blank">
+          <div  class="downloadButton">
+              <img src="{{logo}}" class="buttonImage">
+              <div class="btnText">
+                <div>Download</div>
+                <div>{{appName}}</div>
+              </div>
+            </div>
+      </a>
+ 
+    </div>
+  </div>
+
+
+  <div class="imageSection" [ngStyle]="{'order': imagFirst ? 1 :2}">
+    <img src="{{image}}" class="imgDesc">
+    <p class="title">{{title}}</p>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+@import '../../../../assets/scss/varibles.scss';
+
+.footerWrapper {
+    // padding: 15px;
+    color: $white-color;
+
+    .topFooter {
+        padding: 15px;
+        background: #2b2b2b;
+        justify-content: space-between;
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        .reachUs {
+            flex: 1
+        }
+
+        .ourApps {
+            flex: 1;
+            flex-wrap: wrap;
+
+        }
+    }
+
+    .bottomFooter {
+        background: #151515;
+    }
+}
+
+.iconSize {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.links {
+    color: $white-color;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ourApps {
+    a>img {
+        margin-right: 10px;
+        width: 200px;
+    }
+}
+
+.social-links {
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 2px;
+    border-radius: 2px;
+    width: 35px;
+    background: #1e2235;
+    color: white;
+    transition: all 0.6s ease-in-out;
+}
+
+.social-links:hover {
+    background: #fff;
+    color: #1e2235 !important;
+
+}

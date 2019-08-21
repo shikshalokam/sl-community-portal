@@ -1,0 +1,72 @@
+@import "../../../../../assets//scss/varibles.scss";
+
+.descriptionSection {
+    flex-direction: column;
+    padding: 10;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex: 2;
+    margin-right: 15px;
+}
+.wrpper {
+    margin: 35px 0;
+}
+.downloadButton {
+    background: #A7A9AC;
+    padding: 3px 20px;
+    color: $white-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 10px;
+    width: 150px;
+    cursor: pointer;
+    img {
+        height: 40px
+    }
+    .btnText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 5px;
+    }
+
+
+}
+
+.imageSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+}
+
+.actionContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imgDesc {
+    width: 100%;
+    max-width: 300px;
+}
+
+.title {
+    color: $primary-color;
+    font-size: 25px;
+    font-weight: bold !important;
+    text-transform: capitalize;
+    margin: 10px 0;
+}
+
+.startNow {
+    text-transform: uppercase;
+    padding: 5px 25px;
+    width: 150px
+}
