@@ -9,6 +9,8 @@ import { DescriptionCardComponent } from './landing-page/description-card/descri
 import {MatButtonModule} from '@angular/material/button';
 import {MatRippleModule} from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { MatToolbarModule } from '@angular/material';
     CommunitySharedModule,
     MatButtonModule,
     MatRippleModule,
-    MatToolbarModule
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule
   ]
 })
 export class LandingModule { }
