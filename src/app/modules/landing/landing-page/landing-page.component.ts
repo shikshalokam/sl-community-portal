@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-landing-page',
@@ -10,6 +11,8 @@ export class LandingPageComponent implements OnInit {
   @ViewChild("explore") explore: ElementRef;
   @ViewChild("partners") partners: ElementRef;
   @ViewChild("footer") footer: ElementRef;
+
+  baseUrl = environment.keycloakBaseUrl + '/home';
 
   cardsData = [
     {

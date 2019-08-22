@@ -1,16 +1,30 @@
 @import "../../../../assets/scss/varibles.scss";
 
 .wrapper {
-    padding: 10px 15px;
-    margin: 15px auto;
-    max-width: 1200px;
-    color: $light-black-color;
+    // padding: 10px 15px;
+    // margin: 15px auto;
+    // max-width: 1200px;
+    margin-top: 130px;
+    line-height: 24px;
+    color: #96989A !important;
 }
 
 .aboutSL {
     flex: 4;
     margin-right: 20px;
+    // color: $black-color;
 }
+
+.aboutWrapper {
+    // display: flex;
+    // align-items: center;
+}
+
+.content {
+    color: #96989A !important;
+
+}
+
 .aboutSLBanner {
     margin-top: 130px;
 
@@ -24,7 +38,7 @@
     font-weight: bold;
     font-size: 28px;
     margin-bottom: 15px;
-    color: $light-black-color
+    color: $black-color
 }
 
 .patnersWrapper {
@@ -50,4 +64,18 @@
     position: fixed;
     z-index: 10;
     top: 0
+}
+
+.videoContainer {
+    padding-top: 35px;
+}
+
+.sidemenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+.noPadding {
+    padding: 0
 }

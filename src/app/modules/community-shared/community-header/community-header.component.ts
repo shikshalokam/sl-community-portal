@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 export class CommunityHeaderComponent implements OnInit {
 
   @Output() linkClick  = new EventEmitter();
+  @Output() toggle = new EventEmitter()
   baseUrl = environment.keycloakBaseUrl + '/home';
 
   constructor() { }
@@ -18,6 +19,11 @@ export class CommunityHeaderComponent implements OnInit {
 
   goTo(id) {
     this.linkClick.emit(id)
+  }
+
+  toggleNav() {
+    console.log("hiiii")
+    this.toggle.emit();
   }
 
 }
