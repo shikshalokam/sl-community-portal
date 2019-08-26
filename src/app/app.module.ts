@@ -73,10 +73,10 @@ export function authFactory(authService: AuthService) {
       multi: true,
       deps: [AuthService]
     },
-    SlickCarouselModule
+    // SlickCarouselModule
   ],
   exports:[
-    SlickCarouselModule
+    // SlickCarouselModule
   ],
 
   bootstrap: [AppComponent]
