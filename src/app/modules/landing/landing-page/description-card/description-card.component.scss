@@ -4,12 +4,20 @@
     flex-direction: column;
     padding: 10;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
     display: flex;
     // flex: 2;
     // margin-right: 15px;
 }
-
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.order1{
+    order: 1;
+}
+.order2{
+    order: 2;
+}
 .wrpper {
     margin-top: 30px;
     padding: 0;
@@ -51,7 +59,10 @@
     text-align: center;
     // flex: 1;
 }
-
+.playStoreLogo{
+    width: 50%;
+    height: 52px;
+}
 .actionContainer {
     display: flex;
     justify-content: center;
@@ -81,3 +92,4 @@
 .link {
     text-decoration: none
 }
+

@@ -1,5 +1,6 @@
-<div class=" wrpper col-xs-12">
-  <div class="descriptionSection col-xs-12 col-sm-8" [ngClass]="{'pull-right': imagFirst }">
+<div class=" wrpper col-xs-12 _flex-box flex-wrap noPaddingSmallScreen">
+  <div class="descriptionSection col-xs-12 col-sm-8 noPaddingSmallScreen" [ngClass]="{'order2': imagFirst }">
+    <p class="title">{{title}}</p>
     <p innerHTML="{{description}}">
     </p>
     <div class="actionContainer">
@@ -7,21 +8,22 @@
         <button mat-flat-button color="primary" class="startNow">Start now</button>
       </a>
       <a href="{{link}}" class="link" matRipple target="_blank">
-        <div class="downloadButton">
+        <div *ngIf="!playStoreLogo" class="downloadButton">
           <img src="{{logo}}" class="buttonImage">
           <div class="btnText">
             <div>Download</div>
             <div>{{appName}}</div>
           </div>
         </div>
+        <img *ngIf="playStoreLogo" src="{{logo}}" class="playStoreLogo">
+
       </a>
 
     </div>
   </div>
 
 
-  <div class="imageSection col-xs-12 col-sm-4"  [ngClass]="{'pull-left': imagFirst }">
+  <div class="imageSection col-xs-12 col-sm-4 noPaddingSmallScreen"  [ngClass]="{'order1': imagFirst }">
     <img src="{{image}}" class="imgDesc">
-    <p class="title">{{title}}</p>
   </div>
 </div>
