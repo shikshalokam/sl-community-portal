@@ -4,9 +4,10 @@
     // padding: 10px 15px;
     // margin: 15px auto;
     // max-width: 1200px;
-    margin-top: 150px;
+    margin-top: 130px;
     line-height: 24px;
-    color: #96989A !important;
+    padding: 0;
+    // color: #96989A !important;
 }
 
 .aboutSL {
@@ -15,10 +16,10 @@
     // color: $black-color;
 }
 
-.aboutWrapper {
-    // display: flex;
-    // align-items: center;
+.greyBackground{
+    background-color: #f2f2f2;
 }
+
 
 .content {
     color: #96989A !important;
@@ -38,7 +39,8 @@
     font-weight: bold;
     font-size: 28px;
     margin-bottom: 15px;
-    color: $black-color
+    color: $black-color;
+    text-align: center;
 }
 ._smallScreenText {
        
@@ -83,3 +85,29 @@
 .noPadding {
     padding: 0
 }
+.partnerImage{
+    // border-radius: 50%;
+    height : 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider-div{
+    position: relative;
+    // display: flex;
+    // align-items:center;
+}
+.slider-btn{
+    position: absolute;
+    font-size: 25px;
+}
+.btn-next{
+    right: 0;
+    top: 50%;
+}
+.btn-prev{
+    left: 0;
+    top: 50%;
+
+}   
