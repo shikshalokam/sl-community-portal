@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
+import { SlickCarouselComponent } from 'ngx-slick-carousel';
+
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
-
 export class LandingPageComponent implements OnInit {
   @ViewChild("aboutSl") aboutSl: ElementRef;
   @ViewChild("explore") explore: ElementRef;
@@ -17,64 +18,133 @@ export class LandingPageComponent implements OnInit {
 
   cardsData = [
     {
-      description: `<p class="_smallScreenText">Bodh enables you to learn new concepts in an interesting and easy way. You can create, curate, or search relevant learning resources that offer a high degree of interaction and cater to 
+      description: `<p class="_smallScreenText _helveticaFont">Bodh enables you to learn new concepts in an interesting and easy way. You can create, curate, or search relevant learning resources that offer a high degree of interaction and cater to 
                   various learning styles. You can learn at own pace and at convenience.</p>`,
       title: "Create personalized and powerful learning experiences",
       logo: "../../../../../assets/images/app1.png",
       image: '../../../../../assets/images/Bodh_LearnerApp -01.png',
       appName: "BODH",
       hideStartNow: true,
-      playStoreLogo:true,
+      playStoreLogo: true,
       link: "https://play.google.com/store/apps/details?id=org.shikshalokam.app"
     },
     {
-      description: `<p class="_smallScreenText">Samiksha equips you to create your own framework and assess education institutions such as schools, anganwadi and as well individuals of the education system including HMs, teachers and other officials. You can generate reports, analyse data and draw insights.</p>`,
+      description: `<p class="_smallScreenText _helveticaFont">Samiksha equips you to create your own framework and assess education institutions such as schools, anganwadi and as well individuals of the education system including HMs, teachers and other officials. You can generate reports, analyse data and draw insights.</p>`,
       title: "Observe, Assess and Analyse to take Informed Decisions",
       logo: "../../../../../assets/images/app2.png",
       image: '../../../../../assets/images/_Samiksha APP_Logo.jpg',
       appName: "SAMIKSHA",
       imagFirst: true,
       hideStartNow: true,
-      playStoreLogo:true,
+      playStoreLogo: true,
       link: "https://play.google.com/store/apps/details?id=org.shikshalokam.samiksha"
     },
     {
-      description: `<p class="_smallScreenText">Unnati enables you to undertake a set of action projects purposefully with a specific objective in a specific period of time. Education leaders can use Unnati to create projects, invite other people as collaborators, assign timelines, execute and monitor progress.</p>`,
+      description: `<p class="_smallScreenText _helveticaFont">Unnati enables you to undertake a set of action projects purposefully with a specific objective in a specific period of time. Education leaders can use Unnati to create projects, invite other people as collaborators, assign timelines, execute and monitor progress.</p>`,
       title: "Create, Collaborate, Execute and Track your own School Improvement",
       logo: "../../../../../assets/images/Unnati logo final-01.png",
       image: '../../../../../assets/images/Unnati logo final-01.png',
       appName: "UNNATI",
       hideStartNow: true,
-      playStoreLogo:false,
+      playStoreLogo: false,
       link: "https://play.google.com/store/apps/details?id=org.shikshalokam.unnati"
     },
 
   ];
 
   partnrs = [
-    "../../../../../assets/images/1.jpg",
-    "../../../../../assets/images/2.png",
-    "../../../../../assets/images/3.jpg",
-    "../../../../../assets/images/4.png",
-    "../../../../../assets/images/5.jpg",
-    "../../../../../assets/images/6.png",
-    "../../../../../assets/images/7.jpg",
-    "../../../../../assets/images/8.png",
-    "../../../../../assets/images/9.png",
-    "../../../../../assets/images/10.jpg",
-    "../../../../../assets/images/11.jpg",
-    "../../../../../assets/images/12.png",
-    "../../../../../assets/images/13.png",
-    "../../../../../assets/images/14.png",
-    "../../../../../assets/images/15 sanjhisikhya_logo.jpg",
-    "../../../../../assets/images/16.1.jpg",
-    "../../../../../assets/images/16.jpeg",
-    "../../../../../assets/images/17.jpg",
-    "../../../../../assets/images/18.png",
-    "../../../../../assets/images/19.png",
-    "../../../../../assets/images/20.jpeg",
-    "../../../../../assets/images/21.png",
-    "../../../../../assets/images/22.jpg",
+    {
+      img: "../../../../../assets/images/1.jpg",
+      link: "http://www.kefindia.org"
+    },
+    {
+      img: "../../../../../assets/images/2.png",
+      link: "http://www.mantra4change.com"
+    },
+    {
+      img: "../../../../../assets/images/3.jpg",
+      link: ""
+    },
+    {
+      img: "../../../../../assets/images/4.png",
+      link: "https://www.adhyayanfoundation.org/"
+    },
+    {
+      img: "../../../../../assets/images/5.jpg",
+      link: "https://indiaschoolleaders.org/"
+    },
+    {
+      img: "../../../../../assets/images/6.png",
+      link: "https://www.leadershipforequity.org/"
+    },
+    {
+      img: "../../../../../assets/images/7.jpg",
+      link: "https://saajha.org/"
+    },
+    {
+      img: "../../../../../assets/images/8.png",
+      link: "https://gyanprakash.org/"
+    },
+    {
+      img: "../../../../../assets/images/9.png",
+      link: "https://indiaeducationcollective.org/"
+    },
+    {
+      img: "../../../../../assets/images/10.jpg",
+      link: " https://vidhyavidhai.org/"
+    },
+    {
+      img: "../../../../../assets/images/11.jpg",
+      link: " https://loopeducation.weebly.com/"
+    },
+    {
+      img: "../../../../../assets/images/12.png",
+      link: "https://www.facebook.com/ProjectSamarthya/"
+    },
+    {
+      img: "../../../../../assets/images/13.png",
+      link: "https://www.i-saksham.org/"
+    },
+    {
+      img: "../../../../../assets/images/14.png",
+      link: "http://www.barefootedu.in/"
+    },
+    {
+      img: "../../../../../assets/images/15 sanjhisikhya_logo.jpg",
+      link: "https://www.sanjhisikhiya.org/"
+    },
+    {
+      img: "../../../../../assets/images/16.1.jpg",
+      link: "http://www.bhumi.ngo/"
+    },
+    {
+      img: "../../../../../assets/images/16.jpeg",
+      link: "https://www.srindia.org/"
+    },
+    {
+      img: "../../../../../assets/images/17.jpg",
+      link: "https://upkram.in/"
+    },
+    {
+      img: "../../../../../assets/images/18.png",
+      link: "https://www.facebook.com/samaitshala/"
+    },
+    {
+      img: "../../../../../assets/images/19.png",
+      link: "http://simpleeducationfoundation.org/"
+    },
+    {
+      img: "../../../../../assets/images/20.jpeg",
+      link: "http://ayang.org.in/"
+    },
+    {
+      img: "../../../../../assets/images/21.png",
+      link: ""
+    },
+    {
+      img: "../../../../../assets/images/22.jpg",
+      link: "https://www.facebook.com/thrivechennai/"
+    },
 
 
 
@@ -90,77 +160,58 @@ export class LandingPageComponent implements OnInit {
   }
 
   scrollToView(refrnce) {
-    console.log(refrnce);
-    // console.log(this[refrnce].nativeElement)
-    // var topOfElement = document.querySelector(refrnce).offsetTop - 130;
-    // window.scroll({ top: topOfElement, behavior: "smooth" });
-
-
-
-this[refrnce].nativeElement.scrollIntoView(true);
-let scrolledY = window.scrollY;
-if(scrolledY){
-  refrnce === 'footer' ?  window.scroll(0, scrolledY - 0) : window.scroll(0, scrolledY - 120);
-}
-    // this[refrnce].nativeElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    // this[refrnce].nativeElement.scrollTo(0,450);
-    // this[refrnce].nativeElement.scroll({
-    //   top: 100,
-    //   left: 100,
-    //   behavior: 'smooth'
-    // });// this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+    this[refrnce].nativeElement.scrollIntoView(true);
+    let scrolledY = window.scrollY;
+    if (scrolledY) {
+      refrnce === 'footer' ? window.scroll(0, scrolledY - 0) : window.scroll(0, scrolledY - 120);
+    }
 
   }
 
 
-
-   
-  slides = [
-    {img: "../assets/images/1.jpg"},
-    {img: "../assets/images/2.jpg"},
-    {img: "../assets/images/3.jpg"},
-    {img: "../assets/images/4.jpg"},
-    {img: "../assets/images/5.jpg"},
-    {img: "../assets/images/6.jpg"},
-    {img: "../assets/images/7.jpg"},
-    {img: "../assets/images/8.jpg"},
-    {img: "../assets/images/9.jpg"},
-    {img: "../assets/images/10.jpg"},
-    {img: "../assets/images/11.jpg"},
-    {img: "../assets/images/12.jpg"}
-  ];
- 
-  slideConfig = {
-    "slidesToShow": 4, 
+  slideResourcesConfig = {
+    "slidesToShow": 4,
     "slidesToScroll": 1,
-    "nextArrow":"<div class='nav-btn next-slide'></div>",
-    "prevArrow":"<div class='nav-btn prev-slide'></div>",
-    "dots":true,
-    "infinite": false
+    "centerPadding": "60px",
+    "arrows": false,
+    "autoplay": true
+  }
+
+  
+  slidePartnersConfig = {
+    "slidesToShow": 4,
+    "slidesToScroll": 1,
+    "centerPadding": "60px",
+    "arrows": false,
+    "infinite": true,
+    "autoplay": true
   };
-  
-  addSlide() {
-    this.slides.push({img: "http://placehold.it/350x150/777777"})
+
+ 
+  @ViewChild('slickModal') slickModal: SlickCarouselComponent;
+
+  next() {
+    this.slickModal.slickNext();
   }
-  
-  removeSlide() {
-    this.slides.length = this.slides.length - 1;
+
+  prev() {
+    this.slickModal.slickPrev();
   }
-  
+
   slickInit(e) {
     console.log('slick initialized');
   }
-  
+
   breakpoint(e) {
     console.log('breakpoint');
   }
-  
+
   afterChange(e) {
     console.log('afterChange');
   }
-  
+
   beforeChange(e) {
     console.log('beforeChange');
   }
- 
+
 }

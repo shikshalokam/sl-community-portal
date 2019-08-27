@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./community-footer.component.scss']
 })
 export class CommunityFooterComponent implements OnInit {
-
-  constructor() { }
+  currentYear = new Date() ;
+  constructor() {
+   }
 
   ngOnInit() {
   }
-
+  
 }
