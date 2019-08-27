@@ -16,6 +16,7 @@ export class DescriptionCardComponent implements OnInit {
   @Input() imagFirst;
   @Input() hideStartNow;
   @Input() link;
+  @Input() playStoreLogo;
 
   keyclockBaseUrl = environment.keycloakBaseUrl + '/home';
 

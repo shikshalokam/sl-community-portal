@@ -17,44 +17,72 @@
         <app-community-header (linkClick)="scrollToView($event)" (toggle)="sidenav.toggle()"></app-community-header>
       </div>
     </mat-toolbar>
-    <div class="col-xs-12 col-md-10 col-md-offset-1 wrapper">
-      <div class="col-xs-12 aboutWrapper">
-        <div class="col-sm-4 col-xs-12" #aboutSl>
-          <h1 class="aboutText">About Shikshalokam</h1>
-          <p class="content">
-            ShikshaLokam enables and amplifies leadership development opportunities for individuals and institutions
-            engaged
-            in K-12 education systems.
+    <!-- <div class="col-xs-12 col-md-10 col-md-offset-1 wrapper"> -->
+        <div class="col-xs-12 col-md-12  wrapper">
+      <div class="col-xs-12 aboutWrapper noPaddingSmallScreen">
+          
+        <div class="col-sm-12  col-xs-12 col-md-12 col-lg-12 _margin-top noPaddingSmallScreen" #aboutSl>
+          <!-- <h1 class="aboutText">About Shikshalokam</h1> -->
+          <div class="container col-xs-12 noPadding">
+              <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+            
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img src="assets/images/carousel1.jpg" alt="carousel1" style="width:100%;">
+                  </div>
+            
+                  <div class="item">
+                    <img src="assets/images/carousel2.jpg" alt="carousel2" style="width:100%;">
+                  </div>
+                
+                  <div class="item">
+                    <img src="assets/images/carousel3.jpg" alt="carousel3" style="width:100%;">
+                  </div>
+                </div>
+            
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          <p class="content _smallScreenText _small-margin-top">
+              ShikshaLokam enables and amplifies leadership development opportunities for individuals and institutions engaged in K-12 education systems
           </p>
-          <p class="content">
-            As a platform for education leadership, ShikshaLokam offers open-source technology capabilities and
-            resources to
-            a variety of ecosystem players, including Individuals, NGOs, and Government. ShikshaLokam aims to do so in
-            ways
-            that support education leadership development at a large scale with high impact. Keeping the Societal
-            Platform
-            construct, ShikshaLokam works towards distributing the ability to solve the gaps that exist in education
-            leadership development space and improving the agency of actors in the ecosystem to drive large scale
-            educational change programs.
+          <p class="content _smallScreenText">
+              As a platform for education leadership, ShikshaLokam offers open-source technological capabilities and learning resources to a variety of ecosystem actors, including Individuals, NGOs, and Government. ShikshaLokam aims to do so in ways that support education leadership development at a large scale with high impact in a sustainable manner.
           </p>
         </div>
-        <div class="col-sm-8 col-xs-12 _flex-box videoContainer">
+        <!-- <div class="col-sm-8 col-xs-12 _flex-box videoContainer">
           <iframe width="100%" height="350" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0"
             allowfullscreen></iframe>
-        </div>
+        </div> -->
       </div>
 
-      <div class="col-xs-12" #explore>
+      <div class="col-xs-12 noPaddingSmallScreen" #explore>
         <div *ngFor="let card of cardsData">
           <app-description-card [link]="card?.link" [description]="card?.description" [image]="card?.image"
             [hideStartNow]="card?.hideStartNow" [logo]="card?.logo" [title]="card?.title" [appName]="card?.appName"
+            [playStoreLogo]="card?.playStoreLogo"
             [imagFirst]="card?.imagFirst">
           </app-description-card>
         </div>
 
       </div>
 
-      <div #partners class="col-xs-12">
+      <div #partnaboutTexters class="col-xs-12 noPaddingSmallScreen">
         <h1 class="aboutText">Partners</h1>
         <div class="patnersWrapper">
           <div class="patnerCard" *ngFor="let partner of partnrs">
@@ -62,6 +90,77 @@
           </div>
         </div>
       </div>
+
+      <!-- <ngx-slick-carousel class="carousel" 
+                        #slickModal="slick-carousel" 
+                        [config]="slideConfig" 
+                        (init)="slickInit($event)"
+                        (breakpoint)="breakpoint($event)"
+                        (afterChange)="afterChange($event)"
+                        (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let partner of partnrs" class="slide">
+            <img src="{{partner}}">
+             
+        </div>
+    </ngx-slick-carousel> -->
+
+
+
+    <!-- <ngx-slick-carousel 
+    class="carousel" #slickModal="slick-modal"
+    #galleryOne="slick-carousel" 
+    [config]="slideConfig" 
+    (afterChange)="afterChange($event)">
+
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+       <img src="{{slide.img}}">
+    </div>
+</ngx-slick-carousel> -->
+<!-- <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+          <img src="{{ slide.img }}" alt="" width="100%">
+    </div>
+</ngx-slick>
+ 
+<button (click)="addSlide()">Add</button>
+<button (click)="removeSlide()">Remove</button>
+<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+<button (click)="slickModal.unslick()">unslick</button> -->
+      <!-- <ui-carousel 
+          slides="ctrl.slides"
+          slides-to-show="3"
+          slides-to-scroll="1"
+          initial-slide="1"
+          autoplay="true"
+          autoplay-speed="2000"
+          dots="true">
+      <carousel-item>
+      <div class="patnerCard" *ngFor="let partner of partnrs">
+          <img src="{{partner}}">
+        </div>
+     </carousel-item>
+    </ui-carousel> -->
+    <!-- <div class="container">
+        <div class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-sm"><img class="d-block w-100" src="//placehold.it/1200x600/444" alt="1 slide"></div>
+                        <div class="col-sm"><img class="d-block w-100" src="//placehold.it/1200x600/ccff00" alt="2 slide"></div>
+                        <div class="col-sm"><img class="d-block w-100" src="//placehold.it/1200x600" alt="3 slide"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-sm"><img class="d-block w-100" src="//placehold.it/1200x600/ccff00" alt="4 slide"></div>
+                        <div class="col-sm"><img class="d-block w-100" src="//placehold.it/1200x600/444" alt="5 slide"></div>
+                        <div class="col-sm"><img class="d-block w-100" src="//placehold.it/1200x600/ddd" alt="6 slide"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+     
 
     </div>
     <div #footer class="col-xs-12" style="padding: 0">

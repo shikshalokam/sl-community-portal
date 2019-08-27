@@ -3,11 +3,6 @@
     <img src="../../../../assets/images/ShikshaLokam Logo_highrez_transparent.png">
   </div>
   <div class="rightContainer">
-    <div class="login">
-      <a href="{{baseUrl}}">
-        <button mat-flat-button color="primary">Login</button>
-      </a>
-    </div>
     <div class="links">
       <ul>
         <li (click)="goTo('aboutSl')"><a>About Us</a></li>
@@ -16,6 +11,11 @@
         <li (click)="goTo('footer')"><a>Contact Us</a></li>
       </ul>
     </div>
+    <div class="login _small-margin-top">
+        <a href="{{baseUrl}}">
+          <button mat-flat-button color="primary">Login</button>
+        </a>
+      </div>
   </div>
   <button mat-icon-button (click)="toggleNav()" class="menuIcon">
     <mat-icon>menu</mat-icon>

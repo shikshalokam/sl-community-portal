@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
+
 export class LandingPageComponent implements OnInit {
   @ViewChild("aboutSl") aboutSl: ElementRef;
   @ViewChild("explore") explore: ElementRef;
@@ -16,34 +17,35 @@ export class LandingPageComponent implements OnInit {
 
   cardsData = [
     {
-      description: `<p>The Learning Management Systems offers the users the features to design, compile, search and tag various learning resources and undertake customised learning experiences. The Platform offers a knowledge taxonomy in order to map the knowledge pieces existing within the domain of education leadership.
-      ShikshaLokam Learner App enables Educational Leaders to consume and create relevant learning resources in an interesting and easy manner. This app is easily accessible and free, and every Educational Leader can make use of this app at their convenient time and learn effectively. The App provides learning content in various formats (like H5P, Audio, Video,PDF, etc).
-      </p>`,
-      title: "Learning Management Systems",
-      logo: "../../../../../assets/images/Bodh_LearnerApp -01.png",
-      image: '../../../../../assets/images/LMS.png',
+      description: `<p class="_smallScreenText">Bodh enables you to learn new concepts in an interesting and easy way. You can create, curate, or search relevant learning resources that offer a high degree of interaction and cater to 
+                  various learning styles. You can learn at own pace and at convenience.</p>`,
+      title: "Create personalized and powerful learning experiences",
+      logo: "../../../../../assets/images/app1.png",
+      image: '../../../../../assets/images/Bodh_LearnerApp -01.png',
       appName: "BODH",
+      hideStartNow: true,
+      playStoreLogo:true,
       link: "https://play.google.com/store/apps/details?id=org.shikshalokam.app"
     },
     {
-      description: `<p>The Assessment capability on the ShikshaLokam platform allows users to create rubric-driven institutional and individual assessments collaboratively. The data collected through these assessments can be evaluated manually and/or automatically and be visualised through reports and dashboards. 
-      Samiksha App equips education leaders to observe and assess; analyse data and generate reports. There are various kinds of Assessments. A leader could assess education institutions such as schools,anganwadi and as well assess individuals of the education system including HMs, teachers and other officials. Samiksha offers a leader to assess through simple observations as well.</p>`,
-      title: "Assessment",
-      logo: "../../../../../assets/images/_Samiksha APP_Logo.jpg",
-      image: '../../../../../assets/images/SAMIKSHA.png',
+      description: `<p class="_smallScreenText">Samiksha equips you to create your own framework and assess education institutions such as schools, anganwadi and as well individuals of the education system including HMs, teachers and other officials. You can generate reports, analyse data and draw insights.</p>`,
+      title: "Observe, Assess and Analyse to take Informed Decisions",
+      logo: "../../../../../assets/images/app2.png",
+      image: '../../../../../assets/images/_Samiksha APP_Logo.jpg',
       appName: "SAMIKSHA",
       imagFirst: true,
       hideStartNow: true,
+      playStoreLogo:true,
       link: "https://play.google.com/store/apps/details?id=org.shikshalokam.samiksha"
     },
     {
-      description: `<p>The Improvement Plan capability allows users to create and track simple improvement plans for individual and institutional entities. The capability shall allow designating collaborators in projects, assigning mentors to learners and catalyse a learning-by-doing experience captured through reflections and discussion boards.
-      Unnati App enables educational leaders to create and track simple improvement plans to run their ecosystem better.Users can divide their plans into tasks and sub-tasks and assign it to required stakeholders. Unnati aims at facilitating the improvement journey of education leaders supported with relevant learning resources and assessment tools. </p>`,
-      title: "Improvement Projects",
+      description: `<p class="_smallScreenText">Unnati enables you to undertake a set of action projects purposefully with a specific objective in a specific period of time. Education leaders can use Unnati to create projects, invite other people as collaborators, assign timelines, execute and monitor progress.</p>`,
+      title: "Create, Collaborate, Execute and Track your own School Improvement",
       logo: "../../../../../assets/images/Unnati logo final-01.png",
-      image: '../../../../../assets/images/Unnati.png',
+      image: '../../../../../assets/images/Unnati logo final-01.png',
       appName: "UNNATI",
       hideStartNow: true,
+      playStoreLogo:false,
       link: "https://play.google.com/store/apps/details?id=org.shikshalokam.unnati"
     },
 
@@ -89,8 +91,76 @@ export class LandingPageComponent implements OnInit {
 
   scrollToView(refrnce) {
     console.log(refrnce);
-    console.log(this[refrnce].nativeElement)
-    this[refrnce].nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // console.log(this[refrnce].nativeElement)
+    // var topOfElement = document.querySelector(refrnce).offsetTop - 130;
+    // window.scroll({ top: topOfElement, behavior: "smooth" });
+
+
+
+this[refrnce].nativeElement.scrollIntoView(true);
+let scrolledY = window.scrollY;
+if(scrolledY){
+  refrnce === 'footer' ?  window.scroll(0, scrolledY - 0) : window.scroll(0, scrolledY - 120);
+}
+    // this[refrnce].nativeElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    // this[refrnce].nativeElement.scrollTo(0,450);
+    // this[refrnce].nativeElement.scroll({
+    //   top: 100,
+    //   left: 100,
+    //   behavior: 'smooth'
+    // });// this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+
   }
 
+
+
+   
+  slides = [
+    {img: "../assets/images/1.jpg"},
+    {img: "../assets/images/2.jpg"},
+    {img: "../assets/images/3.jpg"},
+    {img: "../assets/images/4.jpg"},
+    {img: "../assets/images/5.jpg"},
+    {img: "../assets/images/6.jpg"},
+    {img: "../assets/images/7.jpg"},
+    {img: "../assets/images/8.jpg"},
+    {img: "../assets/images/9.jpg"},
+    {img: "../assets/images/10.jpg"},
+    {img: "../assets/images/11.jpg"},
+    {img: "../assets/images/12.jpg"}
+  ];
+ 
+  slideConfig = {
+    "slidesToShow": 4, 
+    "slidesToScroll": 1,
+    "nextArrow":"<div class='nav-btn next-slide'></div>",
+    "prevArrow":"<div class='nav-btn prev-slide'></div>",
+    "dots":true,
+    "infinite": false
+  };
+  
+  addSlide() {
+    this.slides.push({img: "http://placehold.it/350x150/777777"})
+  }
+  
+  removeSlide() {
+    this.slides.length = this.slides.length - 1;
+  }
+  
+  slickInit(e) {
+    console.log('slick initialized');
+  }
+  
+  breakpoint(e) {
+    console.log('breakpoint');
+  }
+  
+  afterChange(e) {
+    console.log('afterChange');
+  }
+  
+  beforeChange(e) {
+    console.log('beforeChange');
+  }
+ 
 }

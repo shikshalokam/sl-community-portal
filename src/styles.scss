@@ -81,7 +81,12 @@ body {
 ._full-width {
     width: 100%;
 }
-
+._margin-top{
+    margin-top: 20px;
+}
+._small-margin-top{
+    margin-top: 10px;
+}
 ._cursor-pointer {
     cursor: pointer;
 }
@@ -90,7 +95,9 @@ body {
     background: $green-color;
     color: $white-color;
 }
-
+._smallScreenText {
+    font-size: 18px;
+}
 ._primary-btn {
     background: $primary-color;
     color: $white-color;
