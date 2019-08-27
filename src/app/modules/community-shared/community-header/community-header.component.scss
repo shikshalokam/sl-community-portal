@@ -10,6 +10,13 @@
             width: 200px;
         }
     }
+    .login {
+        border-radius: 10px;
+        text-transform: uppercase !important;
+        padding: 0 25px;
+        // justify-content: flex-end;
+        // display: flex;
+    }
     .rightContainer {
         display: block;
         flex: 1;
@@ -17,7 +24,7 @@
         flex-direction: column;
         align-items: flex-end;
         .login > button{
-            border-radius: 10px;
+            border-radius: 20px;
             text-transform: uppercase !important;
             padding: 0 25px;
             // justify-content: flex-end;

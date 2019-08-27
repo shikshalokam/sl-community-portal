@@ -20,6 +20,8 @@ import { CommunitySharedModule } from './modules/community-shared/community-shar
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 // import { SlickCarouselModule } from 'ngx-slick-carousel';
 // import { SlickModule } from 'ngx-slick';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 export function  setupTranslateFactory(
   service: TranslateService): Function {
   return () => service.use('en');
@@ -59,6 +61,7 @@ export function authFactory(authService: AuthService) {
     CommunitySharedModule,
     AngularFontAwesomeModule,
     // SlickModule.forRoot(),
+    SlickCarouselModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
