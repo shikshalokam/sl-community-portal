@@ -21,8 +21,9 @@ export class LandingPageComponent implements OnInit {
       description: `<p class="_smallScreenText _helveticaFont">Bodh enables you to learn new concepts in an interesting and easy way. You can create, curate, or search relevant learning resources that offer a high degree of interaction and cater to 
                   various learning styles. You can learn at own pace and at convenience.</p>`,
       title: "Create personalized and powerful learning experiences",
-      logo: "../../../../../assets/images/app1.png",
+      logo: "../../../../../assets/images/googlePlayIcon.png",
       image: '../../../../../assets/images/Bodh_LearnerApp -01.png',
+      imageText:`<p class="imageText">Learn to improve</p>`,
       appName: "BODH",
       hideStartNow: true,
       playStoreLogo: true,
@@ -31,8 +32,9 @@ export class LandingPageComponent implements OnInit {
     {
       description: `<p class="_smallScreenText _helveticaFont">Samiksha equips you to create your own framework and assess education institutions such as schools, anganwadi and as well individuals of the education system including HMs, teachers and other officials. You can generate reports, analyse data and draw insights.</p>`,
       title: "Observe, Assess and Analyse to take Informed Decisions",
-      logo: "../../../../../assets/images/app2.png",
-      image: '../../../../../assets/images/_Samiksha APP_Logo.jpg',
+      logo: "../../../../../assets/images/googlePlayIcon.png",
+      image: '../../../../../assets/images/samiksha-logo.png',
+      imageText:`<p class="imageText">Assess to improve</p>`,      
       appName: "SAMIKSHA",
       imagFirst: true,
       hideStartNow: true,
@@ -42,11 +44,12 @@ export class LandingPageComponent implements OnInit {
     {
       description: `<p class="_smallScreenText _helveticaFont">Unnati enables you to undertake a set of action projects purposefully with a specific objective in a specific period of time. Education leaders can use Unnati to create projects, invite other people as collaborators, assign timelines, execute and monitor progress.</p>`,
       title: "Create, Collaborate, Execute and Track your own School Improvement",
-      logo: "../../../../../assets/images/Unnati logo final-01.png",
+      logo: "../../../../../assets/images/googlePlayIcon.png",
       image: '../../../../../assets/images/Unnati logo final-01.png',
+      imageText:`<p class="imageText">Plan to improve</p>`,
       appName: "UNNATI",
       hideStartNow: true,
-      playStoreLogo: false,
+      playStoreLogo: true,
       link: "https://play.google.com/store/apps/details?id=org.shikshalokam.unnati"
     },
 
@@ -174,17 +177,52 @@ export class LandingPageComponent implements OnInit {
     "slidesToScroll": 1,
     "centerPadding": "60px",
     "arrows": false,
-    "autoplay": true
+    "autoplay": true,
+    'respondTo': 'window',
+
+    'responsive': [{
+      'breakpoint': 1024,
+      'settings': {
+      
+          'slidesToShow': 1,
+          'slidesToScroll': 1,
+          'initialSlide': 1,
+          'arrows': true,
+          dots: true
+        }
+      }]
   }
 
-  
+ 
   slidePartnersConfig = {
-    "slidesToShow": 4,
+    "slidesToShow": 5,
     "slidesToScroll": 1,
     "centerPadding": "60px",
     "arrows": false,
-    "infinite": true,
-    "autoplay": true
+    "autoplay": true,
+    'respondTo': 'window',
+    'responsive': [
+      {
+      'breakpoint': 600,
+      'settings': {
+      
+          'slidesToShow': 1,
+          'slidesToScroll': 1,
+          'initialSlide': 1,
+          'arrows': true,
+        }
+      },
+      {
+        'breakpoint': 800,
+        'settings': {
+        
+            'slidesToShow': 2,
+            'slidesToScroll': 1,
+            'initialSlide': 2,
+            'arrows': true,
+          }
+        }
+    ]
   };
 
  
