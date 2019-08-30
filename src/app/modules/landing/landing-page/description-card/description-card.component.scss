@@ -60,9 +60,10 @@
     // flex: 1;
 }
 .playStoreLogo{
-    width: 50%;
-    height: 52px;
+    // width: 50%;
+    height: 150px;
 }
+
 .actionContainer {
     display: flex;
     justify-content: center;
@@ -93,3 +94,6 @@
     text-decoration: none
 }
 
+.noPadding{
+    padding: 0;
+}

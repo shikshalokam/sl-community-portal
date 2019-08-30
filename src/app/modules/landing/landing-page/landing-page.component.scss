@@ -26,6 +26,9 @@
 
 }
 
+.whiteBackground{
+    background-color: $white-color;
+}
 .aboutSLBanner {
     margin-top: 130px;
 
@@ -68,10 +71,12 @@
     height: auto;
     background-color: $light-grey-color;
     position: fixed;
-    z-index: 10;
+    z-index: 20;
     top: 0
 }
-
+.maxImageWidth{
+    max-width: 200px !important;
+}
 .videoContainer {
     padding-top: 35px;
 }
