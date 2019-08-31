@@ -1,0 +1,120 @@
+@import "../../../../assets/scss/varibles.scss";
+
+.wrapper {
+    // padding: 10px 15px;
+    // margin: 15px auto;
+    // max-width: 1200px;
+    margin-top: 115px;
+    line-height: 24px;
+    padding: 0;
+    // color: #96989A !important;
+}
+
+.aboutSL {
+    flex: 4;
+    margin-right: 20px;
+    // color: $black-color;
+}
+
+.greyBackground{
+    background-color: #f2f2f2;
+}
+
+
+.content {
+    color: #96989A !important;
+
+}
+
+.whiteBackground{
+    background-color: $white-color;
+}
+.aboutSLBanner {
+    margin-top: 130px;
+
+    flex: 5;
+    img {
+        width: 100%;
+    }
+}
+
+.aboutText {
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: $black-color;
+    text-align: center;
+}
+._smallScreenText {
+       
+    font-size: 18px ;
+  
+}
+.patnersWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap
+}
+
+.patnerCard {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    img{
+        width: 100%;
+    }
+}
+
+.toolBar {
+    height: auto;
+    // background-color: $light-grey-color;
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    border-bottom: 1px solid $light-grey-color;
+}
+.maxImageWidth{
+    max-width: 150px !important;
+    min-width: 150px !important;
+}
+.videoContainer {
+    padding-top: 35px;
+}
+
+.sidemenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+.noPadding {
+    padding: 0
+}
+.partnerImage{
+    // border-radius: 50%;
+    height : 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider-div{
+    position: relative;
+    // display: flex;
+    // align-items:center;
+}
+.slider-btn{
+    position: absolute;
+    font-size: 25px;
+}
+.btn-next{
+    right: 0;
+    top: 50%;
+}
+.btn-prev{
+    left: 0;
+    top: 50%;
+
+}   

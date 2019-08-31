@@ -29,11 +29,16 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/slick-carousel/slick/slick.scss",
+    "node_modules/slick-carousel/slick/slick-theme.scss",
               "src/assets/scss/responsive.scss",
               "src/assets/scss/varibles.scss",
+              "node_modules/font-awesome/css/font-awesome.css",
               "src/styles.scss"
             ],
             "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/slick-carousel/slick/slick.min.js",
               "./node_modules/keycloak-js/dist/keycloak.min.js"
             ]
           },
