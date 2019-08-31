@@ -21,7 +21,7 @@ export class LandingPageComponent implements OnInit {
       description: `<p class="_smallScreenText _helveticaFont">Bodh enables you to learn new concepts in an interesting and easy way. You can create, curate, or search relevant learning resources that offer a high degree of interaction and cater to 
                   various learning styles. You can learn at own pace and at convenience.</p>`,
       title: "Create personalized and powerful learning experiences",
-      logo: "../../../../../assets/images/googlePlayIcon.png",
+      logo: "../../../../../assets/images/logo1.png",
       image: '../../../../../assets/images/Bodh_LearnerApp -01.png',
       imageText:`<p class="imageText">Learn to Improve</p>`,
       appName: "BODH",
@@ -32,7 +32,7 @@ export class LandingPageComponent implements OnInit {
     {
       description: `<p class="_smallScreenText _helveticaFont">Samiksha equips you to create your own framework and assess education institutions such as schools, anganwadi and as well individuals of the education system including HMs, teachers and other officials. You can generate reports, analyse data and draw insights.</p>`,
       title: "Observe, Assess and Analyse to take Informed Decisions",
-      logo: "../../../../../assets/images/googlePlayIcon.png",
+      logo: "../../../../../assets/images/logo2.png",
       image: '../../../../../assets/images/samiksha-logo.png',
       imageText:`<p class="imageText">Assess to Improve</p>`,      
       appName: "SAMIKSHA",
@@ -44,7 +44,7 @@ export class LandingPageComponent implements OnInit {
     {
       description: `<p class="_smallScreenText _helveticaFont">Unnati enables you to undertake a set of action projects purposefully with a specific objective in a specific period of time. Education leaders can use Unnati to create projects, invite other people as collaborators, assign timelines, execute and monitor progress.</p>`,
       title: "Create, Collaborate, Execute and Track your own School Improvement",
-      logo: "../../../../../assets/images/googlePlayIcon.png",
+      logo: "../../../../../assets/images/logo3.png",
       image: '../../../../../assets/images/Unnati logo final-01.png',
       imageText:`<p class="imageText">Plan to Improve</p>`,
       appName: "UNNATI",
@@ -93,7 +93,7 @@ export class LandingPageComponent implements OnInit {
       link: "https://indiaeducationcollective.org/"
     },
     {
-      img: "../../../../../assets/images/10.jpg",
+      img: "../../../../../assets/images/10.png",
       link: " https://vidhyavidhai.org/"
     },
     {

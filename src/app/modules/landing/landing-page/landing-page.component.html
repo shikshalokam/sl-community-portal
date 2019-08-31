@@ -19,8 +19,8 @@
     </mat-toolbar>
     <!-- <div class="col-xs-12 col-md-10 col-md-offset-1 wrapper"> -->
     <div class="col-xs-12 col-md-12  wrapper">
-      <div class="col-xs-12 aboutWrapper noPaddingSmallScreen">
-        <div class="col-sm-12  col-xs-12 col-md-12 col-lg-12 _margin-top noPaddingSmallScreen" #aboutSl>
+      <div class="col-xs-12 aboutWrapper noPaddingSmallScreen noPadding">
+        <div class="col-sm-12  col-xs-12 col-md-12 col-lg-12  noPaddingSmallScreen noPadding" #aboutSl>
           <!-- <h1 class="aboutText">About Shikshalokam</h1> -->
           <div class="container col-xs-12 noPadding">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -56,7 +56,7 @@
               </a>
             </div>
           </div>
-          <div class="_margin-top col-xs-12">
+          <!-- <div class="_margin-top col-xs-12">
 
             <p class="content _smallScreenText">
               ShikshaLokam enables and amplifies leadership development opportunities for individuals and institutions
@@ -69,7 +69,7 @@
               high
               impact in a sustainable manner.
             </p>
-          </div>
+          </div> -->
 
         </div>
         <!-- <div class="col-sm-8 col-xs-12 _flex-box videoContainer">
@@ -78,7 +78,7 @@
         </div> -->
       </div>
 
-      <div class="col-xs-12 noPaddingSmallScreen greyBackground"  #explore>
+      <div class="col-xs-12  greyBackground"  #explore>
         <div *ngFor="let card of cardsData">
           <app-description-card [link]="card?.link" [description]="card?.description" [image]="card?.image"
             [hideStartNow]="card?.hideStartNow" [logo]="card?.logo" [title]="card?.title" [appName]="card?.appName"

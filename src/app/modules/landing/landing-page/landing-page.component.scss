@@ -4,7 +4,7 @@
     // padding: 10px 15px;
     // margin: 15px auto;
     // max-width: 1200px;
-    margin-top: 130px;
+    margin-top: 115px;
     line-height: 24px;
     padding: 0;
     // color: #96989A !important;
@@ -69,13 +69,15 @@
 
 .toolBar {
     height: auto;
-    background-color: $light-grey-color;
+    // background-color: $light-grey-color;
     position: fixed;
     z-index: 20;
-    top: 0
+    top: 0;
+    border-bottom: 1px solid $light-grey-color;
 }
 .maxImageWidth{
-    max-width: 200px !important;
+    max-width: 150px !important;
+    min-width: 150px !important;
 }
 .videoContainer {
     padding-top: 35px;
