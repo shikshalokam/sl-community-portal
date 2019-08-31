@@ -20,7 +20,8 @@
 }
 .wrpper {
     margin-top: 30px;
-    padding: 0;
+    // padding: 0;
+    padding: 0 10px;
 }
 
 .downloadButton {
@@ -61,7 +62,7 @@
 }
 .playStoreLogo{
     // width: 50%;
-    height: 150px;
+    width: 200px;
 }
 
 .actionContainer {
@@ -74,6 +75,7 @@
 .imgDesc {
     width: 100%;
     max-width: 300px;
+    margin: 10px 0;
 }
 
 .title {
