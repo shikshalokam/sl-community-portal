@@ -1,0 +1,52 @@
+<div class="headrWrapper">
+  <div class="leftContainer">
+    <img (click)="goTo('aboutSl')" src="../../../../assets/images/ShikshaLokam Logo_highrez_transparent.png">
+  </div>
+  <div class="rightContainer">
+    <div class="links">
+      <ul>
+        <li (click)="goTo('aboutSl')"><a>About Us</a></li>
+        <li (click)="goTo('explore')"><a>Explore</a></li>
+        <li (click)="goTo('partners')"><a>Our Partners</a></li>
+        <li (click)="goTo('footer')"><a>Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="login _small-margin-top">
+        <a href="{{baseUrl}}">
+          <!-- Login -->
+          <button mat-flat-button color="primary" class="login">Login</button>
+        </a>
+      </div>
+  </div>
+  <button mat-icon-button (click)="toggleNav()" class="menuIcon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  
+
+</div>
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="../../../../assets/images/ShikshaLokam Logo_highrez_transparent.png" width="200">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+    </div>
+</nav> -->

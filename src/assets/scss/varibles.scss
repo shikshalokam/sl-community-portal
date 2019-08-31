@@ -15,9 +15,11 @@ $app-darkBlue-color:var(--app-darkBlue-color);
 $faded-label-color:var(--faded-label-color);
 $blue-gradient:var(--blue-gradient);
 $dark-blue:var(--dark-blue);
+$light-black-color:var(--light-black);
 
 
 :root{
+--light-black:"#6C6E71";
 --primary-color:#A63936;
 --black-color:#4c4c4c;
 --grey-color:#bababa;

@@ -1,0 +1,101 @@
+@import "../../../../../assets//scss/varibles.scss";
+
+.descriptionSection {
+    flex-direction: column;
+    padding: 10;
+    justify-content: center;
+    // align-items: center;
+    display: flex;
+    // flex: 2;
+    // margin-right: 15px;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.order1{
+    order: 1;
+}
+.order2{
+    order: 2;
+}
+.wrpper {
+    margin-top: 30px;
+    // padding: 0;
+    padding: 0 10px;
+}
+
+.downloadButton {
+    background: #A7A9AC;
+    padding: 3px 20px;
+    color: $white-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 150px;
+    margin: 20px 0;
+    cursor: pointer;
+
+    img {
+        height: 36px
+    }
+
+    .btnText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 5px;
+    }
+
+
+}
+
+.imageSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 30px;
+    text-align: center;
+    // flex: 1;
+}
+.playStoreLogo{
+    // width: 50%;
+    width: 200px;
+}
+
+.actionContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imgDesc {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+}
+
+.title {
+    color: $primary-color;
+    font-size: 25px;
+    font-weight: bold !important;
+    text-transform: capitalize;
+    margin: 10px 0;
+}
+
+.startNow {
+    text-transform: uppercase;
+    padding: 5px 25px;
+    width: 150px
+}
+
+.link {
+    text-decoration: none
+}
+
+.noPadding{
+    padding: 0;
+}

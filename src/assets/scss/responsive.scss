@@ -2,8 +2,25 @@
     .sideDiv {
         display: none !important;
     }
+    ._smallScreenText {
+       
+        font-size: 15px !important;
+      
+    }
+    .noPaddingSmallScreen{
+        padding: 0!important;
+    }
     .colon{
         display: none;
+    }
+    // .playStoreLogo{
+    //     width: 100% !important;
+    // }
+    .order1{
+        order: 2 !important;
+    }
+    .order2{
+        order: 1 !important;
     }
     .routingDiv {
         // position: relative;
@@ -12,7 +29,9 @@
         // float: right;
         // overflow-y: auto;
     }
-   
+    .wrapper {
+        margin-top: 79px !important;
+    }
     .navbar{
         display : none !important;
     }
@@ -114,6 +133,23 @@
         display:inline !important;
     }
     
+    .noPaddingSmallScreen{
+        padding: 0!important;
+    }
+    ._smallScreenText {
+       
+        font-size: 15px !important;
+      
+    }
+    .order1{
+        order: 2 !important;
+    }
+    .order2{
+        order: 1 !important;
+    }
+    // .playStoreLogo{
+    //     width: 100% !important;
+    // }
     .mat-expansion-panel-header{
         align-items: baseline !important;
     }
@@ -184,7 +220,9 @@
             display: flex !important;
             padding:0px 26%;
         }
-
+        .wrapper {
+            margin-top: 100px !important;
+        }
         
 }
 
@@ -199,5 +237,22 @@
     .dropdownDiv{
         width:200px !important;
         display:flex !important;
+    }
+    // .playStoreLogo{
+    //     width: 100% !important;
+    // }
+    .order1{
+        order: 2 !important;
+    }
+    .order2{
+        order: 1 !important;
+    }
+    .noPaddingSmallScreen{
+        padding: 0!important;
+    }
+    ._smallScreenText {
+       
+        font-size: 15px !important;
+      
     }
 }

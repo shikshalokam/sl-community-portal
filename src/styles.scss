@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import '@angular/material/prebuilt-themes/indigo-pink.css';
-@import "./assets//scss//varibles.scss";
+@import './theme.scss';
+@import "./assets//scss/varibles.scss";
 
 
 @font-face {
@@ -81,16 +81,34 @@ body {
 ._full-width {
     width: 100%;
 }
-
+._margin-top{
+    margin-top: 20px !important;
+}
+._small-margin-top{
+    margin-top: 10px !important;
+}
+._small-margin-bottom{
+    margin-bottom: 10px !important;
+}
+._margin-bottom{
+    margin-bottom: 20px !important;
+}
 ._cursor-pointer {
     cursor: pointer;
+}
+.imageText{
+    color: #5e5f62 !important;
+    font-size: 18px;
+    font-weight: 800;
 }
 
 ._green-btn {
     background: $green-color;
     color: $white-color;
 }
-
+._smallScreenText {
+    font-size: 18px;
+}
 ._primary-btn {
     background: $primary-color;
     color: $white-color;
@@ -99,3 +117,6 @@ span:focus {
     outline: none;
     border: 0;
  }
+._helveticaFont{
+    font-family: Helvetica !important;
+}
