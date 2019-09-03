@@ -57,7 +57,7 @@ export class AppComponent {
       this.isLoggedIn = false;
       // this.currentUser = "blank"
     }
-    console.log(this.isLoggedIn)
+    // console.log(this.isLoggedIn)
    }
 
   ngOnInit() {
