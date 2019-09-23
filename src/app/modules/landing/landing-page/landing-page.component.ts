@@ -66,7 +66,7 @@ export class LandingPageComponent implements OnInit {
     },
     {
       img: "../../../../../assets/images/3.jpg",
-      link: ""
+      link: "https://edumentum.org/"
     },
     {
       img: "../../../../../assets/images/4.png",
