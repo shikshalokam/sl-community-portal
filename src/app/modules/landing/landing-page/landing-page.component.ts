@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { environment } from 'src/environments/environment';
-
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
+import { AuthService } from '../../../modules/private-modules/auth-service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -9,13 +10,23 @@ import { SlickCarouselComponent } from 'ngx-slick-carousel';
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
+  isLoggedIn: boolean;
+  programId;
+  assessmentId;
+  // links ;
+  opened = true;
+  pushMode = 'side';
+  currentUser;
+  logo = " ./assets/shikshalokam.png";
+  // baseUrl;
+  portalName;
+  links = [];
   @ViewChild("aboutSl") aboutSl: ElementRef;
   @ViewChild("explore") explore: ElementRef;
   @ViewChild("partners") partners: ElementRef;
   @ViewChild("footer") footer: ElementRef;
 
   baseUrl = environment.keycloakBaseUrl + '/home';
-
   cardsData = [
     {
       description: `<p class="_smallScreenText _helveticaFont">Bodh enables you to learn new concepts in an interesting and easy way. You can create, curate, or search relevant learning resources that offer a high degree of interaction and cater to 
@@ -23,7 +34,7 @@ export class LandingPageComponent implements OnInit {
       title: "Create personalized and powerful learning experiences",
       logo: "../../../../../assets/images/logo1.png",
       image: '../../../../../assets/images/Bodh_LearnerApp -01.png',
-      imageText:`<p class="imageText">Learn to Improve</p>`,
+      imageText: `<p class="imageText">Learn to Improve</p>`,
       appName: "BODH",
       hideStartNow: true,
       playStoreLogo: true,
@@ -34,7 +45,7 @@ export class LandingPageComponent implements OnInit {
       title: "Observe, Assess and Analyse to take Informed Decisions",
       logo: "../../../../../assets/images/logo2.png",
       image: '../../../../../assets/images/samiksha-logo.png',
-      imageText:`<p class="imageText">Assess to Improve</p>`,      
+      imageText: `<p class="imageText">Assess to Improve</p>`,
       appName: "SAMIKSHA",
       imagFirst: true,
       hideStartNow: true,
@@ -46,7 +57,7 @@ export class LandingPageComponent implements OnInit {
       title: "Create, Collaborate, Execute and Track your own School Improvement",
       logo: "../../../../../assets/images/logo3.png",
       image: '../../../../../assets/images/Unnati logo final-01.png',
-      imageText:`<p class="imageText">Plan to Improve</p>`,
+      imageText: `<p class="imageText">Plan to Improve</p>`,
       appName: "UNNATI",
       hideStartNow: true,
       playStoreLogo: true,
@@ -157,9 +168,23 @@ export class LandingPageComponent implements OnInit {
 
   ]
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) { 
+    this.currentUser = this.authService.getCurrentUserDetails();
+    this.baseUrl = environment.base_url;
+    this.portalName = environment.portal_name;
+
+
+    if (this.currentUser) {
+      this.isLoggedIn = true;
+    }
+    else {
+      this.isLoggedIn = false;
+    }
+  }
 
   ngOnInit() {
+    console.log('===home page=====');
+    console.log('this.currentUser',this.currentUser);
   }
 
   scrollToView(refrnce) {
@@ -183,17 +208,17 @@ export class LandingPageComponent implements OnInit {
     'responsive': [{
       'breakpoint': 1024,
       'settings': {
-      
-          'slidesToShow': 1,
-          'slidesToScroll': 1,
-          'initialSlide': 1,
-          'arrows': true,
-          dots: true
-        }
-      }]
+
+        'slidesToShow': 1,
+        'slidesToScroll': 1,
+        'initialSlide': 1,
+        'arrows': true,
+        dots: true
+      }
+    }]
   }
 
- 
+
   slidePartnersConfig = {
     "slidesToShow": 5,
     "slidesToScroll": 1,
@@ -203,9 +228,9 @@ export class LandingPageComponent implements OnInit {
     'respondTo': 'window',
     'responsive': [
       {
-      'breakpoint': 600,
-      'settings': {
-      
+        'breakpoint': 600,
+        'settings': {
+
           'slidesToShow': 1,
           'slidesToScroll': 1,
           'initialSlide': 1,
@@ -215,17 +240,17 @@ export class LandingPageComponent implements OnInit {
       {
         'breakpoint': 800,
         'settings': {
-        
-            'slidesToShow': 2,
-            'slidesToScroll': 1,
-            'initialSlide': 2,
-            'arrows': true,
-          }
+
+          'slidesToShow': 2,
+          'slidesToScroll': 1,
+          'initialSlide': 2,
+          'arrows': true,
         }
+      }
     ]
   };
 
- 
+
   @ViewChild('slickModal') slickModal: SlickCarouselComponent;
 
   next() {

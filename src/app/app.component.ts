@@ -46,7 +46,7 @@ export class AppComponent {
       this.opened = false;
       this.pushMode = 'push';
     }
-    this.currentUser = this.authService.getCurrentUserDetails();
+    // this.currentUser = this.authService.getCurrentUserDetails();
     this.baseUrl=environment.base_url;
     this.portalName = environment.portal_name;
 

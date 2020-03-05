@@ -9,22 +9,30 @@ import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material';
 import { AuthService } from '../auth-service/auth.service';
 import { SidenavComponent } from 'shikshalokam';
-
+import { KeycloakAuthGuard, KeycloakService } from 'keycloak-angular';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate ,CanActivateChild {
 
-  constructor(private authService: AuthService,private snackBar: MatSnackBar, private router: Router) { }
+  constructor(private authService: AuthService, protected keycloakAngular: KeycloakService, 
+    private snackBar: MatSnackBar, private router: Router) { 
+    }
   url ;
   canAcess ;
   canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    let url: string = state.url;
-    this.url = state.url;
-    this.canAcess = JSON.parse(localStorage.getItem('canAcess'));
-    console.log(route.data.id + "parent")
-    return ( this.roleAecss(route.data.id ) )
+    // let url: string = state.url;
+    // this.url = state.url;
+    // this.canAcess = JSON.parse(localStorage.getItem('canAcess'));
+    // console.log(route.data.id + "parent")
+    // return ( this.roleAecss(route.data.id ) )
+    if (window.localStorage.getItem('auth-token')) {
+      return true;
+    } else {
+      return false;
+
+    }
   }
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     let url: string = state.url;
@@ -35,11 +43,30 @@ export class AuthGuard implements CanActivate ,CanActivateChild {
     return ( this.roleAecss(route.data.id ) )
   }
 
+   isAccessAllowed(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      // if (true) {
+        this.keycloakAngular.login()
+          .catch(e => console.error(e));
+        return reject(false);
+      // }
+ 
+      // const requiredRoles: string[] = route.data.roles;
+      // if (!requiredRoles || requiredRoles.length === 0) {
+      //   return resolve(true);
+      // } else {
+      //   if (!this.roles || this.roles.length === 0) {
+      //     resolve(false);
+      //   }
+      //   resolve(requiredRoles.every(role => this.roles.indexOf(role) > -1));
+      // }
+    });
+  }
+
   
   
   roleAecss(url){
     let flag = false ;  
-    // console.log(url)
     this.canAcess.forEach(element => {
       if(url.includes(element))  {
         flag =true;

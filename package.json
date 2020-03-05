@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^7.0.4",
+    "@angular/animations": "^7.2.16",
     "@angular/cdk": "^7.0.4",
     "@angular/common": "~7.0.0",
     "@angular/compiler": "~7.0.0",
@@ -27,6 +27,7 @@
     "@auth0/angular-jwt": "^2.1.0",
     "angular-font-awesome": "^3.1.2",
     "angular-google-charts": "^0.1.6",
+    "angular2-jwt": "^0.2.3",
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.4",
     "express": "^4.16.4",
@@ -44,6 +45,7 @@
     "ngx-spinner": "^6.1.2",
     "node-sass": "^4.10.0",
     "rxjs": "~6.3.3",
+    "rxjs-compat": "^6.5.4",
     "shikshalokam": "file:../sl-portal-library/dist/shikshalokam/shikshalokam-0.0.1.tgz",
     "slick-carousel": "^1.8.1",
     "zone.js": "~0.8.26"

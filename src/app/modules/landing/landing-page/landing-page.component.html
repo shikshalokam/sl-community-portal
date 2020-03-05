@@ -13,10 +13,14 @@
 
   <mat-sidenav-content>
     <mat-toolbar class="toolBar noMarginPadding">
-      <div class="col-xs-12 noPadding" >
-        <app-community-header (linkClick)="scrollToView($event)" (toggle)="sidenav.toggle()" ></app-community-header>
+      <div class="col-xs-12 noPadding">
+        <app-community-header (linkClick)="scrollToView($event)" (toggle)="sidenav.toggle()"></app-community-header>
       </div>
+      <!-- <div *ngIf= "isLoggedIn" class="col-xs-12 noPadding" >
+      <button (click) ="mainpageDirect()" mat-flat-button color="primary">Dashboard</button>
+      </div> -->
     </mat-toolbar>
+
     <!-- <div class="col-xs-12 col-md-10 col-md-offset-1 wrapper"> -->
     <div class="col-xs-12 col-md-12  wrapper">
       <div class="col-xs-12 aboutWrapper noPaddingSmallScreen noPadding">
@@ -78,12 +82,11 @@
         </div> -->
       </div>
 
-      <div class="col-xs-12  greyBackground"  #explore>
+      <div class="col-xs-12  greyBackground" #explore>
         <div *ngFor="let card of cardsData">
           <app-description-card [link]="card?.link" [description]="card?.description" [image]="card?.image"
             [hideStartNow]="card?.hideStartNow" [logo]="card?.logo" [title]="card?.title" [appName]="card?.appName"
-            [imageText]="card?.imageText"
-            [playStoreLogo]="card?.playStoreLogo" [imagFirst]="card?.imagFirst">
+            [imageText]="card?.imageText" [playStoreLogo]="card?.playStoreLogo" [imagFirst]="card?.imagFirst">
           </app-description-card>
         </div>
 
@@ -96,9 +99,9 @@
             (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
             (beforeChange)="beforeChange($event)">
             <div ngxSlickItem *ngFor="let partner of partnrs" class="partnerImage col-md-4 col-sm-6 col-xs-12">
-                <a href="{{partner.link}}" target="_blank">
-                  <img src="{{partner.img}}" alt="" class="maxImageWidth">
-                </a>
+              <a href="{{partner.link}}" target="_blank">
+                <img src="{{partner.img}}" alt="" class="maxImageWidth">
+              </a>
             </div>
 
 
@@ -112,7 +115,7 @@
         </div>
       </div>
 
-<!--
+      <!--
       <div #partners class="col-xs-12  noPaddingSmallScreen">
           <h1 class="aboutText">Resources</h1>
           <div class="slider-div">
@@ -138,6 +141,7 @@
 
 
     </div>
+
     <div #footer class="col-xs-12 _margin-top" style="padding: 0">
       <app-community-footer></app-community-footer>
     </div>

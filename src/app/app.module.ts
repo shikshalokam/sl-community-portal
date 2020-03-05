@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule, APP_INITIALIZER , ApplicationRef, DoBootstrap} from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { CoreModule,TranslateService,SharedModule } from 'shikshalokam';
+import { CoreModule, TranslateService, SharedModule } from 'shikshalokam';
 // import { AuthService } from './core/services/auth/auth.service';
 import { MatDividerModule } from '@angular/material/divider';
 // import { ApiInterceptor } from 'src/app/core/services/interceptor-service/interceptor.service';
@@ -21,12 +21,22 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 // import { SlickCarouselModule } from 'ngx-slick-carousel';
 // import { SlickModule } from 'ngx-slick';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { Http, RequestOptions } from '@angular/http';
+import { AuthHttp, AuthConfig } from 'angular2-jwt';
+import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
+import { keycloakInitializer } from './modules/private-modules/auth/keycloak-initializer';
+import { AuthGuard } from './modules/private-modules/auth-gaurd/auth.gaurd';
 
-export function  setupTranslateFactory(
+
+// const keycloakService = new KeycloakService();
+
+export function setupTranslateFactory(
   service: TranslateService): Function {
   return () => service.use('en');
 }
-
+// export function authHttpServiceFactory(http: Http, options: RequestOptions) {
+//   return new AuthHttp(new AuthConfig(), http, options);
+// }
 // export function authFactory(authService: AuthService) {
 //    return () => authService.init();
 //   return () => {return}  ;
@@ -36,24 +46,26 @@ export function tokenGetter() {
 }
 
 
-export function authFactory(authService: AuthService) {
-  return () => authService.init();
-  // return;
-}
+// export function authFactory(authService: AuthService) {
+//   return () => authService.init();
+//   // return;
+// }
 @NgModule({
   declarations: [
     AppComponent,
-    
-    
+
+
   ],
   imports: [
     BrowserModule,
+    // KeycloakAngularModule,
     // CommonModule,
     AppRoutingModule,
     // SlickCarouselModule,
     SharedModule,
     CoreModule,
     MatDividerModule,
+    // ToastrModule.forRoot(),
     CoreModule.forRoot(),
     HttpClientModule,
     BrowserAnimationsModule,
@@ -70,15 +82,25 @@ export function authFactory(authService: AuthService) {
   ],
   providers: [
     TranslateService,
-    {
-      provide: APP_INITIALIZER,
-      useFactory: authFactory,
-      multi: true,
-      deps: [AuthService]
-    },
+    AuthGuard
+    // {
+    //   provide: AuthHttp,
+    //   useFactory: authHttpServiceFactory,
+    //   deps: [Http, RequestOptions]
+    // },
+    // {
+    //   provide: KeycloakService,
+    //   useValue: keycloakService
+    // },
+    // {
+    //   provide: APP_INITIALIZER,
+    //   useFactory: keycloakInitializer,
+    //   multi: true,
+    //   deps: [AuthService]
+    // },
     // SlickCarouselModule
   ],
-  exports:[
+  exports: [
     // SlickCarouselModule
   ],
 
@@ -86,4 +108,15 @@ export function authFactory(authService: AuthService) {
 })
 
 
-export class AppModule { }
+export class AppModule  {
+  // ngDoBootstrap(appRef: ApplicationRef) {
+  //   keycloakService
+  //     .init()
+  //     .then(() => {
+  //       console.log('[ngDoBootstrap] bootstrap app');
+ 
+  //       appRef.bootstrap(AppComponent);
+  //     })
+  //     .catch(error => console.error('[ngDoBootstrap] init Keycloak failed', error));
+  // }
+ }

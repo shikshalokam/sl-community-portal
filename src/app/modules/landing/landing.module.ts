@@ -12,16 +12,24 @@ import { MatToolbarModule } from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import {AuthService } from '../private-modules/auth-service/auth.service';
+import { SharedModule } from 'shikshalokam';
 
+// export function authFactory(authService: AuthService) {
+//   return () => authService.init();
+//   return () => {return}  ;
+// }
 
 @NgModule({
   declarations: [
     DashboardComponent,
     LandingPageComponent,
-    DescriptionCardComponent
-  ],
+    DescriptionCardComponent,
+   ],
+  
   imports: [
     MatTooltipModule,
+    SharedModule,
     landingRoutingModule,
     CoreModule,
     CommunitySharedModule,
