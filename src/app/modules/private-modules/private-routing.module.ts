@@ -1,25 +1,38 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PrivateLandingComponent } from './private-landing/private-landing.component';
-// import { DashboardComponent } from 'shikshalokam';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PrivateComponent } from './private.component';
 
+// const routes: Routes = [
+//   { path: 'dashboard', component: DashboardComponent, data: { title: 'shikshalokam' } },
+//   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+// ];
 
-
-const routes: Routes = [
+const routes = [
   {
     path: '',
-    data: {
-      title: 'private'
-    },
+    component: PrivateComponent,
+    data: {},
     children: [
-      { path: 'landing', component: PrivateLandingComponent, data: { title: 'shikshalokam' } },
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+      {
+        path: '**',
+        redirectTo: '/dashboard'
+      }
     ]
   }
 ];
 
+
+
 @NgModule({
   imports: [
-    RouterModule.forChild(routes)],
-    exports: [RouterModule]
+    RouterModule.forChild(routes)
+  ],
+  exports: [RouterModule]
 })
 export class privateRoutingModule { }

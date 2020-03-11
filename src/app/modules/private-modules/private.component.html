@@ -1,1 +1,37 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container class="example-container">
+
+    <mat-sidenav-content>
+        <!-- <mat-toolbar class="toolBar noMarginPadding">
+        <div class="col-xs-12 noPadding">
+         <div class="headrWrapper">
+   <app-navbar [currentUser]="currentUser" [isLoggedIn]="isLoggedIn" (Logout)="onLogout()" [logo]="logo" [url]="baseUrl" [portal]="portalName"></app-navbar>
+    <app-responsive-navbar [currentUser]="currentUser" (Logout)="onLogout()" [logo]="logo" [url]="baseUrl" [portal]="portalName"></app-responsive-navbar>
+  
+   
+    <button mat-icon-button (click)="toggleNav()" class="menuIcon">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  
+        </div>
+      </mat-toolbar> -->
+        <mat-toolbar class="toolBar noMarginPadding">
+            <div class="col-xs-12 ">
+                <app-navbar [currentUser]="currentUser" [isLoggedIn]="isLoggedIn" (Logout)="onLogout()" [logo]="logo"
+                    [url]="baseUrl" [portal]="portalName"></app-navbar>
+                <app-responsive-navbar [currentUser]="currentUser" (Logout)="onLogout()" [logo]="logo" [url]="baseUrl"
+                    [portal]="portalName"></app-responsive-navbar>
+            </div>
+
+        </mat-toolbar>
+        <!-- <div class="col-xs-12 col-md-10 col-md-offset-1 wrapper"> -->
+        <div class="col-xs-12 col-md-12  wrapper landing">
+            <router-outlet></router-outlet>
+        </div>
+
+        <div #footer class="col-xs-12 _margin-top" style="padding: 0">
+            <app-community-footer></app-community-footer>
+        </div>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>

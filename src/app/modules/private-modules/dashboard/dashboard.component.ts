@@ -36,6 +36,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("vhgsdvfjhegfejr")
     this.dashboards=this.obj.dashboards;
   }
 

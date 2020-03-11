@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { privateRoutingModule } from './private-routing.module';
-import { PrivateLandingComponent } from './private-landing/private-landing.component';
 import { PrivateComponent } from './private.component';
-import { CommunitySharedModule} from '../community-shared/community-shared.module';
+import { CommunitySharedModule } from '../community-shared/community-shared.module';
 import { Routes, RouterModule } from '@angular/router';
 import { CoreModule, TranslateService, SharedModule } from 'shikshalokam';
 
@@ -18,15 +17,17 @@ import {
   MatTooltipModule,
   MatToolbarModule
 } from '@angular/material';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthService } from './auth-service/auth.service';
 // import { ConfigurationModule } from 'shikshalokam';
 
 @NgModule({
-  declarations: [PrivateLandingComponent, PrivateComponent],
+  declarations: [PrivateComponent, DashboardComponent],
   imports: [
     CommonModule,
     CommunitySharedModule,
     RouterModule,
-    CoreModule,  SharedModule,
+    CoreModule, SharedModule,
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
@@ -42,4 +43,8 @@ import {
   providers: [TranslateService,
   ]
 })
-export class PrivateModule { }
+export class PrivateModule {
+  constructor(private auth: AuthService) {
+    this.auth.init();
+  }
+}

@@ -33,8 +33,8 @@ export class CommunityHeaderComponent implements OnInit {
   }
 
   login() {
-    // this.router.navigateByUrl('private/landing');
-   this.authService.init();
+    this.router.navigateByUrl('private/dashboard');
+  //  this.authService.init();
   }
 
 }

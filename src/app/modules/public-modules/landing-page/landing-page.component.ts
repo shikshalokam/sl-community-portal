@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
-import { AuthService } from '../../../modules/private-modules/auth-service/auth.service';
+import { AuthService } from '../../private-modules/auth-service/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
