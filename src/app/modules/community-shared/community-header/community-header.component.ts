@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import {  AuthService } from '../../../modules/private-modules/auth-service/auth.service';
+import {  AuthService } from '../../core-community/services/auth-service/auth.service';
 import { Router } from '@angular/router';
 // import { ToastrService } from 'ngx-toastr';
 @Component({
@@ -33,8 +33,7 @@ export class CommunityHeaderComponent implements OnInit {
   }
 
   login() {
-    this.router.navigateByUrl('private/dashboard');
-  //  this.authService.init();
+    this.router.navigateByUrl('/private/dashboard');
   }
 
 }

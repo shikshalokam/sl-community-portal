@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { TranslateService } from 'shikshalokam';
-import { AuthService } from './auth-service/auth.service';
+import { AuthService } from '../core-community/services/auth-service/auth.service';
 
 @Component({
   selector: 'app-private',
@@ -67,12 +67,9 @@ export class PrivateComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    console.log('logout page ngOnInit');
-  }
+  ngOnInit() { }
 
   onLogout() {
-    console.log('===logout');
     this.authService.getLogout();
   }
 

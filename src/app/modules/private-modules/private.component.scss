@@ -1,22 +1,22 @@
 @import '../../../assets/scss/varibles.scss';
+
 .noMarginPadding {
     margin: 0px;
     padding: 0px;
 }
-.landing {
-    margin-top: 15%;
-    margin-bottom: 15%;
-}
+
 .headrWrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 10px;
+
     .leftContainer {
         img {
             width: 200px;
         }
     }
+
     .login {
         border-radius: 10px;
         text-transform: uppercase !important;
@@ -24,31 +24,37 @@
         // justify-content: flex-end;
         // display: flex;
     }
+
     .rightContainer {
         display: block;
         flex: 1;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        .login > button{
+
+        .login>button {
             border-radius: 20px;
             text-transform: uppercase !important;
             padding: 0 25px;
             // justify-content: flex-end;
             // display: flex;
         }
-        .links >  ul {
+
+        .links>ul {
             display: flex !important;
             list-style: none !important;
             margin-bottom: 0;
             justify-content: space-between;
             padding-left: 0;
             margin-top: 15px;
+
             li {
                 margin-left: 25px;
-                :hover{
-                    color:$primary-color;
+
+                :hover {
+                    color: $primary-color;
                 }
+
                 a {
                     color: #7F8083;
                     font-size: 20px;
@@ -66,13 +72,10 @@
 
 @media only screen and (max-width: 768px) {
     .rightContainer {
-      display: none !important;
+        display: none !important;
     }
+
     .menuIcon {
         display: block !important;
     }
-  }
-
-  
-
-
+}

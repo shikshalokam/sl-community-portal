@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
+import { KeycloakService } from 'keycloak-angular';
 
 
 declare var Keycloak: any;
@@ -9,57 +10,46 @@ declare var Keycloak: any;
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
   isLoggedIn = false;
   redirectUrl: string;
   userName: string;
-  constructor(private jwtHelper: JwtHelperService, private router: Router,
+  constructor(private jwtHelper: JwtHelperService, private router: Router
   ) { }
 
 
   private keycloakAuth: any;
+  public keycloakInstance;
+  keycloak = new KeycloakService();
 
-  init(): Promise<any> {
-    console.log("inside confff")
+
+  initilizeKeycloak(config): Promise<any> {
     return new Promise((resolve, reject) => {
-      const config = {
-        'url': environment.keycloak.url,
-        'realm': environment.keycloak.realm,
-        'clientId': environment.keycloak.clientId,
-      };
-      this.keycloakAuth = new Keycloak(config);
-      this.keycloakAuth.init({ onLoad: 'check-sso' })
-        .success((data) => {
-          console.log(data)
-          console.log(this.keycloakAuth);
-          debugger
-          if(!data){
-            // console.log(data.isTokenExpired())
-            this.keycloakAuth.login();
-          }
-          // this.toastr.success('Hello world!', 'Toastr fun!');
-          // localStorage.setItem('auth-token', this.keycloakAuth.token)
-          // localStorage.setItem('downloadReport-token', environment.downloadReportHeaderValue);
-          // this.router.navigateByUrl('/private/dashboard');
-          resolve();
-        }, error => {
-          console.log('===========', error);
-        })
-        .error(() => {
-          console.log('=========== reject');
-          reject();
-        });
-    });
+      this.keycloak.init(config).then(success => {
+        resolve(config)
+      }).catch(error => {
+        reject(error)
+      })
+    })
   }
 
+  isUserLoggedIn() {
+    return (this.keycloak && this.keycloak['_instance'].token) ? true : false
+  }
 
+  instanceLogin() {
+    this.keycloak.login().then(successs => {
+      console.log("successs")
+    }).catch(error => {
+      console.log("errorrrr")
+    })
+  }
 
   getToken(): string {
     const accessToken = localStorage.getItem('auth-token');
     console.log(accessToken)
     return accessToken ? accessToken : null;
-
-
   }
 
   getCurrentUserDetails() {
@@ -69,7 +59,7 @@ export class AuthService {
     console.log(this.getToken())
     // this.userName = this.getToken() ? this.jwtHelper.decodeToken(this.getToken()).name : '';
 
-    return  null
+    return null
   }
 
   getLogout() {

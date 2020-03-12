@@ -18,8 +18,6 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AuthService } from './auth-service/auth.service';
-// import { ConfigurationModule } from 'shikshalokam';
 
 @NgModule({
   declarations: [PrivateComponent, DashboardComponent],
@@ -44,7 +42,4 @@ import { AuthService } from './auth-service/auth.service';
   ]
 })
 export class PrivateModule {
-  constructor(private auth: AuthService) {
-    this.auth.init();
-  }
 }
