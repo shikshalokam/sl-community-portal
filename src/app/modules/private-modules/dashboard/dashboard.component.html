@@ -1,12 +1,12 @@
 <div class="dashboard">
   <ul class="unorder-list">
     <li *ngFor="let dashboard of dashboards" class="icons" matTooltip={{dashboard.tooltip|translate}}>
-      <a href="{{dashboard.url}}"  target="_blank" class="navigation">
+      <a href="{{dashboard.url}}" target="_blank" class="navigation">
         <i class="material-icons">
           {{dashboard.icon}}
         </i>
         <div class="context">
-          <div class="text-flow" >
+          <div class="text-flow">
             {{dashboard.tooltip | translate}}
           </div>
         </div>
@@ -15,4 +15,3 @@
 
   </ul>
 </div>
- 
