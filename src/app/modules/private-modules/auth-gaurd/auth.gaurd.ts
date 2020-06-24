@@ -6,9 +6,11 @@ import {
   CanActivateChild
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { MatSnackBar } from '@angular/material';
+// import { MatSnackBar } from '@angular/material';
+// import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 import { AuthService } from '../auth-service/auth.service';
-import { SidenavComponent } from 'shikshalokam';
+// import { SidenavComponent } from 'shikshalokam';
 
 
 @Injectable({
@@ -16,7 +18,7 @@ import { SidenavComponent } from 'shikshalokam';
 })
 export class AuthGuard implements CanActivate ,CanActivateChild {
 
-  constructor(private authService: AuthService,private snackBar: MatSnackBar, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
   url ;
   canAcess ;
   canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
@@ -64,14 +66,14 @@ export class AuthGuard implements CanActivate ,CanActivateChild {
       if (this.authService.userName == 'Sandeep') {
         return true;
       }
-      this.snackBar.open("Unauthorized Access", "Ok", {duration: 3000});
+      // this.snackBar.open("Unauthorized Access", "Ok", {duration: 3000});
       return false;
     }
     else {
       if (this.authService.userName == 'Mouneesh') {
         return true;
       }
-      this.snackBar.open("Unauthorized Access", "Ok", {duration: 3000});
+      // this.snackBar.open("Unauthorized Access", "Ok", {duration: 3000});
       return false;
 
     }

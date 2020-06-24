@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TranslateService, GlobalConfigurationService } from 'shikshalokam';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from './modules/private-modules/auth-service/auth.service';
 import { environment } from 'src/environments/environment';
@@ -10,22 +9,6 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
-  // constructor(private translate: TranslateService) {
-  //   translate.use('en').then(() => {
-    
-  //   });
-  // }
-
-  // links = [  
-  //         { 
-  //           linkHeading : "headings.features",
-  //           options:[ 
-                      
-                      
-  //                   ]  
-  //           }
-  //       ] ;
 
   isLoggedIn:boolean;
   programId;
@@ -38,10 +21,8 @@ export class AppComponent {
   baseUrl;
   logo =" ./assets/shikshalokam.png";
   roleAcess=[];
-  constructor(private translate: TranslateService,private route : ActivatedRoute,private authService :AuthService , private globalConfigService:GlobalConfigurationService) {
-    translate.use('en').then(() => {
-      
-    });
+  constructor(private route : ActivatedRoute,private authService :AuthService ) {
+
     if (window.screen.width < 760) { // 768px portrait
       this.opened = false;
       this.pushMode = 'push';
