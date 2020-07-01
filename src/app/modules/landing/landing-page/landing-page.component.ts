@@ -2,6 +2,9 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
+import { Router } from '@angular/router';
+import { keyCloakService } from '../../private-modules/key-cloack/keycloak.service';
+
 
 @Component({
   selector: 'app-landing-page',
@@ -157,9 +160,11 @@ export class LandingPageComponent implements OnInit {
 
   ]
 
-  constructor() { }
+  constructor(private router: Router,
+    private keyCloak: keyCloakService) { }
 
   ngOnInit() {
+
   }
 
   scrollToView(refrnce) {

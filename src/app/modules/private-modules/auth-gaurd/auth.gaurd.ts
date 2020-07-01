@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 // import { MatSnackBar } from '@angular/material';
 // import {MatSnackBarModule} from '@angular/material/snack-bar';
 
-import { AuthService } from '../auth-service/auth.service';
+// import { AuthService } from '../auth-service/auth.service';
 // import { SidenavComponent } from 'shikshalokam';
 
 
@@ -18,7 +18,9 @@ import { AuthService } from '../auth-service/auth.service';
 })
 export class AuthGuard implements CanActivate ,CanActivateChild {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(
+    // private authService: AuthService,
+     private router: Router) { }
   url ;
   canAcess ;
   canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
@@ -63,16 +65,16 @@ export class AuthGuard implements CanActivate ,CanActivateChild {
 
   checkUser(url: string) {
     if (url.includes("parent")) {
-      if (this.authService.userName == 'Sandeep') {
-        return true;
-      }
+      // if (this.authService.userName == 'Sandeep') {
+      //   return true;
+      // }
       // this.snackBar.open("Unauthorized Access", "Ok", {duration: 3000});
       return false;
     }
     else {
-      if (this.authService.userName == 'Mouneesh') {
-        return true;
-      }
+      // if (this.authService.userName == 'Mouneesh') {
+      //   return true;
+      // }
       // this.snackBar.open("Unauthorized Access", "Ok", {duration: 3000});
       return false;
 

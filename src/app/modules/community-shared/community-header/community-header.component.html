@@ -10,12 +10,14 @@
         <li (click)="goTo('partners')"><a>Our Partners</a></li>
         <li (click)="goTo('footer')"><a>Contact Us</a></li>
         <li _ngcontent-c7="">
-            <div class="login ">
-                <a href="{{baseUrl}}">
-                  <!-- Login -->
-                  <button mat-flat-button="" color="primary" class="login mat-flat-button mat-primary" _ngcontent-c7=""><span style="color: #fff !important;" >Login</span></button>
-                </a>
-            </div>
+          <div class="login ">
+            <!-- [routerLink] = " '/library/learning'" -->
+            <a>
+              <!-- Login -->
+              <button (click)="login()" mat-flat-button="" color="primary" class="login mat-flat-button mat-primary">
+                <span style="color: #fff !important;">Login</span></button>
+            </a>
+          </div>
         </li>
       </ul>
     </div>

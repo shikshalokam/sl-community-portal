@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { AuthService } from './modules/private-modules/auth-service/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
+// import { AuthService } from './modules/private-modules/auth-service/auth.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -21,13 +21,16 @@ export class AppComponent {
   baseUrl;
   logo =" ./assets/shikshalokam.png";
   roleAcess=[];
-  constructor(private route : ActivatedRoute,private authService :AuthService ) {
+ 
+  constructor(private route : ActivatedRoute,
+    // private authService :AuthService,
+    private router: Router ) {
 
     if (window.screen.width < 760) { // 768px portrait
       this.opened = false;
       this.pushMode = 'push';
     }
-    this.currentUser = this.authService.getCurrentUserDetails();
+    // this.currentUser = this.authService.getCurrentUserDetails();
     this.baseUrl=environment.base_url;
     this.portalName = environment.portal_name;
 
@@ -42,17 +45,17 @@ export class AppComponent {
    }
 
   ngOnInit() {
-    
+    // this.router.navigate(['/private/learning'])
   }
    
   onLogout(){
-    this.authService.getLogout();
+    // this.authService.getLogout();
     this.onLogin();
   } 
   onLogin(){
     // this.authService.init({onload:'login-required'});
     console.log("login Called")
-    this.authService.getLogin();
+    // this.authService.getLogin();
   }
   onResize(event)
   {

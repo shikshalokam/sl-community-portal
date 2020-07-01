@@ -1,0 +1,22 @@
+<div>
+    <mat-toolbar class="c-filters">
+        <div *ngFor="let data of filtersData">
+            <mat-form-field style="width: 250px;" class="example-chip-list">
+                <mat-label class="required">{{data?.label}}</mat-label>
+                <mat-select [value]="selected" class="text-capital" autocomplete="false">
+                    <mat-option class="text-capital" *ngFor="let item of data['options']" [(value)]="item.value">
+                        {{item.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </mat-toolbar>
+    <div class="c-card">
+        <div *ngFor="let data of resourceData">
+            <div style="padding-left: 10px">
+                <app-card [cardData] = "resourceData"></app-card>
+            </div>
+        </div>
+    </div>
+
+</div>

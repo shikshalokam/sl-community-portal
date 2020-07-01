@@ -4,15 +4,21 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { CommunityFooterComponent } from './community-footer/community-footer.component';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { CardComponent } from './card/card.component';
+import { SharedModuleModule } from 'shikshalokam';
+
 
 @NgModule({
-  declarations: [CommunityHeaderComponent, CommunityFooterComponent],
+  declarations: [CommunityHeaderComponent, CommunityFooterComponent, CardComponent],
   imports: [
     CommonModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule,
+    SharedModuleModule
   ], exports: [
-    CommunityHeaderComponent, CommunityFooterComponent
+    CommunityHeaderComponent, CommunityFooterComponent, CardComponent
   ]
 })
 export class CommunitySharedModule { }

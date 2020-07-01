@@ -16,6 +16,8 @@ $faded-label-color:var(--faded-label-color);
 $blue-gradient:var(--blue-gradient);
 $dark-blue:var(--dark-blue);
 $light-black-color:var(--light-black);
+$text-color: var(--text-color);
+$body-background: var(--body-background);
 
 
 :root{
@@ -38,4 +40,6 @@ $light-black-color:var(--light-black);
 --faded-label-color:rgba(0,0,0,.5);
 --blue-gradient:#b35754;
 --dark-blue:rgb(143, 56, 53);
+--text-color: #83868a;
+--body-background: #efeeee;
 }
