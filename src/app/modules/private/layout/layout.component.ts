@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-design',
-  templateUrl: './design.component.html',
-  styleUrls: ['./design.component.scss']
+  selector: 'app-layout',
+  templateUrl: './layout.component.html',
+  styleUrls: ['./layout.component.scss']
 })
-export class DesignComponent implements OnInit {
+export class LayoutComponent implements OnInit {
   menudata = [
     {
       "icon": "local_library",
@@ -23,7 +23,7 @@ export class DesignComponent implements OnInit {
       "icon": "dashboard",
       "name": "Portals",
       "action": "portals",
-      "url": "/portals1"
+      "url": "/portals"
     },
     {
       "icon": "edit",

@@ -1,26 +1,12 @@
 <div class="dashboard-content">
   <p>
-    <mat-toolbar style="padding-left: 300px; background-color: white;">
-      <div>
-        <button [routerLink]="'/library/learning'" routerLinkActive="p-button" mat-button
-          matTooltip="Learning Resources">
-          Learning Resources
-        </button>
-      </div>
-      <div>
-        <button [routerLink]="'/library/observation'" mat-button routerLinkActive="p-button" matTooltip="Observations">
-          Observations
-        </button>
-      </div>
-      <div>
-        <button mat-button routerLinkActive="p-button" matTooltip="Assesments">
-          Assesments
-        </button>
-      </div>
-      <div>
-        <button mat-button routerLinkActive="p-button" matTooltip="Improvement Projects">
-          Improvement Projects
-        </button>
+    <mat-toolbar class="c-toolbar">
+      <div *ngFor="let data of tabData">
+        <div>
+          <button [routerLink]="data.routerLink" routerLinkActive="p-button" mat-button matTooltip="{{data.label}}">
+            {{data.label}}
+          </button>
+        </div>
       </div>
     </mat-toolbar>
   </p>

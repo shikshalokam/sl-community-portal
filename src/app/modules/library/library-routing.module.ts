@@ -15,10 +15,9 @@ const routes: Routes = [{
     { path: 'observation', component: ObservationsComponent },
     { path: 'assesment', component: AssesmentsComponent },
     // {
-    //   path: '',
-    //   redirectTo: '/learning',
-    //   pathMatch: 'full'
-    // }
+    //   path: '', redirectTo: '/learning', pathMatch: 'full'
+    // },
+    // { path: '**', redirectTo: '/learning', pathMatch: 'full' }
   ],
 }
 ];

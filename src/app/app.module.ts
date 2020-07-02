@@ -10,12 +10,12 @@ import { environment } from 'src/environments/environment';
 // import { AuthService } from './modules/private-modules/auth-service/auth.service';
 import { JwtModule } from '@auth0/angular-jwt';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { CommunitySharedModule } from './modules/community-shared/community-shared.module';
+import { PortalSharedModule } from './modules/portal-shared/portal-shared.module';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import {  CoreModuleModule } from 'shikshalokam';
-import { PrivateModule } from './modules/private-modules/private.module';
-import { keyCloakService } from './modules/private-modules/key-cloack/keycloak.service';
-import { CommunityCoreModule } from './modules/community-core/community-core.module';
+
+import { CommunityCoreModule } from './modules/portal-core/portal-core.module';
+import { keyCloakService } from './modules/portal-core/services/keyCloack-service/keycloak.service';
 
 // import { KeycloakAngularModule } from 'keycloak-angular';
 
@@ -55,9 +55,8 @@ export function tokenGetter() {
     HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    CommunitySharedModule,
+    PortalSharedModule,
     SlickCarouselModule,
-    PrivateModule,
     CommunityCoreModule,
     // KeycloakAngularModule,
     JwtModule.forRoot({

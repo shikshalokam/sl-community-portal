@@ -4,7 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { landingRoutingModule } from './landing.routing.module';
 import { CommonModule } from '@angular/common';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { CommunitySharedModule } from '../community-shared/community-shared.module';
+import { PortalSharedModule } from '../portal-shared/portal-shared.module';
 import { DescriptionCardComponent } from './landing-page/description-card/description-card.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule } from '@angular/material/core';
@@ -32,7 +32,7 @@ import { KeycloakAngularModule } from 'keycloak-angular';
     CommonModule,
     MatTooltipModule,
     landingRoutingModule,
-    CommunitySharedModule,
+    PortalSharedModule,
     MatButtonModule,
     MatRippleModule,
     MatSidenavModule,

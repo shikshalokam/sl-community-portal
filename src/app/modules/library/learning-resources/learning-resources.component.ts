@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { LibraryService } from '../../community-core';
-import { keyCloakService } from '../../private-modules/key-cloack/keycloak.service';
+import { LibraryService } from '../../portal-core';
+import { CommunityServiceService, KendraServiceService } from 'shikshalokam';
+import { LibraryConfig } from '../library.config';
+import { environment } from 'src/environments/environment';
+
 
 
 @Component({
@@ -11,19 +14,22 @@ import { keyCloakService } from '../../private-modules/key-cloack/keycloak.servi
 export class LearningResourcesComponent implements OnInit {
   filtersData: any;
   resourceData: any;
-  menudata = [{ value: 1 }, { value: 2 }, { value: 3 }, { value: 3 }, { value: 3 }];
   constructor(private libraryService: LibraryService,
-    private keyCloakService: keyCloakService) { }
+    private communityServiceService: CommunityServiceService,
+    private kendraServiceService: KendraServiceService) { }
 
   ngOnInit() {
     this.getFilters();
     this.getLearningResources();
+
+
   }
 
+
+
   getFilters() {
-    this.libraryService.getFilterList().subscribe(data => {
-      console.log('getFilters', data['result']);
-      this.filtersData = data['result']
+    this.communityServiceService.get(environment.base_url + LibraryConfig.filterList).subscribe(data => {
+      this.filtersData = data['result'];
     }, error => {
 
     })
@@ -31,7 +37,7 @@ export class LearningResourcesComponent implements OnInit {
 
 
   getLearningResources() {
-    this.libraryService.getLearningResources().subscribe(data => {
+    this.communityServiceService.get(environment.base_url + LibraryConfig.learningResources).subscribe(data => {
       console.log('getLearningResources', data);
       this.resourceData = data['result']['data'];
 

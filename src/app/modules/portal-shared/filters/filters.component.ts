@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LibraryService } from '../../community-core';
+import { LibraryService } from '../../portal-core';
 
 @Component({
   selector: 'app-filters',

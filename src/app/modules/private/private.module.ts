@@ -1,7 +1,7 @@
 import { NgModule, APP_INITIALIZER, DoBootstrap } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FullLayoutRoutingModule } from './full-layout-routing.module';
-import { DesignComponent } from './design/design.component';
+import { PrivateRoutingModule } from './private-routing.module';
+import { LayoutComponent } from './layout/layout.component';
 import { CoreModuleModule } from 'shikshalokam';
 import { LibraryModule } from '../library/library.module';
 import { MyFolderModule } from '../my-folder/my-folder.module';
@@ -13,10 +13,10 @@ import { initializer } from 'src/utils/app-init';
 
 
 @NgModule({
-  declarations: [DesignComponent],
+  declarations: [LayoutComponent],
   imports: [
     CommonModule,
-    FullLayoutRoutingModule,
+    PrivateRoutingModule,
     CoreModuleModule,
     LibraryModule,
     LandingModule,

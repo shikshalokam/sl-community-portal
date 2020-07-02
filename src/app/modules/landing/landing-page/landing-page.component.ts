@@ -3,7 +3,6 @@ import { environment } from 'src/environments/environment';
 
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
 import { Router } from '@angular/router';
-import { keyCloakService } from '../../private-modules/key-cloack/keycloak.service';
 
 
 @Component({
@@ -160,8 +159,7 @@ export class LandingPageComponent implements OnInit {
 
   ]
 
-  constructor(private router: Router,
-    private keyCloak: keyCloakService) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
 

@@ -8,7 +8,8 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { keyCloakService } from '../../private-modules/key-cloack/keycloak.service';
+import { keyCloakService } from '../services/keyCloack-service/keycloak.service';
+
 
 
 @Injectable()
