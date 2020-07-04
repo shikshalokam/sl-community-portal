@@ -1,41 +1,17 @@
-<mat-toolbar style="display: flex; justify-content: space-evenly; background-color: white;">
-  <div>
-    <mat-form-field style="width: 150%;" class="example-chip-list">
-      <mat-label class="required">Category</mat-label>
-      <mat-select [value]="selected" class="text-capital" autocomplete="false">
-        <mat-option class="text-capital" *ngFor="let item of categoryData" [(value)]="item.value">{{item.label}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-
-  <div>
-    <mat-form-field  style="width: 150%;" class="example-chip-list">
-      <mat-label class="required">Sub Category</mat-label>
-      <mat-select [value]="selected" class="text-capital" autocomplete="false">
-        <mat-option class="text-capital" *ngFor="let item of subCategoryData" [(value)]="item.value">{{item.label}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-
-  <div>
-    <mat-form-field   style="width: 150%;" class="example-chip-list">
-      <mat-label class="required">Topic</mat-label>
-      <mat-select [value]="selected" class="text-capital" autocomplete="false">
-        <mat-option class="text-capital" *ngFor="let item of topicData" [(value)]="item.value">{{item.label}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-
-  <div>
-    <mat-form-field  style="width: 150%;" class="example-chip-list">
-      <mat-label class="required">Language</mat-label>
-      <mat-select [value]="selected" class="text-capital" autocomplete="false">
-        <mat-option class="text-capital" *ngFor="let item of languageData" [(value)]="item.value">{{item.label}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-</mat-toolbar>
+<div>
+  <mat-toolbar class="c-filters">
+    <!-- <form [formGroup]="filterForm"> -->
+    <div *ngFor="let data of filtersData">
+      <mat-form-field style="width:250px" class="example-chip-list">
+        <mat-label class="required">{{data?.label}}</mat-label>
+        <mat-select  (selectionChange)="onchange($event)" [value]="selected"
+          class="text-capital" autocomplete="false">
+          <mat-option class="text-capital" *ngFor="let item of data['options']" [(value)]="item.value">
+            {{item.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <!-- </form> -->
+  </mat-toolbar>
+</div>

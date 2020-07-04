@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-library-tab',
-  templateUrl: './library-tab.component.html',
-  styleUrls: ['./library-tab.component.scss']
+  selector: 'app-library',
+  templateUrl: './library.component.html',
+  styleUrls: ['./library.component.scss']
 })
-export class LibraryTabComponent implements OnInit {
+export class LibraryComponent implements OnInit {
 
   tab: any = 'Learning';
   tabData = [
@@ -34,11 +34,7 @@ export class LibraryTabComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.router.navigate(['library/learning']);
-  }
-
-  tabSelect(data) {
-    this.tab = data;
+    // this.router.navigate(['library/learning']);
   }
 
 }

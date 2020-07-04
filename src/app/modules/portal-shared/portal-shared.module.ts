@@ -8,16 +8,17 @@ import { RouterModule } from '@angular/router';
 import { CardComponent } from './card/card.component';
 import { SharedModuleModule } from 'shikshalokam';
 import { FiltersComponent } from './filters/filters.component';
-
-
+import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
+import { CommingSoonComponent } from './comming-soon/comming-soon.component'; 
 
 @NgModule({
-  declarations: [CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent],
+  declarations: [CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, CommingSoonComponent],
   imports: [
     CommonModule,
     MatButtonModule,
     MatIconModule,
     RouterModule,
+    FormsModule, ReactiveFormsModule,
     SharedModuleModule
   ], exports: [
     CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent

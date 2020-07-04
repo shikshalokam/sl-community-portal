@@ -16,7 +16,7 @@ const routes: Routes = [
   {
     path: '',
     // canActivate: [PrivateGuard],
-    loadChildren: () => import('./modules/private/private.module').then(m => m.FullLayoutModule)
+    loadChildren: () => import('./modules/private/private.module').then(m => m.PrivateModule)
   },
 
 ];

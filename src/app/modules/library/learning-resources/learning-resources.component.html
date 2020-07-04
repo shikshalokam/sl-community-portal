@@ -1,23 +1,22 @@
-
 <div>
-    <mat-toolbar class="c-filters">
-        <div *ngFor="let data of filtersData">
-            <mat-form-field style="width: 250px;" class="example-chip-list">
-                <mat-label class="required">{{data?.label}}</mat-label>
-                <mat-select [value]="selected" class="text-capital" autocomplete="false">
-                    <mat-option class="text-capital" *ngFor="let item of data['options']" [(value)]="item.value">
-                        {{item.label}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-    </mat-toolbar>
-    <div class="c-card">
-        <div *ngFor="let data of resourceData">
-            <div style="padding-left: 10px">
-                <app-card [cardData] = "resourceData"></app-card>
-            </div>
-        </div>
+  <app-filters [filtersData]="filtersData" (sendFilters)="getSelected($event)"></app-filters>
+  <div>
+    <div *ngFor="let data of resourceData" class="whole-card">
+      <section style="margin-top: 5%;"> 
+        <img mat-card-image src="/assets/images/{{data?.title}}.png" onError="this.src='/assets/images/1.jpg'"
+          alt="Photo of a Shiba Inu" class="c-image">
+        <h4>{{data?.title}}</h4>
+        <p class="c-description">
+          {{data?.description}}
+        </p>
+      </section>
+      <span *ngFor="let rdata of data['resources']">
+        <app-card [cardData]="rdata"></app-card>
+      </span>
+      <div style="padding: 5% 0% 0% 50%;">
+        <a href="{{rdata?.redirect_url}}"><button mat-button class="p-button">View more</button></a>
+      </div>
     </div>
 
+  </div>
 </div>

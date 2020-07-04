@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-layout',
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss']
+  selector: 'app-private',
+  templateUrl: './private.component.html',
+  styleUrls: ['./private.component.scss']
 })
-export class LayoutComponent implements OnInit {
+export class PrivateComponent implements OnInit {
   menudata = [
     {
       "icon": "local_library",
@@ -49,8 +48,7 @@ export class LayoutComponent implements OnInit {
       "url": "/help1"
     }
   ];
-  constructor(private router: Router) {
-   }
+  constructor() { }
 
   ngOnInit() {
   }

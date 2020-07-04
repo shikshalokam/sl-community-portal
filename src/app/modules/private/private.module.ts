@@ -1,7 +1,6 @@
 import { NgModule, APP_INITIALIZER, DoBootstrap } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrivateRoutingModule } from './private-routing.module';
-import { LayoutComponent } from './layout/layout.component';
 import { CoreModuleModule } from 'shikshalokam';
 import { LibraryModule } from '../library/library.module';
 import { MyFolderModule } from '../my-folder/my-folder.module';
@@ -10,10 +9,11 @@ import { environment } from 'src/environments/environment';
 // import { keyCloakService } from '../private-modules/key-cloack/keycloak.service';
 import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
 import { initializer } from 'src/utils/app-init';
+import { PrivateComponent } from './private/private.component';
 
 
 @NgModule({
-  declarations: [LayoutComponent],
+  declarations: [PrivateComponent],
   imports: [
     CommonModule,
     PrivateRoutingModule,
@@ -31,7 +31,7 @@ import { initializer } from 'src/utils/app-init';
     }
   ],
 })
-export class FullLayoutModule {
+export class PrivateModule {
   //  implements DoBootstrap { 
 
   // constructor(private keycloak: keyCloakService) { }

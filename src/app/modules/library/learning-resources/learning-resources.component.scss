@@ -9,3 +9,42 @@
   flex-wrap: wrap;
   padding-top: 5%;
 }
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.c-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  min-width: 300px;
+  flex-direction: column;
+  margin: 10px;
+}
+.icon-background {
+  background-color: #e5f3fe;
+  height: 50px;
+  width: 50px;
+  border-radius: 30px;
+  // padding: 20%;
+}
+
+.whole-card {
+  padding-left: 5%;
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.c-image {
+  height: 50px;
+  width: 50px;
+  margin-left: 40px;
+}
+.c-description {
+  width: 250px;
+  margin-top: 30px;
+}

@@ -1,0 +1,12 @@
+@import "../../../../assets/scss/varibles.scss";
+
+.dashboard-content {
+  padding: 8% 40px 15px 50px;
+}
+.c-toolbar {
+  background-color: $white-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}

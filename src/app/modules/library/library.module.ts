@@ -6,12 +6,12 @@ import { CoreModuleModule, SharedModuleModule } from 'shikshalokam';
 import { ObservationsComponent } from './observations/observations.component';
 import { AssesmentsComponent } from './assesments/assesments.component';
 import { PortalSharedModule } from '../portal-shared/portal-shared.module';
-import { LibraryTabComponent } from './library-tab/library-tab.component';
 import { MatIconModule } from '@angular/material/icon';
+import { LibraryComponent } from './library/library.component';
 
 
 @NgModule({
-  declarations: [LearningResourcesComponent, ObservationsComponent, AssesmentsComponent, LibraryTabComponent],
+  declarations: [LearningResourcesComponent, ObservationsComponent, AssesmentsComponent, LibraryComponent],
   imports: [
     CommonModule,
     LibraryRoutingModule,
