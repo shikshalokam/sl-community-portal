@@ -5,7 +5,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class CommonService {
 
+  details: any;
   constructor(private _snackBar: MatSnackBar) { }
+
+   // To set the data
+   setUserDetails(data) {
+    this.details = data;
+  }
+
+  getUserDetails() {
+    return this.details;
+  }
 
   // Commonly used in all pages
   commonSnackBar(message, action, position, time) {

@@ -2,8 +2,9 @@
   <p>
     <mat-toolbar class="c-toolbar">
       <div *ngFor="let data of tabData">
-        <div>
-          <button [routerLink]="data.routerLink" routerLinkActive="p-button" mat-button matTooltip="{{data.label}}">
+        <div class="tab-text">
+          <button [routerLink]="data.routerLink" (click)="commingSoon()" routerLinkActive="p-button" mat-button
+            matTooltip="{{data.label}}">
             {{data.label}}
           </button>
         </div>

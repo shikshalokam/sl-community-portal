@@ -1,15 +1,18 @@
-<div style="padding: 10px;">
-  <mat-card class="c-card" style="height: 250px;">
+<div>
+  <mat-card class="c-card">
     <mat-card-header class="c-cardheader">
-      <mat-card-subtitle>{{cardData?.description}}</mat-card-subtitle>
+      <mat-card-subtitle>{{cardData?.description ? cardData?.description: 'Shikshaloakam'}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content class="c-cardcontent">
-      <img mat-card-image src="{{cardData?.appicon}}" onError="this.src='/assets/images/1.jpg'" alt="Photo of a Shiba Inu">
-      <!-- https://cdn.browshot.com/static/images/not-found.png -->
+      <span *ngIf="cardData?.appIcon; else other">
+        <img mat-card-image src="{{cardData?.appIcon}}" onError="this.src='/assets/images/1.jpg'"
+          alt="Photo of a Shiba Inu">
+      </span>
+      <ng-template #other></ng-template>
     </mat-card-content>
     <mat-card-actions>
-      <span mat-button> {{cardData?.time}}</span>
-      <a href="{{cardData?.redirect_url}}" target="_blank"><span class="c-view">View</span></a>
+      <span class="text-color" style="padding-left: 15px;" mat-button> {{cardData?.time}}</span>
+      <a href="{{cardData?.url}}" target="_blank"><span class="c-view">View</span></a>
     </mat-card-actions>
   </mat-card>
 </div>

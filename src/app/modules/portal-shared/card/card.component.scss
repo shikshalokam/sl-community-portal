@@ -1,6 +1,8 @@
 .c-card {
   max-width: 400px;
   min-width: 300px;
+  height: 250px;
+  margin-top: 20px;
 }
 
 .mat-card img {
@@ -11,15 +13,35 @@
 .c-cardheader {
   align-items: center;
   flex-flow: column;
+  margin-bottom: 10px;
 }
 
 .c-view {
   float: right;
   color: green;
+  margin-right: 15px;
 }
 
 .c-cardcontent {
   height: 65%;
-  background-color: grey;
-  max-width: 100%;
+  background-color: #e5f3fe;
+  // max-width: 100%;
+}
+
+mat-card {
+  transition: none !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 991px) {
+  .c-sidenav {
+    transform: translateX(-200px);
+    transition: ease all 0.3s;
+    position: fixed;
+    z-index: 3;
+    box-shadow: 0 0 10px rgba(229, 234, 250, 0.65);
+  }
+  .main-content {
+    width: 100%;
+  }
 }

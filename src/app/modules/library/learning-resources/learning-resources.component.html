@@ -2,19 +2,21 @@
   <app-filters [filtersData]="filtersData" (sendFilters)="getSelected($event)"></app-filters>
   <div>
     <div *ngFor="let data of resourceData" class="whole-card">
-      <section style="margin-top: 5%;"> 
-        <img mat-card-image src="/assets/images/{{data?.title}}.png" onError="this.src='/assets/images/1.jpg'"
+      <section class="c-description"> 
+        <div class="icon-background">
+        <img src="/assets/images/{{data?.title}}.png"
           alt="Photo of a Shiba Inu" class="c-image">
+        </div>
         <h4>{{data?.title}}</h4>
-        <p class="c-description">
-          {{data?.description}}
-        </p>
+        <div class="text-color">
+            {{data?.description}}
+        </div>
       </section>
       <span *ngFor="let rdata of data['resources']">
         <app-card [cardData]="rdata"></app-card>
       </span>
       <div style="padding: 5% 0% 0% 50%;">
-        <a href="{{rdata?.redirect_url}}"><button mat-button class="p-button">View more</button></a>
+        <a href="{{data?.viewMoreUrl}}" target="_blank"><button style="width: 200px;" mat-button class="p-button">View More</button></a>
       </div>
     </div>
 

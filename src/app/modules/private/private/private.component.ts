@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { keyCloakService, CommonService } from '../../portal-core';
+
 
 @Component({
   selector: 'app-private',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./private.component.scss']
 })
 export class PrivateComponent implements OnInit {
+  userDetails: any;
   menudata = [
     {
       "icon": "local_library",
@@ -16,7 +19,7 @@ export class PrivateComponent implements OnInit {
       "icon": "folder",
       "name": "My Folder",
       "action": "folder",
-      "url": "/myfolder/sample"
+      "url": "/myfolder/sample1"
     },
     {
       "icon": "dashboard",
@@ -28,7 +31,7 @@ export class PrivateComponent implements OnInit {
       "icon": "edit",
       "name": "Workspace",
       "action": "workspace",
-      "url": "private/workspace"
+      "url": "private/workspace1"
     },
     {
       "icon": "rate_review",
@@ -48,9 +51,20 @@ export class PrivateComponent implements OnInit {
       "url": "/help1"
     }
   ];
-  constructor() { }
+  constructor(private keycloakService: keyCloakService,
+    private commonService: CommonService) { }
 
   ngOnInit() {
+    this.userDetails = this.commonService.getUserDetails()
+  }
+
+  logoutMethod() {
+    this.keycloakService.logout();
+  }
+
+  selectedMenu(data) {
+    this.commonService.commonSnackBar('Comming soon', 'Dismiss', 'top', 10000)
+
   }
 
 }

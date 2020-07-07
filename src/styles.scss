@@ -142,5 +142,8 @@ span:focus {
 }
 
 .mat-toolbar {
-    font: inherit;
+  font: inherit;
+}
+.text-color {
+  color: $text-color;
 }

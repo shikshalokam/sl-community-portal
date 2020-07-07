@@ -3,7 +3,7 @@ import { environment } from 'src/environments/environment';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { KeycloakService } from 'keycloak-angular';
-// import { CommonServiceService } from '../common-service.service';
+import { CommonService } from '../common/common.service';
 
 
 declare var Keycloak: any;
@@ -17,7 +17,7 @@ export class keyCloakService {
   redirectUrl: string;
   userName: string;
   constructor(private jwtHelper: JwtHelperService, private router: Router,
-    // private commonServiceService: CommonServiceService
+    private commonService: CommonService
   ) { }
 
 
@@ -52,11 +52,10 @@ export class keyCloakService {
 
   setToken() {
     const tokendetails = this.keycloak.getKeycloakInstance();
-    console.log('tokendetails', tokendetails.profile);
-
-    // this.commonServiceService.setUserDetails(tokendetails.profile);
+    this.commonService.setUserDetails(tokendetails.profile);
   }
-  // To reurn back the details from keycloak
+
+  // To return back the details from keycloak
   sendToken() {
     const tokendetails = this.keycloak.getKeycloakInstance();
     return tokendetails;

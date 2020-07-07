@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonService } from '../../portal-core';
 
 @Component({
   selector: 'app-library',
@@ -16,7 +17,7 @@ export class LibraryComponent implements OnInit {
       tooltip: 'Learning Resources'
     },
     {
-      routerLink: '/library/observation',
+      routerLink: '/library/observations',
       label: 'Observations',
       tooltip: 'Observations'
     },
@@ -31,10 +32,15 @@ export class LibraryComponent implements OnInit {
       tooltip: ' Improvement Projects'
     }
   ]
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private commonService: CommonService) { }
 
   ngOnInit() {
-    // this.router.navigate(['library/learning']);
+  }
+
+  commingSoon(){
+    this.commonService.commonSnackBar('Comming soon', 'Dismiss', 'top', 10000)
+
   }
 
 }
