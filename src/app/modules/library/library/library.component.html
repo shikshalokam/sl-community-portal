@@ -1,7 +1,7 @@
 <div class="dashboard-content">
-  <p>
-    <mat-toolbar class="c-toolbar">
-      <div *ngFor="let data of tabData">
+  <div class="row" style="justify-content: center;">
+    <div *ngFor="let data of tabData">
+      <div class="col-md-4 col-lg-4">
         <div class="tab-text">
           <button [routerLink]="data.routerLink" (click)="commingSoon()" routerLinkActive="p-button" mat-button
             matTooltip="{{data.label}}">
@@ -9,9 +9,7 @@
           </button>
         </div>
       </div>
-    </mat-toolbar>
-  </p>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
 </div>
-
-
-<router-outlet></router-outlet>

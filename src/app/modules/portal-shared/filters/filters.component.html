@@ -1,18 +1,24 @@
 <div *ngIf="filtersData">
-  <mat-toolbar class="c-filters">
+  <!-- <mat-toolbar class="c-filters"> -->
+  <div class="row" style="justify-content: space-evenly;padding-top: 50px;">
     <!-- <form [formGroup]="filterForm"> -->
     <!-- <mat-icon matTooltip="filters">assignment</mat-icon> -->
-    <img src="/assets/images/filter.svg" alt="Photo of a Shiba Inu" class="svg">
-    <div class="tab-text" *ngFor="let data of filtersData">
-      <mat-form-field style="width:250px" class="example-chip-list">
-        <mat-label class="required">{{data?.label}}</mat-label>
-        <mat-select (selectionChange)="onchange($event)" [value]="selected" class="text-capital" autocomplete="false">
-          <mat-option class="text-capital" *ngFor="let item of data['options']" [(value)]="item.value">
-            {{item.label}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+    <div class="f-image">
+      <img src="/assets/images/filter.svg" alt="Photo of a Shiba Inu" class="svg">
     </div>
-    <!-- </form> -->
-  </mat-toolbar>
+    <div class="tab-text" *ngFor="let data of filtersData">
+      <div class="col-md-4 col-lg-4">
+        <mat-form-field style="width:250px" class="example-chip-list">
+          <mat-label class="required">{{data?.label}}</mat-label>
+          <mat-select (selectionChange)="onchange($event)" [value]="selected" class="text-capital" autocomplete="false">
+            <mat-option class="text-capital" *ngFor="let item of data['options']" value="item.value">
+              {{item.label}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <!-- </form> -->
+  <!-- </mat-toolbar> -->
 </div>

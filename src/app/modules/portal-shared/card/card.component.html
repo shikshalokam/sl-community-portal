@@ -1,17 +1,24 @@
-<div>
-  <mat-card class="c-card">
+<div  #card (window:resize)="width=card.getBoundingClientRect().width">
+  <mat-card>
     <mat-card-header class="c-cardheader">
-      <mat-card-subtitle>{{cardData?.description ? cardData?.description: 'Shikshaloakam'}}</mat-card-subtitle>
+      <mat-card-subtitle style="text-align: center;">
+        <div  [style.width.px]="width - 50" class="c-title">
+          {{cardData?.description}}
+        </div>
+      </mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content class="c-cardcontent">
-      <span *ngIf="cardData?.appIcon; else other">
-        <img mat-card-image src="{{cardData?.appIcon}}" onError="this.src='/assets/images/1.jpg'"
-          alt="Photo of a Shiba Inu">
-      </span>
-      <ng-template #other></ng-template>
+    <mat-card-content>
+      <div *ngIf="cardData?.appIcon else noImage" style="height: 150px;">
+        <img mat-card-image src="{{cardData?.appIcon}}">
+      </div>
+      <ng-template #noImage>
+        <div class="no-image">
+
+        </div>
+      </ng-template>
     </mat-card-content>
     <mat-card-actions>
-      <span class="text-color" style="padding-left: 15px;" mat-button> {{cardData?.time}}</span>
+      <span class="text-color c-description" mat-button> {{cardData?.time}}</span>
       <a href="{{cardData?.url}}" target="_blank"><span class="c-view">View</span></a>
     </mat-card-actions>
   </mat-card>

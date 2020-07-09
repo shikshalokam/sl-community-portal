@@ -42,7 +42,7 @@ export class FiltersComponent implements OnInit {
 
   onchange() {
     this.sendFilters.emit();
-    console.log(' this.filterForm', this.filterForm.value);
+    // console.log(' this.filterForm', this.filterForm.value);
 
   }
 }

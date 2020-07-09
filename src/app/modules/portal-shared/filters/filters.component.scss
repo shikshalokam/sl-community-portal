@@ -1,20 +1,21 @@
 @import "../../../../assets/scss/varibles.scss";
 
 .mat-toolbar {
-    font: inherit;
+  font: inherit;
 }
 
 .c-filters {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: white;
-    flex-wrap: wrap;
-  }
-  .svg{
-    height: 40px;
-    margin-bottom: 20px;
-  }
+  display: flex;
+  justify-content: space-evenly;
+  background-color: $white-color;
+  flex-wrap: wrap;
+  height: auto;
+}
+.svg {
+  height: 40px;
+  margin-bottom: 20px;
+}
 
-  .tab-text {
-    color: $text-color;
-  }
+.tab-text {
+  color: $text-color;
+}

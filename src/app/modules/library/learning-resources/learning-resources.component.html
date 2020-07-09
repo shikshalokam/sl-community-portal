@@ -1,22 +1,31 @@
 <div>
   <app-filters [filtersData]="filtersData" (sendFilters)="getSelected($event)"></app-filters>
-  <div>
-    <div *ngFor="let data of resourceData" class="whole-card">
-      <section class="c-description"> 
-        <div class="icon-background">
-        <img src="/assets/images/{{data?.title}}.png"
-          alt="Photo of a Shiba Inu" class="c-image">
-        </div>
-        <h4>{{data?.title}}</h4>
-        <div class="text-color">
-            {{data?.description}}
-        </div>
-      </section>
-      <span *ngFor="let rdata of data['resources']">
-        <app-card [cardData]="rdata"></app-card>
-      </span>
-      <div style="padding: 5% 0% 0% 50%;">
-        <a href="{{data?.viewMoreUrl}}" target="_blank"><button style="width: 200px;" mat-button class="p-button">View More</button></a>
+
+  <div *ngFor="let data of resourceData" class="whole-card">
+    <div class="row">
+      <div class="col-md-2 col-lg-2 col-xs-12">
+        <section class="c-description">
+          <div class="icon-background">
+            <img src="/assets/images/{{data?.title}}.png" alt="Photo of a Shiba Inu" class="c-image">
+          </div>
+          <div>
+            <h4>{{data?.title}}</h4>
+            <div class="text-color" style="margin-top: 20px;">
+              {{data?.description}}
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="col-md-10 col-lg-10 col-xs-12">
+        <span *ngFor="let rdata of data['resources']">
+          <div class="col-md-4 col-lg-4 col-xs-12">
+            <app-card [cardData]="rdata"></app-card>
+          </div>
+        </span>
+      </div>
+      <div class="c-view">
+        <a href="{{data?.viewMoreUrl}}" target="_blank"><button style="width: 200px;" mat-button class="p-button">View
+            More</button></a>
       </div>
     </div>
 

@@ -132,7 +132,7 @@ span:focus {
 }
 
 .dashboard-content {
-  padding: 10% 40px 15px 50px;
+  padding: 100px 50px 15px 50px;
 }
 
 .p-button {
@@ -147,3 +147,84 @@ span:focus {
 .text-color {
   color: $text-color;
 }
+
+.mat-form-field {
+  font-size: larger;
+}
+.main-content {
+  padding: 20px;
+}
+
+mat-card {
+  word-break: break-word;
+}
+
+@media (max-width: 600px) {
+  .c-view {
+    padding: 0px !important;
+  }
+}
+
+
+// @media only screen and (max-width: 600px) {
+//   .c-toolbar {
+//     height: auto;
+//     width: auto;
+//   }
+
+//   .icon-background {
+//     background-color: #e5f3fe;
+//     height: 70px;
+//     width: 70px;
+//     border-radius: 35px;
+//     margin: 20% 35% 10% 25% !important;
+//   }
+
+//   .c-description {
+//     margin-top: 0px;
+//     display: inline-block;
+//     text-align: center;
+//     margin-right: 0px;
+//     text-align: center;
+//     padding-left: 100px;
+//   }
+//   .c-sidenav {
+//     margin-top: 0px;
+//     margin-bottom: 0px;
+//   }
+//   .m-card {
+//     margin-left: 15px;
+//   }
+//   .c-view {
+//     padding: 5% 0% 0% 20% !important;
+//   }
+//   .dashboard-content {
+//     padding: 25% 40px 15px 50px !important;
+//   }
+//   .f-image {
+//     padding-right: 50px;
+//     margin-left: 50px;
+//   }
+// }
+
+// @media only screen and (min-width: 600px) {
+//   .f-image {
+//     padding-right: 50%;
+//     margin-left: 50%;
+//   }
+//   .c-description {
+//     margin-left: 20%;
+//   }
+//   .dashboard-content {
+//     padding: 20% 40px 15px 50px;
+//   }
+//   .c-view {
+//     padding: 5% 0% 0% 25%;
+//   }
+//   .m-card {
+//     margin-left: 15%;
+//   }
+//   .c-toolbar{
+//     flex-wrap: inherit;
+//   }
+// }

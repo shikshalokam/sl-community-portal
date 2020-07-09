@@ -34,22 +34,17 @@
 }
 
 .whole-card {
-  padding-left: 5%;
   margin-top: 3%;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .c-image {
-  // height: 50px;
   width: 30px;
   margin-top: 25px;
 }
 .c-description {
-  width: 250px;
-  margin-top: 30px;
-  display: inline-block;
   text-align: center;
-  // padding-right: 60px;
-  margin-right: 65px;
+}
+
+.c-view {
+  padding: 5% 0% 0% 50%;
 }

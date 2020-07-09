@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CommunityService } from 'shikshalokam';
+import { CommunityService } from 'shikshalokam';
 import { LibraryConfig } from '../library.config';
 import { environment } from 'src/environments/environment';
 
@@ -14,7 +14,6 @@ export class LearningResourcesComponent implements OnInit {
   filtersData: any;
   resourceData: any;
 
-  
   constructor(private communityService: CommunityService) { }
 
   ngOnInit() {
