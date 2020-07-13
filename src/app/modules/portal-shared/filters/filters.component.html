@@ -1,9 +1,10 @@
-<div>
+<div style="padding-top:50px ;">
   <form [formGroup]="filterForm">
     <div class="row" formArrayName="filterSelects">
 
       <div class="f-image">
-        <img style="cursor: pointer;" matTooltip = "clear Filters" (click)="clearFilters()" src="/assets/images/filter.svg" alt="Photo of a Shiba Inu" class="svg">
+        <img style="cursor: pointer;" matTooltip="clear Filters" (click)="clearFilters()"
+          src="/assets/images/filter.svg" alt="Photo of a Shiba Inu" class="svg">
       </div>
       <div class="tab-text" *ngFor="let data of filtersData; let i = index">
         <div class="col-md-4 col-lg-4">
@@ -21,4 +22,3 @@
     </div>
   </form>
 </div>
-
