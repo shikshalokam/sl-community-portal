@@ -18,7 +18,8 @@ export class LearningResourcesComponent implements OnInit {
 
   ngOnInit() {
     this.getFilters();
-    this.getLearningResources();
+    let data = ['', '', '', ''];
+    this.getLearningResources(data);
   }
 
 
@@ -32,17 +33,17 @@ export class LearningResourcesComponent implements OnInit {
   }
 
 
-  getLearningResources() {
-    this.communityService.get(environment.base_url + LibraryConfig.learningResources).subscribe(data => {
-      this.resourceData = data['result'];
-    }, error => {
+  getLearningResources(data) {
+    this.communityService.get(environment.base_url + LibraryConfig.learningResources
+      + '&Category=' + data[0] + '&Language=' + data[1] + '&Subcategory=' + data[2] + '&Topic=' + data[3]).subscribe(data => {
+        this.resourceData = data['result'];
+      }, error => {
 
-    })
+      })
   }
 
   getSelected(data) {
-    console.log('selected filters', data);
-
+    this.getLearningResources(data['filterSelects']);
   }
 
 }

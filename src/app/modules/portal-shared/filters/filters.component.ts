@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-filters',
@@ -8,41 +7,38 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./filters.component.scss']
 })
 export class FiltersComponent implements OnInit {
-  categoryData: any;
-  subCategoryData: any;
-  languageData: any;
-  topicData: any;
+
+
   filterForm: FormGroup
+
   @Input() filtersData: any;
   @Output() sendFilters = new EventEmitter();
-  myFormGroupSubs: Subscription;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
+
+  }
 
   ngOnInit() {
-    if (this.filterForm)
-      this.filterForm = this.filters();
-    // this.sample();
+    this.filters();
   }
 
   filters() {
-    const group = this.fb.group({});
-
-    this.filtersData.forEach(field => {
-      const control = this.fb.control(
-        field.label
-      );
-      group.addControl(field.label, control);
-    });
-    return group;
-
-    // this.filterForm = this.fb.group({
-    //   filter: [],
-    // });
+    if (this.filtersData) {
+      this.filterForm = this.fb.group({
+        filterSelects: this.fb.array(this.filtersData.map(item => new FormControl(''))),
+      });
+    }
   }
 
-  onchange() {
-    this.sendFilters.emit();
-    // console.log(' this.filterForm', this.filterForm.value);
 
+  onChange() {
+    this.sendFilters.emit(this.filterForm.value);
+  }
+
+  clearFilters() {
+    this.filterForm.reset();
+    this.filterForm = this.fb.group({
+      filterSelects: this.fb.array(this.filtersData.map(item => new FormControl(''))),
+    });
+    this.sendFilters.emit(this.filterForm.value);
   }
 }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PrivateGuard } from './modules/portal-core';
-import { initializer } from 'src/utils/app-init';
 
 
 

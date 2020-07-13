@@ -1,5 +1,5 @@
 <div>
-  <app-filters [filtersData]="filtersData" (sendFilters)="getSelected($event)"></app-filters>
+  <app-filters *ngIf = "filtersData" [filtersData]="filtersData" (sendFilters)="getSelected($event)"></app-filters>
 
   <div *ngFor="let data of resourceData" class="whole-card">
     <div class="row">
@@ -10,21 +10,24 @@
           </div>
           <div>
             <h4>{{data?.title}}</h4>
-            <div class="text-color" style="margin-top: 20px;">
+            <div class="_text-color" style="margin-top: 20px;">
               {{data?.description}}
             </div>
           </div>
         </section>
       </div>
-      <div class="col-md-10 col-lg-10 col-xs-12">
+      <div class="col-md-1 col-lg-1 col-xs-1">
+
+      </div>
+      <div class="col-md-9 col-lg-9 col-xs-12">
         <span *ngFor="let rdata of data['resources']">
           <div class="col-md-4 col-lg-4 col-xs-12">
             <app-card [cardData]="rdata"></app-card>
           </div>
         </span>
       </div>
-      <div class="c-view">
-        <a href="{{data?.viewMoreUrl}}" target="_blank"><button style="width: 200px;" mat-button class="p-button">View
+      <div class="c-viewmore">
+        <a href="{{data?.viewMoreUrl}}" target="_blank"><button style="width: 200px;" mat-button class="_p-button">View
             More</button></a>
       </div>
     </div>

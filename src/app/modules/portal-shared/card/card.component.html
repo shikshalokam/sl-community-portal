@@ -1,6 +1,6 @@
 <div  #card (window:resize)="width=card.getBoundingClientRect().width">
   <mat-card>
-    <mat-card-header class="c-cardheader">
+    <mat-card-header>
       <mat-card-subtitle style="text-align: center;">
         <div  [style.width.px]="width - 50" class="c-title">
           {{cardData?.description}}
@@ -18,7 +18,7 @@
       </ng-template>
     </mat-card-content>
     <mat-card-actions>
-      <span class="text-color c-description" mat-button> {{cardData?.time}}</span>
+      <span class="_text-color c-description" mat-button> {{cardData?.time}}</span>
       <a href="{{cardData?.url}}" target="_blank"><span class="c-view">View</span></a>
     </mat-card-actions>
   </mat-card>

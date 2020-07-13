@@ -1,7 +1,10 @@
+@import "../../../../assets/scss/varibles.scss";
+
+
 .c-filters {
   display: flex;
   justify-content: space-evenly;
-  background-color: white;
+  background-color: $white-color;
 }
 
 .c-card {
@@ -10,10 +13,6 @@
   padding-top: 5%;
 }
 
-.example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
-}
 
 .c-section {
   display: flex;
@@ -30,7 +29,6 @@
   width: 70px;
   border-radius: 35px;
   margin: 20% 35% 10% 35%;
-  // padding: 20%;
 }
 
 .whole-card {
@@ -45,6 +43,6 @@
   text-align: center;
 }
 
-.c-view {
+.c-viewmore {
   padding: 5% 0% 0% 50%;
 }

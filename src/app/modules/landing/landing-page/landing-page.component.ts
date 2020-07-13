@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { environment } from 'src/environments/environment';
-
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -159,7 +157,7 @@ export class LandingPageComponent implements OnInit {
 
   ]
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
 

@@ -4,13 +4,6 @@
   font: inherit;
 }
 
-.c-filters {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: $white-color;
-  flex-wrap: wrap;
-  height: auto;
-}
 .svg {
   height: 40px;
   margin-bottom: 20px;
@@ -18,4 +11,13 @@
 
 .tab-text {
   color: $text-color;
+}
+
+.c-filters {
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.field-width {
+  width: 280px;
 }
