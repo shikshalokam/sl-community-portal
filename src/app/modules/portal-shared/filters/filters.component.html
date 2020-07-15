@@ -1,24 +1,32 @@
-<div>
+<div style="padding-top: 50px;">
   <form [formGroup]="filterForm">
-    <div class="row" formArrayName="filterSelects">
+    <div formArrayName="filterSelects" style="margin-left: 15px;">
 
-      <div class="f-image">
-        <img style="cursor: pointer;" matTooltip = "clear Filters" (click)="clearFilters()" src="/assets/images/filter.svg" alt="Photo of a Shiba Inu" class="svg">
-      </div>
-      <div class="tab-text" *ngFor="let data of filtersData; let i = index">
-        <div class="col-md-4 col-lg-4">
-          <mat-form-field class="field-width">
-            <mat-label>{{data?.label}}</mat-label>
-            <mat-select [formControlName]="i" (selectionChange)="onChange($event)" class="text-capital"
-              autocomplete="false">
-              <mat-option class="text-capital" *ngFor="let item of data['options']" value="{{item.value}}">
-                {{item.label}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+      <div class="row">
+        <div class="col-md-1 col-sm-12 center">
+          <img src="/assets/images/filter.svg" alt="Photo of a Shiba Inu" class="svg">
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-3" *ngFor="let data of filtersData; let i = index">
+              <mat-form-field>
+                <mat-label>{{data?.label}}</mat-label>
+                <mat-select [formControlName]="i" (selectionChange)="onChange($event)" class="text-capital"
+                  autocomplete="false">
+                  <mat-option class="text-capital" *ngFor="let item of data['options']" value="{{item.value}}">
+                    {{item.label}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-12 center">
+          <button (click)="clearFilters()" matTooltip="clear Filters" mat-flat-button color="primary">Clear
+            Filters</button>
         </div>
       </div>
+
     </div>
   </form>
 </div>
-

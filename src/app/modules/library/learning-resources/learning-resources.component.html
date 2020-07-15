@@ -1,10 +1,11 @@
-<div>
-  <app-filters *ngIf = "filtersData" [filtersData]="filtersData" (sendFilters)="getSelected($event)"></app-filters>
+<app-filters *ngIf="filtersData" [filtersData]="filtersData" (sendFilters)="getSelected($event)"></app-filters>
 
-  <div *ngFor="let data of resourceData" class="whole-card">
+
+<div *ngFor="let data of resourceData" class="whole-card">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-2 col-lg-2 col-xs-12">
-        <section class="c-description">
+      <div class="col-md-2 col-sm-12 center">
+        <section>
           <div class="icon-background">
             <img src="/assets/images/{{data?.title}}.png" alt="Photo of a Shiba Inu" class="c-image">
           </div>
@@ -16,21 +17,20 @@
           </div>
         </section>
       </div>
-      <div class="col-md-1 col-lg-1 col-xs-1">
+      <div class="col-md-1">
 
       </div>
-      <div class="col-md-9 col-lg-9 col-xs-12">
-        <span *ngFor="let rdata of data['resources']">
-          <div class="col-md-4 col-lg-4 col-xs-12">
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-4 col-sm-12 card-space" *ngFor="let rdata of data['resources']">
             <app-card [cardData]="rdata"></app-card>
           </div>
-        </span>
+        </div>
       </div>
-      <div class="c-viewmore">
-        <a href="{{data?.viewMoreUrl}}" target="_blank"><button style="width: 200px;" mat-button class="_p-button">View
+      <div style="margin-top: 5%;" class=" center col-md-12 col-sm-12 col-lg-12 col-xl-12">
+        <a href="{{data?.viewMoreUrl}}" target="_blank"><button mat-button class="_p-button col-md-4 col-xl-2 col-sm-4 col-lg-4">View
             More</button></a>
       </div>
     </div>
-
   </div>
 </div>

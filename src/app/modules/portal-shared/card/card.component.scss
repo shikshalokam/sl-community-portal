@@ -14,7 +14,6 @@
 .c-view {
   float: right;
   color: $green-color;
-  font-size: larger;
 }
 .no-image {
   height: 150px;
@@ -26,7 +25,7 @@
   font-size: 15px;
 }
 
-mat-card {
-  transition: none;
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 1px 0px rgba(0, 0, 0, 0.1) !important;
-}
+// mat-card {
+//   transition: none;
+//   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 1px 0px rgba(0, 0, 0, 0.1) !important;
+// }

@@ -112,6 +112,12 @@
     width: 200px !important;
     display: flex !important;
   }
+  .dashboard-content {
+    padding-top: 0px !important;
+  }
+  .card-space {
+    margin-top: 10% !important;
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -215,6 +221,12 @@
   }
   .wrapper {
     margin-top: 100px !important;
+  }
+  .dashboard-content {
+    padding-top: 0px !important;
+  }
+  .card-space {
+    margin-top: 10% !important;
   }
 }
 

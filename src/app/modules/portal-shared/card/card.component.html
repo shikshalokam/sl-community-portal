@@ -1,7 +1,7 @@
 <div  #card (window:resize)="width=card.getBoundingClientRect().width">
   <mat-card>
     <mat-card-header>
-      <mat-card-subtitle style="text-align: center;">
+      <mat-card-subtitle class="center">
         <div  [style.width.px]="width - 50" class="c-title">
           {{cardData?.description}}
         </div>

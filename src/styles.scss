@@ -141,36 +141,43 @@ mat-icon {
   font-weight: 600;
 }
 
-
 ._text-color {
   color: $text-color;
 }
 
-.mat-form-field {
-  font-size: larger;
-}
 .main-content {
   padding: 20px;
 }
 
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+mat-form-field {
+  width: 100%;
+}
 mat-card {
   word-break: break-word;
 }
 
-@media (max-width: 600px) {
-  .c-view {
-    padding: 0px !important;
-  }
-  .f-image {
-    margin-right: 100px;
-    cursor: pointer;
-  }
-  .c-viewmore{
-    padding: 30px 0px 0px 25% !important;
-  }
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  
 }
 
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  
+}
 
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+ 
+}
 
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
 
 
