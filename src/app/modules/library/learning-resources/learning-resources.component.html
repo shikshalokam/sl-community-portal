@@ -1,5 +1,5 @@
 <app-filters *ngIf="filtersData" [filtersData]="filtersData" (sendFilters)="getSelected($event)"></app-filters>
-
+<app-spinner *ngIf = "spin" ></app-spinner>
 
 <div *ngFor="let data of resourceData" class="whole-card">
   <div class="container-fluid">

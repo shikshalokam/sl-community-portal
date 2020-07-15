@@ -1,9 +1,9 @@
 @import "../../../../assets/scss/varibles.scss";
 
-.dashboard-content {
-  padding-top: 100px;
-}
-
 .tab-text {
   color: $text-color;
+}
+
+.mat-tab-header {
+  border-bottom: none ;
 }

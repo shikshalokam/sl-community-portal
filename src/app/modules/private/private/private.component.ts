@@ -49,6 +49,11 @@ export class PrivateComponent implements OnInit {
       "icon": "help",
       "name": "Help",
       "url": "/help1"
+    },
+    {
+      "icon": "person",
+      "name": "Logout",
+      "url": "/logout"
     }
   ];
   constructor(private keycloakService: keyCloakService,
@@ -63,7 +68,11 @@ export class PrivateComponent implements OnInit {
   }
 
   selectedMenu(data) {
-    this.commonService.commonSnackBar('Comming soon', 'Dismiss', 'top', 10000)
+    if (data == 'Logout') {
+      this.logoutMethod();
+    } else {
+      this.commonService.commonSnackBar('Comming soon', 'Dismiss', 'top', 10000);
+    }
 
   }
 

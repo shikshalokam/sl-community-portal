@@ -9,10 +9,11 @@ import { CardComponent } from './card/card.component';
 import { SharedModuleModule } from 'shikshalokam';
 import { FiltersComponent } from './filters/filters.component';
 import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
-import { CommingSoonComponent } from './comming-soon/comming-soon.component'; 
+import { CommingSoonComponent } from './comming-soon/comming-soon.component';
+import { SpinnerComponent } from './spinner/spinner.component'; 
 
 @NgModule({
-  declarations: [CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, CommingSoonComponent],
+  declarations: [CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, CommingSoonComponent, SpinnerComponent],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -21,7 +22,7 @@ import { CommingSoonComponent } from './comming-soon/comming-soon.component';
     FormsModule, ReactiveFormsModule,
     SharedModuleModule
   ], exports: [
-    CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent
+    CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, SpinnerComponent
   ]
 })
 export class PortalSharedModule { }
