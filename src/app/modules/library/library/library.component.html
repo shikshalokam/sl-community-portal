@@ -1,18 +1,20 @@
 <div class="row" style="justify-content: center;">
-  <div *ngFor="let data of tabData">
-    <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
-      <!-- <div class="tab-text"> -->
-      <!-- <mat-tab-group mat-align-tabs="center">
-          <div *ngFor="let data of tabData">
-            <mat-tab matTooltip="{{data.label}}" [routerLink]="data.routerLink" (click)="commingSoon()" routerLinkActive="_p-button" label="{{data.label}}"></mat-tab>
-          </div>
-        </mat-tab-group> -->
+
+  <div *ngFor="let data of tabData" class="desktop-tab">
+    <div class="col-md-12 col-lg-12 col-sm-12 col-xl-8">
       <button [routerLink]="data.routerLink" (click)="commingSoon()" routerLinkActive="_p-button" mat-button
         matTooltip="{{data.label}}">
         {{data.label}}
       </button>
     </div>
   </div>
-  <!-- </div> -->
+
+  <div class="col-md-12 col-lg-12 col-sm-12 col-xl-8 mobile-tab">
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link *ngFor="let data of tabData" (click)="activeLink = data.label"
+        [active]="activeLink == data.label"> {{data.label}} </a>
+    </nav>
+  </div>
+
 </div>
 <router-outlet></router-outlet>

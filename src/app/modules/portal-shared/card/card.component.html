@@ -3,13 +3,13 @@
     <mat-card-header>
       <mat-card-subtitle class="center">
         <div  [style.width.px]="width - 50" class="c-title">
-          {{cardData?.description}}
+          {{cardData?.title}}
         </div>
       </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <div *ngIf="cardData?.appIcon else noImage" style="height: 150px;">
-        <img mat-card-image src="{{cardData?.appIcon}}">
+      <div *ngIf="cardData?.appIcon else noImage" class="image-section">
+        <img src="{{cardData?.appIcon}}" class="card-image">
       </div>
       <ng-template #noImage>
         <div class="no-image">

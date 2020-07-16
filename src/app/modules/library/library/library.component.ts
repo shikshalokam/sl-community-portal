@@ -39,7 +39,7 @@ export class LibraryComponent implements OnInit {
   }
 
   commingSoon(){
-    this.commonService.commonSnackBar('Comming soon', 'Dismiss', 'top', 10000)
+   this.commonService.commonSnackBar('Comming soon', 'Dismiss', 'top', 10000)
 
   }
 

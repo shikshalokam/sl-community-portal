@@ -118,6 +118,13 @@
   .card-space {
     margin-top: 10% !important;
   }
+  .desktop-tab {
+    display: none !important;
+  }
+
+  .mobile-tab {
+    display: block !important;
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -227,6 +234,13 @@
   }
   .card-space {
     margin-top: 10% !important;
+  }
+  .desktop-tab {
+    display: none !important;
+  }
+
+  .mobile-tab {
+    display: block !important;
   }
 }
 
