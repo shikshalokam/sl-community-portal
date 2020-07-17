@@ -129,6 +129,7 @@ mat-icon {
 
 .mat-drawer-side {
   border: none !important;
+  z-index: 0 !important;
 }
 
 // ._dashboard-content {
@@ -162,7 +163,24 @@ mat-icon {
 .mobile-tab {
   display: none;
 }
+.header-icons {
+  display: block;
+}
 
+.btn-logout {
+  display: none;
+}
+
+.c-menu {
+  display: none;
+}
+
+.h-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
 mat-form-field {
   width: 100%;
 }

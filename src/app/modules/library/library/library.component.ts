@@ -17,17 +17,17 @@ export class LibraryComponent implements OnInit {
       tooltip: 'Learning Resources'
     },
     {
-      routerLink: '/library/observations',
+      routerLink: '/library/comming-soon',
       label: 'Observations',
       tooltip: 'Observations'
     },
     {
-      routerLink: '/library/assesments',
+      routerLink: '/library/comming-soon',
       label: 'Assesments',
       tooltip: 'Assesments'
     },
     {
-      routerLink: '/library/improvements',
+      routerLink: '/library/comming-soon',
       label: 'Improvement Projects',
       tooltip: ' Improvement Projects'
     }
@@ -38,8 +38,11 @@ export class LibraryComponent implements OnInit {
   ngOnInit() {
   }
 
-  commingSoon(){
-   this.commonService.commonSnackBar('Comming soon', 'Dismiss', 'top', 10000)
+  commingSoon(data) {
+    if(data == 'Learning Resources'){
+    } else {
+    this.commonService.commonSnackBar('Comming soon', 'Dismiss', 'top', 10000);
+    }
 
   }
 

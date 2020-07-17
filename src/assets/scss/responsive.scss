@@ -125,12 +125,42 @@
   .mobile-tab {
     display: block !important;
   }
+  .header-icons {
+    display: none !important;
+  }
+  .btn-logout {
+    display: block !important;
+  }
+  .c-menu {
+    display: block !important;
+    padding-right: 15px !important;
+  }
+
+  .h-toolbar {
+    position: inherit !important;
+  }
+
+ 
 }
 
 @media only screen and (min-width: 600px) {
 }
 
 @media only screen and (max-width: 768px) {
+  .h-toolbar {
+    position: inherit !important;
+  }
+  .c-menu {
+    display: block !important;
+    padding-right: 15px !important;
+  }
+
+  .btn-logout {
+    display: block !important;
+  }
+  .header-icons {
+    display: none !important;
+  }
   .navbar {
     display: none !important;
   }

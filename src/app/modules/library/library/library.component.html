@@ -2,7 +2,7 @@
 
   <div *ngFor="let data of tabData" class="desktop-tab">
     <div class="col-md-12 col-lg-12 col-sm-12 col-xl-8">
-      <button [routerLink]="data.routerLink" (click)="commingSoon()" routerLinkActive="_p-button" mat-button
+      <button [routerLink]="data.routerLink"  routerLinkActive="_p-button" mat-button
         matTooltip="{{data.label}}">
         {{data.label}}
       </button>
@@ -11,8 +11,8 @@
 
   <div class="col-md-12 col-lg-12 col-sm-12 col-xl-8 mobile-tab">
     <nav mat-tab-nav-bar>
-      <a mat-tab-link *ngFor="let data of tabData" (click)="activeLink = data.label"
-        [active]="activeLink == data.label"> {{data.label}} </a>
+      <div mat-tab-link *ngFor="let data of tabData" [routerLink]="data.routerLink" (click)="activeLink = data.label"
+        [active]="activeLink == data.label"> {{data.label}} </div>
     </nav>
   </div>
 

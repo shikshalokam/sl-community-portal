@@ -19,7 +19,8 @@ export class LearningResourcesComponent implements OnInit {
 
   ngOnInit() {
     this.getFilters();
-    let data = ['', '', '', ''];
+    let data: any[] = ['', '', '', ''];
+    
     this.getLearningResources(data);
   }
 
@@ -41,7 +42,7 @@ export class LearningResourcesComponent implements OnInit {
         this.resourceData = data['result'];
         this.spin = false;
       }, error => {
-
+        this.spin = false;
       })
   }
 
