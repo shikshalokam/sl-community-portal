@@ -10,6 +10,7 @@ import { CommonService } from '../../portal-core';
 export class LibraryComponent implements OnInit {
 
   tab: any = 'Learning';
+  
   tabData = [
     {
       routerLink: '/library/learning',
@@ -17,33 +18,26 @@ export class LibraryComponent implements OnInit {
       tooltip: 'Learning Resources'
     },
     {
-      routerLink: '/library/comming-soon',
+      routerLink: '/library/observation',
       label: 'Observations',
       tooltip: 'Observations'
     },
     {
-      routerLink: '/library/comming-soon',
+      routerLink: '/library/assesment',
       label: 'Assesments',
       tooltip: 'Assesments'
     },
     {
-      routerLink: '/library/comming-soon',
+      routerLink: '/library/improvements',
       label: 'Improvement Projects',
       tooltip: ' Improvement Projects'
     }
   ]
+  activeLink = this.tabData[0]['label'];
   constructor(private router: Router,
     private commonService: CommonService) { }
 
   ngOnInit() {
-  }
-
-  commingSoon(data) {
-    if(data == 'Learning Resources'){
-    } else {
-    this.commonService.commonSnackBar('Comming soon', 'Dismiss', 'top', 10000);
-    }
-
   }
 
 }

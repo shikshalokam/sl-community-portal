@@ -171,9 +171,7 @@ mat-icon {
   display: none;
 }
 
-.c-menu {
-  display: none;
-}
+
 
 .h-toolbar {
   position: fixed;
@@ -181,11 +179,16 @@ mat-icon {
   left: 0;
   z-index: 2;
 }
-mat-form-field {
-  width: 100%;
-}
+// mat-form-field {
+//   width: 100%;
+// }
 mat-card {
   word-break: break-word;
+}
+
+*:focus {
+  outline: none !important;
+  border: 0 !important;
 }
 
 // Small devices (landscape phones, 576px and up)

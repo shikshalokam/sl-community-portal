@@ -11,9 +11,20 @@ import { FiltersComponent } from './filters/filters.component';
 import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
 import { CommingSoonComponent } from './comming-soon/comming-soon.component';
 import { SpinnerComponent } from './spinner/spinner.component'; 
+import { InputComponent } from './components/input/input.component';
+import { SelectComponent } from './components/select/select.component';
+import { DateComponent } from './components/date/date.component';
+import { RadiobuttonComponent } from './components/radiobutton/radiobutton.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.directive';
+import { MultiSelectComponent } from './components/multi-select/multi-select.component';
+import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+
 
 @NgModule({
-  declarations: [CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, CommingSoonComponent, SpinnerComponent],
+  declarations: [CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, CommingSoonComponent, SpinnerComponent,
+    InputComponent, SelectComponent, RadiobuttonComponent, DynamicFormComponent, 
+    CheckboxComponent,MultiSelectComponent, DateComponent,DynamicFieldDirective],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -22,7 +33,9 @@ import { SpinnerComponent } from './spinner/spinner.component';
     FormsModule, ReactiveFormsModule,
     SharedModuleModule
   ], exports: [
-    CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, SpinnerComponent
+    CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, SpinnerComponent,
+    InputComponent, SelectComponent, RadiobuttonComponent, DynamicFormComponent, 
+    CheckboxComponent,MultiSelectComponent, DateComponent, DynamicFieldDirective
   ]
 })
 export class PortalSharedModule { }

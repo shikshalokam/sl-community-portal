@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Subject } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class CommonService {
 
   details: any;
+  onFormReset = new Subject<void>();
   constructor(private _snackBar: MatSnackBar) { }
 
    // To set the data
@@ -13,6 +17,10 @@ export class CommonService {
     this.details = data;
   }
 
+
+  resetForm(): void {
+    this.onFormReset.next();
+  }
   getUserDetails() {
     return this.details;
   }

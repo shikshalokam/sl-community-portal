@@ -5,6 +5,7 @@ import { ObservationsComponent } from './observations/observations.component';
 import { AssesmentsComponent } from './assesments/assesments.component';
 import { LibraryComponent } from './library/library.component';
 import { CommingSoonComponent } from '../portal-shared/comming-soon/comming-soon.component';
+import { ImprovementProjectsComponent } from './improvement-projects/improvement-projects.component';
 
 
 const routes: Routes = [{
@@ -16,6 +17,9 @@ const routes: Routes = [{
     { path: 'observation', component: ObservationsComponent },
     { path: 'assesment', component: AssesmentsComponent },
     { path: 'comming-soon', component: CommingSoonComponent},
+    {
+      path: 'improvements', component: ImprovementProjectsComponent
+    },
     {
       path: '', redirectTo: '/library/learning', pathMatch: 'full'
     },

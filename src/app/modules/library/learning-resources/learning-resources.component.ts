@@ -4,7 +4,6 @@ import { LibraryConfig } from '../library.config';
 import { environment } from 'src/environments/environment';
 
 
-
 @Component({
   selector: 'app-learning-resources',
   templateUrl: './learning-resources.component.html',
@@ -47,7 +46,8 @@ export class LearningResourcesComponent implements OnInit {
   }
 
   getSelected(data) {
-    this.getLearningResources(data['filterSelects']);
+    console.log('getSelected', data);
+    // this.getLearningResources(data['filterSelects']);
   }
 
 }

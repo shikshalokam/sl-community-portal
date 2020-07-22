@@ -8,10 +8,11 @@ import { AssesmentsComponent } from './assesments/assesments.component';
 import { PortalSharedModule } from '../portal-shared/portal-shared.module';
 import { MatIconModule } from '@angular/material/icon';
 import { LibraryComponent } from './library/library.component';
+import { ImprovementProjectsComponent } from './improvement-projects/improvement-projects.component';
 
 
 @NgModule({
-  declarations: [LearningResourcesComponent, ObservationsComponent, AssesmentsComponent, LibraryComponent],
+  declarations: [LearningResourcesComponent, ObservationsComponent, AssesmentsComponent, LibraryComponent, ImprovementProjectsComponent],
   imports: [
     CommonModule,
     LibraryRoutingModule,

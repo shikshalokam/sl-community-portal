@@ -17,10 +17,8 @@
           </div>
         </section>
       </div>
-      <div class="col-md-1">
-
-      </div>
-      <div class="col-md-9">
+      
+      <div class="col-md-9 offset-md-1">
         <div class="row">
           <div class="col-md-4 col-sm-12 card-space" *ngFor="let rdata of data['resources']">
             <app-card [cardData]="rdata"></app-card>
