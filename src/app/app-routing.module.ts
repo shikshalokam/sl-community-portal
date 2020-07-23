@@ -1,16 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PrivateGuard } from './modules/portal-core';
+
+
+
+
 const routes: Routes = [
- 
+
   {
-    path:'',
-    loadChildren: './modules/landing/landing.module#LandingModule'
+    path: 'home',
+    loadChildren: () => import('./modules/landing/landing.module').then(m => m.LandingModule)
   },
+
   {
-    path:'',
-    redirectTo:'',
-    pathMatch:'full'
-  }
+    path: '',
+    // canActivate: [PrivateGuard],
+    loadChildren: () => import('./modules/private/private.module').then(m => m.PrivateModule)
+  },
+
 ];
 
 @NgModule({

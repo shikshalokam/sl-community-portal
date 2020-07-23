@@ -1,0 +1,16 @@
+@import "../../../../assets/scss/varibles.scss";
+
+.tab-text {
+  color: $text-color;
+}
+
+.mat-tab-header {
+  border-bottom: none;
+}
+
+.tab-list {
+  background-color: $primary-color;
+  color: $white-color;
+}
+
+
