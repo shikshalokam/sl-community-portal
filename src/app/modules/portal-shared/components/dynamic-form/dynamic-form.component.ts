@@ -40,7 +40,7 @@ export class DynamicFormComponent implements OnInit {
       if (field.input === "button")
        return;
       const control = this.fb.control(
-        '',
+        field.value,
         this.bindValidations(field.validation || [])
       );
       group.addControl(field.field, control);

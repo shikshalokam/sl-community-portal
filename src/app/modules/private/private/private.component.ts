@@ -63,13 +63,13 @@ export class PrivateComponent implements OnInit {
     this.userDetails = this.commonService.getUserDetails()
   }
 
-  logoutMethod() {
+  logoutMethod(data) {
     this.keycloakService.logout();
   }
 
   selectedMenu(data) {
     if (data == 'Logout') {
-      this.logoutMethod();
+      this.logoutMethod('logout');
     } else {
       this.commonService.commonSnackBar('Comming soon', 'Dismiss', 'top', 10000);
     }

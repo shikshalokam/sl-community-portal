@@ -8,7 +8,7 @@ import * as moment from 'moment';
 })
 export class CardComponent implements OnInit {
   @Input() cardData: any;
-
+   width: any;
   constructor() { }
 
   ngOnInit() {

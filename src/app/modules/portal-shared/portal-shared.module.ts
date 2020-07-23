@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommunityHeaderComponent } from './community-header/community-header.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,6 +19,8 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.directive';
 import { MultiSelectComponent } from './components/multi-select/multi-select.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 
 @NgModule({
@@ -31,11 +33,14 @@ import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.com
     MatIconModule,
     RouterModule,
     FormsModule, ReactiveFormsModule,
-    SharedModuleModule
+    SharedModuleModule,
+    MatFormFieldModule
   ], exports: [
     CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, SpinnerComponent,
     InputComponent, SelectComponent, RadiobuttonComponent, DynamicFormComponent, 
-    CheckboxComponent,MultiSelectComponent, DateComponent, DynamicFieldDirective
-  ]
+    CheckboxComponent,MultiSelectComponent, DateComponent, DynamicFieldDirective,
+    MatFormFieldModule, SharedModuleModule
+  ],
+  schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
 })
 export class PortalSharedModule { }
