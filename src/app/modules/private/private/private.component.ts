@@ -19,7 +19,7 @@ export class PrivateComponent implements OnInit {
       "icon": "folder",
       "name": "My Folder",
       "action": "folder",
-      "url": "/myfolder/sample1"
+      "url": "/myfolder"
     },
     {
       "icon": "dashboard",
@@ -31,24 +31,24 @@ export class PrivateComponent implements OnInit {
       "icon": "edit",
       "name": "Workspace",
       "action": "workspace",
-      "url": "private/workspace1"
+      "url": "/workspace"
     },
     {
       "icon": "rate_review",
       "name": "Review",
       "action": "review",
-      "url": "/home"
+      "url": "/review"
     },
     {
       "icon": "assignment_late",
       "name": "Support",
       "action": "support",
-      "url": "/home1"
+      "url": "/support"
     },
     {
       "icon": "help",
       "name": "Help",
-      "url": "/help1"
+      "url": "/help"
     },
     {
       "icon": "person",
@@ -70,10 +70,7 @@ export class PrivateComponent implements OnInit {
   selectedMenu(data) {
     if (data == 'Logout') {
       this.logoutMethod('logout');
-    } else {
-      this.commonService.commonSnackBar('Comming soon', 'Dismiss', 'top', 10000);
     }
-
   }
 
 }

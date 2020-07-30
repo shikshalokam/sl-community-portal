@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyFolderRoutingModule } from './my-folder-routing.module';
+import { SupportRoutingModule } from './support-routing.module';
 import { PortalSharedModule } from '../portal-shared/portal-shared.module';
-
-
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    MyFolderRoutingModule,
+    SupportRoutingModule,
     PortalSharedModule
   ]
 })
-export class MyFolderModule { }
+export class SupportModule { }
