@@ -1,6 +1,6 @@
 <div class="col-md-3">
 <mat-form-field class="form-full-width margin-top" [formGroup]="group">
-    <mat-select [formControlName]="field.field" placeholder="{{field.field}}" [multiple]="true" #multiSelect>
+    <mat-select [formControlName]="field.field" placeholder="{{field.label}}" [multiple]="true" #multiSelect>
         <mat-option #allSelected (click)="selectionAll()" [value]="0">All</mat-option>
         <mat-option  *ngFor="let role of finaldata" [value]="role.value" (click)="optionSelection(allSelected.viewValue)">
             {{role.label}}

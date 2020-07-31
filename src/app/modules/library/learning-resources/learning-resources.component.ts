@@ -36,7 +36,7 @@ export class LearningResourcesComponent implements OnInit {
         filters: data
     }
     this.spin = true;
-    this.communityService.post(environment.base_url + LibraryConfig.learningResources, filterData).subscribe(data => {
+    this.communityService.post(environment.base_url + LibraryConfig.learningResources + '?limit='+ 3 + '&page='+ 1, filterData).subscribe(data => {
         this.resourceData = data['result'];
         this.spin = false;
       }, error => {

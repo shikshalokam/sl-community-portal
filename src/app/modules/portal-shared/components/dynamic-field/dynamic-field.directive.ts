@@ -16,7 +16,7 @@ import { MultiSelectComponent } from "../multi-select/multi-select.component";
 // TO bind the components based on the type of the field
 const componentMapper = {
   text: InputComponent,
-  select: MultiSelectComponent,
+  select: SelectComponent,
   date: DateComponent,
   radio: RadiobuttonComponent,
   checkbox: CheckboxComponent,
