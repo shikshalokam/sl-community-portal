@@ -1,0 +1,25 @@
+<div  #card (window:resize)="width=card.getBoundingClientRect().width">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-subtitle class="center">
+        <div  [style.width.px]="width - 50" class="c-title">
+          {{cardData?.title}}
+        </div>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngIf="cardData?.appIcon else noImage" class="image-section">
+        <img src="{{cardData?.appIcon}}" class="card-image">
+      </div>
+      <ng-template #noImage>
+        <div class="no-image">
+
+        </div>
+      </ng-template>
+    </mat-card-content>
+    <mat-card-actions>
+      <span class="_text-color c-description" mat-button> {{cardData?.time}}</span>
+      <a href="{{cardData?.url}}" target="_blank"><span class="c-view">View</span></a>
+    </mat-card-actions>
+  </mat-card>
+</div>

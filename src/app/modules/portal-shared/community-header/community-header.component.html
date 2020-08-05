@@ -1,0 +1,28 @@
+<div class="headrWrapper">
+  <div class="leftContainer">
+    <img (click)="goTo('aboutSl')" src="../../../../assets/images/ShikshaLokam Logo_highrez_transparent.png">
+  </div>
+  <div class="rightContainer">
+    <div class="links">
+      <ul>
+        <li (click)="goTo('aboutSl')"><a>About Us</a></li>
+        <li (click)="goTo('explore')"><a>Explore</a></li>
+        <li (click)="goTo('partners')"><a>Our Partners</a></li>
+        <li (click)="goTo('footer')"><a>Contact Us</a></li>
+        <li _ngcontent-c7="">
+          <div class="login ">
+            <!-- [routerLink] = " '/library/learning'" -->
+            <a>
+              <!-- Login -->
+              <button (click)="login()" mat-flat-button="" color="primary" class="login mat-flat-button mat-primary">
+                <span style="color: #fff !important;">Login</span></button>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <button mat-icon-button (click)="toggleNav()" class="menuIcon">
+    <mat-icon>menu</mat-icon>
+  </button>
+</div>

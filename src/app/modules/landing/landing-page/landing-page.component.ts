@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { environment } from 'src/environments/environment';
-
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
+
 
 @Component({
   selector: 'app-landing-page',
@@ -160,6 +160,7 @@ export class LandingPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
   scrollToView(refrnce) {

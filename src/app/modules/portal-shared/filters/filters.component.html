@@ -1,0 +1,19 @@
+<div style="padding-top: 50px;">
+  <div class="row">
+        <div class="col-md-1 col-sm-12 center">
+          <img src="/assets/images/filter.svg"  alt="card Image" class="svg">
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <dynamic-form  [fields]="filtersData">
+            </dynamic-form>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-12 center">
+          <button class ="mb-2 mr-2" (click)="applyFilters()" matTooltip="Apply Filters" 
+          mat-flat-button color="primary">Apply</button>
+          <button (click)="clearFilters()" matTooltip="clear Filters"
+          mat-flat-button color="primary">Clear</button>
+        </div>
+      </div>
+</div>
