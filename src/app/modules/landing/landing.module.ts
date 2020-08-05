@@ -16,9 +16,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CoreModuleModule } from 'shikshalokam';
 import { environment } from 'src/environments/environment';
-import { KeycloakAngularModule } from 'keycloak-angular';
-// import { AuthService } from '../private-modules/auth-service/auth.service';
-// import { LibraryModule } from '../library/library.module';
 
 
 
@@ -41,8 +38,6 @@ import { KeycloakAngularModule } from 'keycloak-angular';
     MatIconModule,
     SlickCarouselModule,
     CoreModuleModule,
-    KeycloakAngularModule
-    // LibraryModule
   ]
 })
 export class LandingModule {

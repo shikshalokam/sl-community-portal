@@ -12,7 +12,6 @@ export class PrivateGuard implements CanActivate {
 
   protected authenticated: boolean;
   constructor(protected router: Router, protected keycloakAngular: KeycloakService) { 
-    alert('guard');
   }
 
 
@@ -21,8 +20,13 @@ export class PrivateGuard implements CanActivate {
       try {
         this.authenticated = await this.keycloakAngular.isLoggedIn();
         // this.roles = await this.keycloakAngular.getUserRoles(true);
-        console.log('PrivateGuard', this.authenticated);
-
+        if (!this.authenticated) {
+          this.keycloakAngular.login()
+            .catch(e => console.error(e));
+          return reject(false);
+        } else {
+          return resolve(true);
+        }
         const result = await this.isAccessAllowed(route, state);
         resolve(result);
       } catch (error) {
@@ -31,22 +35,7 @@ export class PrivateGuard implements CanActivate {
     });
   }
 
-  // constructor(protected router: Router, protected keycloakAngular: KeycloakService) {
-  //   super(router, keycloakAngular);
-  // }
-
-  // canActivate(
-  //   next: ActivatedRouteSnapshot,
-  //   state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-  //   const details = this.keycloakAngular.getdetails();
-  //   console.log('canActivate', details);
-
-  //   // this.keycloakAngular.loadUserProfile().then(profile => {
-  //   //   console.log(profile.username);
-  //   //   console.log(profile['attributes']); //gives you array of all attributes of user, extract what you need
-  //   // })
-  //   return false;
-  // }
+ 
 
   isAccessAllowed(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
     return new Promise((resolve, reject) => {

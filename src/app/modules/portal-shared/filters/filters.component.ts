@@ -2,7 +2,6 @@ import { Component, OnInit, Input, Output, ViewChild, EventEmitter } from '@angu
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { DynamicFormComponent } from '../components/dynamic-form/dynamic-form.component';
 import { FieldConfig } from '../field.interface';
-import { NgForm } from '@angular/forms';
 import { CommonService } from '../../portal-core';
 
 
@@ -13,7 +12,7 @@ import { CommonService } from '../../portal-core';
 })
 export class FiltersComponent implements OnInit {
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
- 
+
   field: FieldConfig;
   filterForm: FormGroup
 

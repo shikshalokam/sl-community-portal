@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { keyCloakService, CommonService } from '../../portal-core';
+import {  CommonService, AuthenticationService } from '../../portal-core';
+import { KeycloakService } from 'keycloak-angular';
 
 
 @Component({
@@ -56,15 +57,16 @@ export class PrivateComponent implements OnInit {
       "url": "/logout"
     }
   ];
-  constructor(private keycloakService: keyCloakService,
-    private commonService: CommonService) { }
+  constructor(private authenticationService: AuthenticationService,
+    private Keycloak: KeycloakService) { }
 
   ngOnInit() {
-    this.userDetails = this.commonService.getUserDetails()
+    const user = this.Keycloak.getKeycloakInstance();
+    this.userDetails = user['profile'];
   }
 
   logoutMethod(data) {
-    this.keycloakService.logout();
+    this.authenticationService.doLogout();
   }
 
   selectedMenu(data) {
