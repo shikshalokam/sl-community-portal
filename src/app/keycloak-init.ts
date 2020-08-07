@@ -1,17 +1,12 @@
 import {environment} from '../environments/environment';
 import {KeycloakService} from 'keycloak-angular';
 
-export function initializer(keycloak: KeycloakService): () => Promise<any> {
+export function initializer(keycloakservice: KeycloakService): () => Promise<any> {
  return (): Promise<any> => {
    return new Promise(async (resolve, reject) => {
      try {
-       await keycloak.init({
-         config: {
-            url: 'https://dev.bodh.shikshalokam.org' + '/auth',
-            realm: 'sunbird',
-            clientId: 'sl-ionic-connect',
-
-         },
+       await keycloakservice.init({
+         config: environment.keycloak,
          initOptions: {
            onLoad: 'check-sso',
            checkLoginIframe: false
