@@ -3,13 +3,13 @@
         <div class="col-md-1 col-sm-12 center">
           <img src="/assets/images/filter.svg"  alt="card Image" class="svg">
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 filters">
           <div class="row">
             <dynamic-form  [fields]="filtersData">
             </dynamic-form>
           </div>
         </div>
-        <div class="col-md-2 col-sm-12 center">
+        <div class="col-md-2 col-sm-12 center f-buttons">
           <button class ="mb-2 mr-2" (click)="applyFilters()" matTooltip="Apply Filters" 
           mat-flat-button color="primary">Apply</button>
           <button (click)="clearFilters()" matTooltip="clear Filters"

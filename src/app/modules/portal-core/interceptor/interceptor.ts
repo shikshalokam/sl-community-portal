@@ -8,7 +8,8 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { keyCloakService } from '../services/keyCloack-service/keycloak.service';
+import { KeycloakService } from 'keycloak-angular';
+
 
 
 
@@ -17,10 +18,11 @@ export class Interceptor implements HttpInterceptor {
     token;
     constructor(private router: Router,
         public dialog: MatDialog,
-        private KeycloakService: keyCloakService,
+        private Keycloak: KeycloakService
     ) { }
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        this.token = this.KeycloakService.sendToken().token;
+        this.token = this.Keycloak.getKeycloakInstance().token;
+
         if (this.token) {
             request = request.clone({
                 setHeaders: {
@@ -45,7 +47,7 @@ export class Interceptor implements HttpInterceptor {
                     if (error.error.success === false) {
                         // this.openDialog();
                     } else {
-                        this.KeycloakService.logout();
+                        this.Keycloak.logout();
                     }
                 }
                 let errorMessage = '';

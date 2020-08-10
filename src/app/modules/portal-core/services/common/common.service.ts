@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subject } from 'rxjs';
+import { KeycloakService } from 'keycloak-angular';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class CommonService {
 
   details: any;
   onFormReset = new Subject<void>();
-  constructor(private _snackBar: MatSnackBar) { }
+  constructor(private _snackBar: MatSnackBar, private keycloakAuth: KeycloakService) { }
 
    // To set the data
    setUserDetails(data) {

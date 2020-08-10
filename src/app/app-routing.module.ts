@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PrivateGuard } from './modules/portal-core';
+import { PrivateGuard, AuthenticationService } from './modules/portal-core';
 
 
 
 
 const routes: Routes = [
-
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'home',
     loadChildren: () => import('./modules/landing/landing.module').then(m => m.LandingModule)
@@ -14,10 +14,9 @@ const routes: Routes = [
 
   {
     path: '',
-    // canActivate: [PrivateGuard],
-    loadChildren: () => import('./modules/private/private.module').then(m => m.PrivateModule)
-  },
-
+    loadChildren: () => import('./modules/private/private.module').then(m => m.PrivateModule),
+    canActivate: [AuthenticationService],
+  }
 ];
 
 @NgModule({
@@ -25,3 +24,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

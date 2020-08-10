@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { keyCloakService, CommonService } from '../../portal-core';
+import {  CommonService, AuthenticationService } from '../../portal-core';
+import { KeycloakService } from 'keycloak-angular';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class PrivateComponent implements OnInit {
       "icon": "folder",
       "name": "My Folder",
       "action": "folder",
-      "url": "/myfolder/sample1"
+      "url": "/myfolder"
     },
     {
       "icon": "dashboard",
@@ -31,24 +32,24 @@ export class PrivateComponent implements OnInit {
       "icon": "edit",
       "name": "Workspace",
       "action": "workspace",
-      "url": "private/workspace1"
+      "url": "/workspace"
     },
     {
       "icon": "rate_review",
       "name": "Review",
       "action": "review",
-      "url": "/home"
+      "url": "/review"
     },
     {
       "icon": "assignment_late",
       "name": "Support",
       "action": "support",
-      "url": "/home1"
+      "url": "/support"
     },
     {
       "icon": "help",
       "name": "Help",
-      "url": "/help1"
+      "url": "/help"
     },
     {
       "icon": "person",
@@ -56,24 +57,22 @@ export class PrivateComponent implements OnInit {
       "url": "/logout"
     }
   ];
-  constructor(private keycloakService: keyCloakService,
-    private commonService: CommonService) { }
+  constructor(private authenticationService: AuthenticationService,
+    private Keycloak: KeycloakService) { }
 
   ngOnInit() {
-    this.userDetails = this.commonService.getUserDetails()
+    const user = this.Keycloak.getKeycloakInstance();
+    this.userDetails = user['profile'];
   }
 
   logoutMethod(data) {
-    this.keycloakService.logout();
+    this.authenticationService.doLogout();
   }
 
   selectedMenu(data) {
     if (data == 'Logout') {
       this.logoutMethod('logout');
-    } else {
-      this.commonService.commonSnackBar('Comming soon', 'Dismiss', 'top', 10000);
     }
-
   }
 
 }

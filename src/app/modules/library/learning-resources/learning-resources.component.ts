@@ -32,12 +32,11 @@ export class LearningResourcesComponent implements OnInit {
 
 
   getLearningResources(data) {
-      if(data) {
-        data.pageSize = 3;
-        data.pageNo = 1
-      }
+      let filterData = {
+        filters: data
+    }
     this.spin = true;
-    this.communityService.post(environment.base_url + LibraryConfig.learningResources, data).subscribe(data => {
+    this.communityService.post(environment.base_url + LibraryConfig.learningResources + '?limit='+ 3 + '&page='+ 1, filterData).subscribe(data => {
         this.resourceData = data['result'];
         this.spin = false;
       }, error => {

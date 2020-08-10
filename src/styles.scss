@@ -49,6 +49,7 @@
 
 body {
   font-family: $regular-font;
+  font-size: 14px;
 }
 
 ._flex-box {
@@ -148,7 +149,7 @@ mat-icon {
 
 .main-content {
   padding: 20px;
-  padding-top: 100px;
+  padding-top: 140px;
 }
 
 .center {
@@ -191,6 +192,9 @@ mat-card {
   border: 0 !important;
 }
 
+// .mat-form-field-infix {
+//   box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75) !important;
+// }
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   
