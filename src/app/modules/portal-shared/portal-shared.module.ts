@@ -20,6 +20,7 @@ import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.
 import { MultiSelectComponent } from './components/multi-select/multi-select.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -34,7 +35,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     RouterModule,
     FormsModule, ReactiveFormsModule,
     SharedModuleModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    TranslateModule.forChild()
   ], exports: [
     CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, SpinnerComponent,
     InputComponent, SelectComponent, RadiobuttonComponent, DynamicFormComponent, 

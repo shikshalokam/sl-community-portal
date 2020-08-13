@@ -1,4 +1,7 @@
 @media only screen and (max-width: 600px) {
+  .main-content {
+    padding-top: 50px !important;
+  }
   .sideDiv {
     display: none !important;
   }
@@ -133,7 +136,7 @@
   }
   .c-menu {
     display: block !important;
-    padding-right: 15px !important;
+    padding-left: 15px !important;
   }
 
   .h-toolbar {
@@ -152,7 +155,11 @@
   }
   .c-menu {
     display: block !important;
-    padding-right: 15px !important;
+    padding-left: 15px !important;
+  }
+
+  .main-content {
+    padding-top: 50px !important;
   }
 
   .btn-logout {
