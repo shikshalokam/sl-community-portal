@@ -18,7 +18,7 @@ export class DescriptionCardComponent implements OnInit {
   @Input() link;
   @Input() playStoreLogo;
   @Input() imageText;
-  keyclockBaseUrl = environment.keycloakBaseUrl + '/home';
+  keyclockBaseUrl = environment.keycloakBaseUrl + '/resources';
 
 
 

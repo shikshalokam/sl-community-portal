@@ -10,7 +10,7 @@ export class CommunityHeaderComponent implements OnInit {
 
   @Output() linkClick  = new EventEmitter();
   @Output() toggle = new EventEmitter()
-  baseUrl = environment.keycloakBaseUrl + '/home';
+  baseUrl = environment.keycloakBaseUrl + '/resources';
 
   constructor() { }
 
