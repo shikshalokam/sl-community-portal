@@ -14,7 +14,7 @@ export class LandingPageComponent implements OnInit {
   @ViewChild("partners") partners: ElementRef;
   @ViewChild("footer") footer: ElementRef;
 
-  baseUrl = environment.keycloakBaseUrl + '/home';
+  baseUrl = environment.keycloakBaseUrl + '/resources';
 
   cardsData = [
     {
