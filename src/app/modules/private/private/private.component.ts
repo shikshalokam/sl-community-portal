@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {  CommonService, AuthenticationService } from '../../portal-core';
 import { KeycloakService } from 'keycloak-angular';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -10,13 +11,15 @@ import { KeycloakService } from 'keycloak-angular';
 })
 export class PrivateComponent implements OnInit {
   userDetails: any;
+  sideData: any;
   menudata = [
     {
       "icon": "local_library",
       "name": "Library",
       "action": "library",
       "url": "/library"
-    }, {
+    }
+    , {
       "icon": "folder",
       "name": "My Folder",
       "action": "folder",
@@ -58,15 +61,18 @@ export class PrivateComponent implements OnInit {
     }
   ];
   constructor(private authenticationService: AuthenticationService,
-    private Keycloak: KeycloakService) { }
+    private Keycloak: KeycloakService, private translate: TranslateService) { }
 
   ngOnInit() {
-    const user = this.Keycloak.getKeycloakInstance();
-    this.userDetails = user['profile'];
+
   }
 
   logoutMethod(data) {
     this.authenticationService.doLogout();
+  }
+
+  changeLanguage(data) {
+    this.translate.use(data);
   }
 
   selectedMenu(data) {

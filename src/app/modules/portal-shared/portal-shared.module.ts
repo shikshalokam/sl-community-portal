@@ -20,14 +20,20 @@ import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.
 import { MultiSelectComponent } from './components/multi-select/multi-select.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { TranslateModule } from '@ngx-translate/core';
+import { AssesmentCardComponent } from './assesment-card/assesment-card.component';
+import {TranslateModule, TranslateLoader, TranslateService} from "@ngx-translate/core";
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, CommingSoonComponent, SpinnerComponent,
     InputComponent, SelectComponent, RadiobuttonComponent, DynamicFormComponent, 
-    CheckboxComponent,MultiSelectComponent, DateComponent,DynamicFieldDirective],
+    CheckboxComponent,MultiSelectComponent, DateComponent,DynamicFieldDirective, AssesmentCardComponent],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -36,13 +42,24 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule, ReactiveFormsModule,
     SharedModuleModule,
     MatFormFieldModule,
-    TranslateModule.forChild()
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  })
   ], exports: [
     CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, SpinnerComponent,
-    InputComponent, SelectComponent, RadiobuttonComponent, DynamicFormComponent, 
+    InputComponent, SelectComponent, RadiobuttonComponent, DynamicFormComponent, TranslateModule,
     CheckboxComponent,MultiSelectComponent, DateComponent, DynamicFieldDirective,
-    MatFormFieldModule, SharedModuleModule
+    MatFormFieldModule, SharedModuleModule, AssesmentCardComponent
   ],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
 })
-export class PortalSharedModule { }
+export class PortalSharedModule {
+  constructor( public translate: TranslateService){
+    translate.addLangs(['en', 'od']);
+    translate.setDefaultLang('en');
+  }
+ }

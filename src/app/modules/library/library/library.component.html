@@ -1,20 +1,39 @@
 <div class="row" style="justify-content: center;">
 
+  <!-- Desktop tab   -->
   <div *ngFor="let data of tabData" class="desktop-tab">
     <div class="col-md-12 col-lg-12 col-sm-12 col-xl-8">
       <button [routerLink]="data.routerLink"  routerLinkActive="_p-button" mat-button
-        matTooltip="{{data.label}}">
-        {{data.label}}
+        matTooltip="{{ 'TAB.' + data.label | translate}}">
+        <span>{{'TAB.' + data.label | translate }}</span>
       </button>
     </div>
   </div>
 
+  <!-- Mobile tab -->
   <div class="col-md-12 col-lg-12 col-sm-12 col-xl-8 mobile-tab">
     <nav mat-tab-nav-bar>
-      <div mat-tab-link *ngFor="let data of tabData" [routerLink]="data.routerLink" (click)="activeLink = data.label"
-        [active]="activeLink == data.label"> {{data.label}} </div>
+      <div mat-tab-link *ngFor="let data of tabData"
+       [routerLink]="data.routerLink" (click)="activeLink = data.label"
+        [active]="activeLink == data.label">
+        <span>{{ 'TAB.' + data.label | translate }}</span>
+    </div>
     </nav>
   </div>
 
 </div>
+
+<!-- 
+<span class="form-inline">
+  <select 
+      class="form-control" 
+      #selectedLang 
+      (change)="switchLang(selectedLang.value)">
+    <option *ngFor="let language of translate.getLangs()" 
+      [value]="language"
+      [selected]="language === translate.currentLang">
+      {{ language }}
+    </option>
+  </select>
+</span> -->
 <router-outlet></router-outlet>
