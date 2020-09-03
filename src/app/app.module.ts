@@ -4,19 +4,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { MatDividerModule } from '@angular/material/divider';
-import { CommonModule } from '@angular/common';
+import { CommonModule, AsyncPipe } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from 'src/environments/environment';
 import { JwtModule } from '@auth0/angular-jwt';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { PortalSharedModule } from './modules/portal-shared/portal-shared.module';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import {  CoreModuleModule, SharedModuleModule } from 'shikshalokam';
+import {  CoreModuleModule } from 'shikshalokam';
 import { CommunityCoreModule } from './modules/portal-core/portal-core.module';
 import { KeycloakAngularModule } from 'keycloak-angular';
 import { AuthenticationService } from './modules/portal-core';
 import { initializer } from './keycloak-init';
 import { KeycloakService } from 'keycloak-angular';
+import {TranslateModule, TranslateLoader, TranslateService} from "@ngx-translate/core";
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 
 @NgModule({
@@ -36,7 +38,6 @@ import { KeycloakService } from 'keycloak-angular';
     SlickCarouselModule,
     CommunityCoreModule,
     KeycloakAngularModule,
-    SharedModuleModule,
   ],
   providers: [
     AuthenticationService,

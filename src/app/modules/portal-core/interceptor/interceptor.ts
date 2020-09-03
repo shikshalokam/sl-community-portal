@@ -21,6 +21,7 @@ export class Interceptor implements HttpInterceptor {
         private Keycloak: KeycloakService
     ) { }
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        if(this.Keycloak.getKeycloakInstance())
         this.token = this.Keycloak.getKeycloakInstance().token;
 
         if (this.token) {

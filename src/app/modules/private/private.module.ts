@@ -1,7 +1,7 @@
 import { NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrivateRoutingModule } from './private-routing.module';
-import { CoreModuleModule, SharedModuleModule } from 'shikshalokam';
+import { CoreModuleModule } from 'shikshalokam';
 import { LibraryModule } from '../library/library.module';
 import { MyFolderModule } from '../my-folder/my-folder.module';
 import { LandingModule } from '../landing/landing.module';
@@ -14,7 +14,6 @@ import { PortalSharedModule } from '../portal-shared/portal-shared.module';
   imports: [
     CommonModule,
     PrivateRoutingModule,
-    SharedModuleModule,
     CoreModuleModule,
     LibraryModule,
     LandingModule,

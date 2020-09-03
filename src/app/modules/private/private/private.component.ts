@@ -64,7 +64,8 @@ export class PrivateComponent implements OnInit {
     private Keycloak: KeycloakService, private translate: TranslateService) { }
 
   ngOnInit() {
-
+  const user = this.Keycloak.getKeycloakInstance();
+  this.userDetails = user['profile'];
   }
 
   logoutMethod(data) {

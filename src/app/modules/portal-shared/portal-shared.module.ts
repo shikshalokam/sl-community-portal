@@ -24,7 +24,7 @@ import { AssesmentCardComponent } from './assesment-card/assesment-card.componen
 import {TranslateModule, TranslateLoader, TranslateService} from "@ngx-translate/core";
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -42,6 +42,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule, ReactiveFormsModule,
     SharedModuleModule,
     MatFormFieldModule,
+    MatProgressSpinnerModule,
+    TranslateModule.forChild(),
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,
@@ -53,13 +55,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, SpinnerComponent,
     InputComponent, SelectComponent, RadiobuttonComponent, DynamicFormComponent, TranslateModule,
     CheckboxComponent,MultiSelectComponent, DateComponent, DynamicFieldDirective,
-    MatFormFieldModule, SharedModuleModule, AssesmentCardComponent
+    MatFormFieldModule, SharedModuleModule, AssesmentCardComponent, MatProgressSpinnerModule
   ],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
 })
 export class PortalSharedModule {
-  constructor( public translate: TranslateService){
-    translate.addLangs(['en', 'od']);
-    translate.setDefaultLang('en');
-  }
+  // constructor( public translate: TranslateService){
+  //   translate.addLangs(['en', 'od']);
+  //   translate.setDefaultLang('en');
+  // }
  }
