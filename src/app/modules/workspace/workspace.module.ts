@@ -6,6 +6,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import { MatTabsModule, MatTab, MatTabChangeEvent, MatTabGroup, MatTabHeader } from '@angular/material/tabs';
 import { ObservationUtilitiesComponent } from './observation-utilities/observation-utilities.component';
 import { AddUpdateCriteriaComponent } from './add-update-criteria/add-update-criteria.component';
+import  { DynamicFormBuilderModule1,DynamicFormBuilderService } from 'dynamic-form-builder';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { AddUpdateCriteriaComponent } from './add-update-criteria/add-update-cri
     WorkspaceRoutingModule,
     PortalSharedModule,
     MatChipsModule,
-    MatTabsModule
-  ]
+    MatTabsModule,
+    DynamicFormBuilderModule1
+  ],
+  providers: [DynamicFormBuilderService]
 })
 export class WorkspaceModule { }

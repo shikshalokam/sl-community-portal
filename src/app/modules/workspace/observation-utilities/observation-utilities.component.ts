@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild, NgModule, Inject, AfterContentChecked, PLATFORM_ID, OnInit, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 
-import { DragAndDropModule } from 'angular-draggable-droppable';
+// import { DragAndDropModule } from 'angular-draggable-droppable';
 import { FormControl, FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import {MatDialog } from '@angular/material/dialog';
 import { MatTabsModule, MatTab, MatTabChangeEvent, MatTabGroup, MatTabHeader } from '@angular/material/tabs';
@@ -151,11 +151,7 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
   removable = true;
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  fruits: Fruit[] = [
-    {name: 'Lemon'},
-    {name: 'Lime'},
-    {name: 'Apple'},
-  ];
+ 
   onChange(event) {
     this.Data = event.form;
 
@@ -177,7 +173,7 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
     const input = event.input;
     const value = event.value;
 
-    // Add our fruit
+    // Add our keyword
     if ((value || '').trim()) {
       this.keyWordItems.push(value.trim());
     }
@@ -208,7 +204,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
     this.showCreate = false;
     this.activatedRoute.params.subscribe(params => {
       this.frameWorkId = params['id'];
-      console.log("this.frameWorkId ", this.frameWorkId);
       if (this.frameWorkId) {
         this.showCreate = true;
         this.getEntityTypeList();
@@ -287,18 +282,16 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
   }
 
   onItemSelect(item: any) {
-    console.log(item);
-    console.log(this.selectedItems);
+  
   }
   OnItemDeSelect(item: any) {
-    console.log(item);
-    console.log(this.selectedItems);
+  
   }
   onSelectAll(items: any) {
-    console.log(items);
+  
   }
   onDeSelectAll(items: any) {
-    console.log(items);
+  
   }
 
 
@@ -330,12 +323,10 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
    * To know whether the data changed or not
    */
   modelChanged(newdata) {
-    console.log('modelChanged', newdata);
     if (this.solutionForm.get('solutionName').dirty || this.solutionForm.get('solutionDescription').dirty
       || this.solutionForm.get('solutionKeywords').dirty || this.solutionForm.get('solutionLanguage').dirty ||
       this.solutionForm.get('solutionEntityType').dirty || this.solutionForm.get('voiceOver').dirty) {
       this.detailschanged = true;
-      console.log('modelChanged to make true', newdata);
     } else {
       this.detailschanged = false;
     }
@@ -402,7 +393,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
 
   }
   solutionSubmit(form) {
-    // console.log("form",form.value); 
     var solObj = {
       name: form.value.name,
       description: form.value.description,
@@ -461,7 +451,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
     this.spinner.hide();
     this.clickedIndex = tabChangeEvent.index;
     this.selectedIndex = tabChangeEvent.index;
-    console.log('tab changed', this.selectedIndex, this.detailschanged);
     this.saveBtn = false;
     if (this.detailschanged && this.selectedIndex != 0) {
       this.confirmpopup();
@@ -521,7 +510,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
         });
       } else if (this.detailschanged) {
         this.detailsdialogRef.afterClosed().subscribe(result => {
-          console.log('confirmpopup data changed', result);
           if (result) {
             this.getFrameWorkDetails();
             this.detailschanged = false;
@@ -542,7 +530,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
         this.openSnackBar("Initial Criteria Cannot be Empty", "Failed");
       }else if(this.detailschanged) {
         this.detailsdialogRef.afterClosed().subscribe(result => {
-         console.log('confirmpopup data changed', result);
          if (result) {
           this.detailschanged = false;
           this.getFrameWorkDetails();
@@ -575,7 +562,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
             this.confirm = false;
             this.clikOk = true;
             // let all = this.DynamicFomServe.getALl();
-            // console.log('unsaved', all);
             this.selectedIndex = this.clickedIndex; // this.clickedIndex
           } else {
             this.clikOk = false;
@@ -586,7 +572,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
         });
       } else if (this.detailschanged) {
         this.detailsdialogRef.afterClosed().subscribe(result => {
-          console.log('confirmpopup data changed', result);
           if (result) {
             this.getFrameWorkDetails();
             this.detailschanged = false;
@@ -601,7 +586,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
   }
 
   nextStep() {
-    console.log('next step', this.selectedIndex)
     if (this.selectedIndex == 2) {
 
       // this.confirm = true;
@@ -653,18 +637,14 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
       }
 
     }
-    console.log(this.selectedIndex);
   }
 
   AddCriteria() {
     this.showAddCriteria = this.showAddCriteria == true ? false : true;
     this.criteriaAddorUpdate = "Add";
-    console.log("criteriaForm.controls", this.criteriaForm.controls);
   }
 
   create() {
-
-    console.log("create called");
     this.showCreate = true;
     this.selectedIndex = 0;
     // creatingg Draft frameWork using below API
@@ -674,7 +654,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
         this.createDraftEcm(frameWorkId);
         this.createDraftSection(frameWorkId);
         this.route.navigateByUrl("/workspace/edit/" + data['result']._id);
-      console.log('--------', data);
 
     }, error => {
 
@@ -702,7 +681,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
             return data;
           };
         })
-        // console.log("selectedEntity",selectedEntity);
         let id = this.generateExternalId();
         let obj = {
           name: this.solutionForm.value.solutionName,
@@ -714,7 +692,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
           externalId: id
         }
         this.communityService.post(environment.workspace_url + configOfFrameWorkAPIs.updateDraftFrameWork +this.frameWorkId,obj,).subscribe(data => {
-          console.log("data", data);
           this.openSnackBar("data updated Succesfully", "Updated");
           this.detailschanged = false;
           this.getFrameWorkDetails();
@@ -743,13 +720,11 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
     this.communityService.get(environment.workspace_url + configOfFrameWorkAPIs.listDraftCriteria  +  frameWorkId + '?page='+ this.criteriaListPageSize + '&limit='+ this.nextCriteriaPage + 1).subscribe(data => {
       if (data && data['status'] == 200) {
         // deep cloning the object
-        console.log('======qqqqqqqqqqqqqqqqqqqq======', data);
         this.allCriteriaList = JSON.parse(JSON.stringify(data['result'].data));
         this.criteriaList = data['result'].data;
 
         // this.DynamicFomServe.setCriteria(this.criteriaList);
 
-        console.log("ArrayOfCriteria", this.criteriaList);
         this.selectedCriteriaOfqtn = this.criteriaList[0];
         this.ArrayOfCriteria = data['result'].data;
         this.cdr.detectChanges();
@@ -762,8 +737,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
   }
 
   onPaginateChange(event) {
-    console.log("event", event);
-    // console.log("this.criteriaListCount 1",this.criteriaListCount); 
     this.nextCriteriaPage = event.pageIndex;
     this.criteriaListPageSize = event.pageSize;
     this.draftCriteriaList(this.frameWorkId);
@@ -832,19 +805,16 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
   getFrameWorkDetails() {
     this.communityService.get(environment.workspace_url + configOfFrameWorkAPIs.getDraftFrameWorkDetails + this.frameWorkId).subscribe(data => {
       if (data['status']) {
-        console.log("framework Details", data['result']);
         let res = data['result'];
         this.draftSolutionName = res.name;
         this.draftsolutionDescription = res.description;
         this.draftSolutionLanguage = res.language[0];
         this.detailschanged = false;
-        // console.log("this.draftSolutionLanguage",this.draftSolutionLanguage);
 
         this.draftSolutionEntityType = res.entityTypeId;
         this.keyWordItems = res.keywords;
       }
     }, error => {
-      console.log("error while callng api service", error);
     })
   }
 
@@ -861,7 +831,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
   getEntityTypeList() {
     this.communityService.get(environment.workspace_url + configOfFrameWorkAPIs.getEntityTypeList).subscribe(data => {
       this.entitys.push(data['result']);
-      console.log("data this.getEntityTypeList();  ", data['result']);
     });
   }
 
@@ -876,7 +845,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
   }
   // triiger event from child for drop Question or Save All Question
   eventFromChild($event) {
-
     // this.totalpages = this.DynamicFomServe.getPageNumbers();
     this.confirm = false;
     this.clikOk = false;
@@ -884,15 +852,10 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
     let _this = this;
     if ($event.action == 'all') {
       this.questionList = $event;
-      console.log('this.questionList', this.questionList['data']);
       for (let i = 0; i < this.questionList['data'].length; i++) {
         if (!this.questionList['data'][i].draftCriteriaId) {
-
           // alert('criteria cannot blanlk for' + this.questionList['data'][i].position + 'Question');
-
         }
-        // console.log('=========', i)
-
       }
       if ($event.data) {
         _this.allFields = $event.data;
@@ -900,7 +863,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
 
           // to update the existing question object and update to server
           if (element._id && _this.updateArray.includes(element._id)) {
-            // console.log("updated  ---", element);
             // let obj = {
             //   question: [],
             //   responseType: element.type,
@@ -923,12 +885,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
 
             // obj.question.push(element.label);
             // obj.question.push(element.options);
-
-
-
-            console.log("element.type && element.type ", element.type)
-
-
             if (element.type && element.type == "matrix") {
               _this.createQuestionAndUpdateMatrixQuestion(element);
 
@@ -941,12 +897,9 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
             // add question to server if only newly add question
             // checking by _id
 
-            // console.log("---id",element._id)
             if (element._id) {
-              console.log("existing question", element);
             } else {
 
-              console.log("new question");
               // if(_this.selectedCriteriaOfqtn && _this.selectedCriteriaOfqtn['_id']){
               let el = _this.selectedCriteriaOfqtn['_id'];
               // } else 
@@ -959,8 +912,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
                 "draftEvidenceMethodId": _this.draftEvidenceMethodId,
                 "draftSectionId": _this.draftSectionId
               }
-
-
               let childernArray = [];
               if (element.child) {
                 childernArray = element.child;
@@ -994,13 +945,11 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
               _this.childArray = []
               if (element.child) {
 
-                console.log("child loop");
                 element.child.forEach(item => {
                   let dataOfChildOBj = _this.dbQuestionObjGeneration(item);
                   _this.childArray.push(dataOfChildOBj);
 
 
-                  console.log(element.child.length, "childObj", _this.childArray.length);
                   if (_this.childArray.length == element.child.length) {
                     let questionId = _this.createDraftQuestion(obj, updateQuestionObj, index, _this.childArray);
                     if (index == _this.allFields.length) {
@@ -1013,21 +962,16 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
                   }
                 });
               } else {
-
-                debugger;
-                console.log("creating new question");
                 let questionId = _this.createDraftQuestion(obj, updateQuestionObj, index);
                 if (index == _this.allFields.length) {
                   let obj = {
                     questionArray: _this.allFields,
                     criteriaList: this.criteriaList
                   }
-                  console.log("--------------obj------", obj);
                   this.eventsSubject.next(obj);
                 }
 
               }
-              // console.log("updateQuestionObj", updateQuestionObj);
 
             }
           }
@@ -1036,7 +980,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
       // const message = 'Data Saved Succesfully';
       // this.openSnackBar(message, "Save");
     } else if ($event.action == 'add') {
-      console.log('addd', $event);
       this.confirm = true;
       if (this.selectedCriteriaOfqtn) {
         $event.data.draftCriteriaId = this.selectedCriteriaOfqtn['_id'];
@@ -1055,8 +998,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
 
     } else if ($event.action == 'update') {
       this.confirm = true
-      debugger;
-      console.log("------update------", $event);
       // update arry contains only existing data which is available in server
       if ($event.data._id) {
         _this.updateArray.push($event.data._id);
@@ -1064,7 +1005,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
       if ($event.data.data && $event.data.data._id) {
         _this.updateArray.push($event.data.data._id);
       }
-      console.log('update---------', _this.updateArray)
       // $event.data.data.type.charAt(0).toUpperCase() + $event.data.type.substring(1) + 
       const message = $event.data.data.field.position + ' ' + 'Question Updated Succesfully';
       this.openSnackBar(message, "Updated");
@@ -1135,7 +1075,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
       }
 
     } else if ($event.action == 'childDelete') {
-      console.log('childDelete', _this.allFields);
       let message = `Are you sure you want to delete this question?`;
       // let dialogData = new ConfirmDialogModel("Confirm Action", message);
       // const dialogRef = this.dialog.open(DeleteConfirmComponent, {
@@ -1154,7 +1093,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
       //     // }, error => {
       //     //   console.log("error while callng api", error);
       //     // })
-      //     console.log('child delete', _this.allFields);
       //     // _this.allFields = _this.allFields[0].child.filter(function (el, index) {
       //     //   return !el.isDelete;
       //     // })
@@ -1201,7 +1139,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
   listDraftSection(frameWorkId) {
 
     this.communityService.get(environment.workspace_url + configOfFrameWorkAPIs.listDraftSection + frameWorkId).subscribe(data => {
-      console.log("section length ", data['result']);
       if (data['result']) {
 
         this.draftSectionId = data['result']._id;
@@ -1214,7 +1151,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
   listDraftEcm(frameWorkId) {
     this.communityService.get( environment.workspace_url + configOfFrameWorkAPIs.listDraftEcm + frameWorkId).subscribe(data => {
       if (data['result'] && data['result'].data) {
-        console.log("Ecm List;  ", data['result']);
 
         this.draftEvidenceMethodId = data['result'].data[0]._id;
         // console.log("Ecm List;  ",data['result'].data[0]._id);
@@ -1352,7 +1288,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
 
     // let data=
 
-    console.log("get all", this.isUpdate);
 
     //   let allQnt = this.DynamicFomServe.getALl();
     //   let qntLen  = allQnt['questionList']['questionList']
@@ -1402,7 +1337,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
 
     //  console.log("get all", allQnt['questionList']['questionList']);
 
-    console.log("this.beforCriteriaChange", this.beforCriteriaChange);
     //  if(this.beforCriteriaChange && this.beforCriteriaChange.length > 0){
 
     //     let qntDat = this.beforCriteriaChange.filter(item => {
@@ -1426,7 +1360,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
     //   }
 
 
-    console.log(this.allQuestionWithDetails, "this.allQuestionWithDetails", this.allQuestionWithDetails.length);
 
     // if(this.allQuestionWithDetails){
 
@@ -1434,7 +1367,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
     // let allQnt = this.DynamicFomServe.getQuestions();
 
     if (!this.allQuestionWithDetails) {
-      console.log("no data");
       this.allQuestionWithDetails = [];
     }
 
@@ -1463,7 +1395,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
 
 
 
-      console.log("this.allQuestionWithDetails", this.allQuestionWithDetails);
       let qntDat = this.allQuestionWithDetails.filter(item => {
         return item.draftCriteriaId == this.selectedCriteriaOfqtn['_id'];
 
@@ -1489,7 +1420,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
         return item.draftCriteriaId == this.selectedCriteriaOfqtn['_id'];
 
       })
-      console.log(this.selectedCriteriaOfqtn['_id'], "qntDat", qntDat, "legnth", qntDat.length);
       if (qntDat && qntDat.length > 0) {
         qntDat.forEach(element => {
           // let questionObj = this.reGenerateQuestionObject(element, qntDat.length);
@@ -1531,7 +1461,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
     let _this = this;
     this.communityService.get(environment.workspace_url + configOfFrameWorkAPIs.draftQuestionList + this.frameWorkId).subscribe(data => {
       if (data['result'] && data['result'].data) {
-        console.log("before data==", data['result'].data);
         let currentThis = _this;
         let allRecords = [];
         data['result'].data.forEach(el => {
@@ -1543,17 +1472,13 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
           //   }
           // });
         });
-        console.log("after data==", data['result'].data);
       } else {
-        console.log("Error while featching question list", data);
       }
     });
   }
 
 
   generateQuestion(allRecords, _this) {
-    console.log("_this.localQuestionList.length == allRecords.length", _this.localQuestionList.length, "==", allRecords.length)
-    console.log("-----matrix-------", _this.localQuestionList);
     let completeObject = [];
     _this.localQuestionList = [];
     allRecords.filter(function (item, index) {
@@ -1573,11 +1498,9 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
       }
     });
     _this.localQuestionList.length = 0
-    console.log("_this.localQuestionList    ----- BEFORE", _this.localQuestionList.length);
     allRecords.forEach(function (element, index) {
 
       let questionObj = _this.reGenerateQuestionObject(element, index);
-      console.log(index, " index _this.localQuestionList    -----", _this.localQuestionList);
       if (_this.localQuestionList == allRecords.length - 1) {
         let obj = {
           questionArray: _this.localQuestionList,
@@ -1585,7 +1508,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
         }
         // this.eventsSubject.next(obj);
 
-        console.log("_this.localQuestionList", _this.localQuestionList);
         if (!_this.allQuestionWithDetails) {
           _this.allQuestionWithDetails = [];
           _this.allQuestionWithDetails = _this.localQuestionList;
@@ -1599,10 +1521,7 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
 
   reGenerateQuestionObject(element, legnth) {
 
-    console.log("reGenerateQuestionObject ---", element);
     if (element._id) {
-
-      // console.log("===============element========",element);
       let ele = element.responseType;
       let label = element.label ? element.label : element.question;
       let len = legnth + 1;
@@ -1840,7 +1759,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
       }
     } else if (ele == "matrix") {
 
-      console.log("ele.children", element)
       obj = {
         position: len,
         field: len + "question",
@@ -1930,7 +1848,6 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
    * @param element  is contain the update date of criteria
    */
   criteriaUpdate(element) {
-    console.log('update element', element);
     let _this = this;
     if (element.name !== '' && element.description !== '') {
       this.criteriaEmpty = false;
@@ -1989,14 +1906,12 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
     
         this.communityService.post(environment.workspace_url + configOfFrameWorkAPIs.draftCriteriaCreate,obj)
         .subscribe(data => {
-          console.log('sssssssssssssssss', data);
           this.criteriaList.paginator = this.paginator;
           this.criteriaList.sort = this.sort;
           this.draftCriteriaList(this.frameWorkId);
           this.criteriaSubmitted = false;
           this.openSnackBar("Criteria Added Succesfully", "Done");
         })
-        console.log('rrrrrrrr', result);
         }
       });
   }
@@ -2019,9 +1934,7 @@ export class ObservationUtilitiesComponent implements OnInit, AfterContentChecke
 
   //   this.communityService.post(environment.workspace_url + configOfFrameWorkAPIs.draftCriteriaCreate,obj)
   //   .subscribe(data => {
-  //     console.log('sssssssssssssssss', data);
   //   })
-  //   console.log('rrrrrrrr', result);
   //   }
   // });
 
