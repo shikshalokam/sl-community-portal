@@ -6,6 +6,7 @@ import { LibraryModule } from '../library/library.module';
 import { MyFolderModule } from '../my-folder/my-folder.module';
 import { LandingModule } from '../landing/landing.module';
 import { PrivateComponent } from './private/private.component';
+import { PortalSharedModule } from '../portal-shared/portal-shared.module';
 
 
 @NgModule({
@@ -16,9 +17,10 @@ import { PrivateComponent } from './private/private.component';
     CoreModuleModule,
     LibraryModule,
     LandingModule,
-    MyFolderModule
+    MyFolderModule,
+    PortalSharedModule,
   ],
 })
 export class PrivateModule {
-
+  
 }

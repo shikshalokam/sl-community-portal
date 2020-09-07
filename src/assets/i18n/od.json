@@ -1,5 +1,20 @@
 {
-    "brand" : "ସ୍କୁଲ ଡେଭେଲପ୍ମେଣ୍ଟ ଇଣ୍ଡେକ୍ସ" ,
+    "TAB": {
+    "LEARNING" : "ଅଧୁନାତନ ତାଲିକା",
+    "OBSERVATION": " ସଂରକ୍ଷଣ ସର୍ବେକ୍ଷଣ",
+    "ASSESMENTS": "ପିତା ବା ମାତା ସୂଚନା",
+    "IMPROVEMENT": "କୋଣସି ଡାଟା ଉପଲବ୍ଧ ନାହିଁ"
+  
+    },
+    "BUTTONS": {
+        "APPLY": "ଉପସ୍ଥାପନା",
+        "CLEAR": "ନିରସିତ",
+        "VIEWMORE": "ନିରସିତ ସର୍ବେକ୍ଷଣ"
+    },
+    "SIDEMENU": {
+        "LIBRARY": "ନିରସିତ ସର୍ବେକ୍ଷଣ",
+        "MYFOLDER": "ନିରସିତ ବେକ୍ଷଣ"
+    },
     "brandResponsive": "ସଁ ଡ଼ ଈ",
     "message" :{
         "alertHeading" : "ସାବଧାନ !!",
@@ -9,7 +24,7 @@
 
     
     "buttons": {
-        "update" : " ଅଧୁନାତନ ତାଲିକା",
+        "update" : "ଅଧୁନାତନ ତାଲିକା",
         "markasComplete" : "ସାରିବା ଚୀନଠୋ",
         "complete" : "ଶେଷ ",
         "cancel" : "ନିରସିତ",

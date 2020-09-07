@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { MatDividerModule } from '@angular/material/divider';
-import { CommonModule } from '@angular/common';
+import { CommonModule, AsyncPipe } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from 'src/environments/environment';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -17,12 +17,9 @@ import { KeycloakAngularModule } from 'keycloak-angular';
 import { AuthenticationService } from './modules/portal-core';
 import { initializer } from './keycloak-init';
 import { KeycloakService } from 'keycloak-angular';
-import {TranslateModule, TranslateLoader} from "@ngx-translate/core";
+import {TranslateModule, TranslateLoader, TranslateService} from "@ngx-translate/core";
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-}
 
 @NgModule({
   declarations: [
@@ -41,13 +38,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     SlickCarouselModule,
     CommunityCoreModule,
     KeycloakAngularModule,
-    TranslateModule.forRoot({
-      loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
-      }
-  })
   ],
   providers: [
     AuthenticationService,
@@ -61,8 +51,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   entryComponents: [AppComponent],
   exports: [
   ],
-  
-
   bootstrap: [AppComponent]
 })
 
