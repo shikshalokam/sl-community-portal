@@ -17,47 +17,76 @@ export class PrivateComponent implements OnInit {
       "icon": "local_library",
       "name": "Library",
       "action": "library",
-      "url": "/library"
+      "url": "/library",
+      "subMenu": []
     }
     , {
       "icon": "folder",
       "name": "My Folder",
       "action": "folder",
-      "url": "/myfolder"
+      "url": "/myfolder",
+      "subMenu": []
     },
     {
       "icon": "dashboard",
       "name": "Portals",
       "action": "portals",
-      "url": "/portals"
+      "url": "/portals",
+      "subMenu": []
     },
     {
       "icon": "edit",
       "name": "Workspace",
       "action": "workspace",
-      "url": "/workspace"
+      "url": "/workspace/create",
+      "subMenu": [
+        {
+          "name": "Create",
+          "url": "/workspace/create"
+        },
+        {
+          "name": "All Solutions",
+          "url": "/workspace/solutions"
+        },
+        {
+          "name": "Drafts",
+          "url": "/workspace/drafts"
+        },
+        {
+          "name": "Submitted for Review",
+          "url": "/workspace/submittedforreview"
+        },
+        {
+          "name": "Published",
+          "url": "/workspace/pulished"
+        }
+      ]
     },
     {
       "icon": "rate_review",
       "name": "Review",
       "action": "review",
-      "url": "/review"
+      "url": "/review",
+      "subMenu": []
     },
     {
       "icon": "assignment_late",
       "name": "Support",
       "action": "support",
-      "url": "/support"
+      "url": "/support",
+      "subMenu": []
     },
     {
       "icon": "help",
       "name": "Help",
-      "url": "/help"
+      "url": "/help",
+      "subMenu": []
     },
     {
       "icon": "person",
       "name": "Logout",
-      "url": "/logout"
+      "url": "/logout",
+      "subMenu": []
     }
   ];
   constructor(private authenticationService: AuthenticationService,

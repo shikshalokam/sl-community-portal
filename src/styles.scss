@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "./theme.scss";
-// @import "./custom-theme.scss";
+@import "./custom-theme.scss";
 @import "./assets/scss/varibles.scss";
 
 @font-face {
@@ -119,6 +119,13 @@ span:focus {
 ._helveticaFont {
   font-family: Helvetica !important;
 }
+.mat-drawer-inner-container {
+  min-width: 240px !important;
+}
+
+.required:after {
+  content: " *";
+}
 
 mat-icon {
   background-repeat: no-repeat;
@@ -173,6 +180,10 @@ mat-icon {
   display: none;
 }
 
+.submenu {
+  background-color:$primary-color;
+  color: $white-color !important;
+}
 
 
 .h-toolbar {

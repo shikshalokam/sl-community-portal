@@ -1,18 +1,17 @@
 import { Component, OnInit, Input, Output, ViewChild, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
-import { DynamicFormComponent } from '../components/dynamic-form/dynamic-form.component';
 import { FieldConfig } from '../field.interface';
 import { CommonService } from '../../portal-core';
+import { DynamicFormComponent } from 'shikshalokam';
 
 
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',
-  styleUrls: ['./filters.component.scss']
+  styleUrls: ['./filters.component.scss'],
 })
 export class FiltersComponent implements OnInit {
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
-
   field: FieldConfig;
   filterForm: FormGroup
 
@@ -36,7 +35,9 @@ export class FiltersComponent implements OnInit {
   }
 
   clearFilters() {
-    this.commonService.resetForm();
+    this.form.clearForm();
     this.sendFilters.emit(this.form.value);
   }
+
+
 }
