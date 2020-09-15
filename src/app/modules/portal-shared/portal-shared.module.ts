@@ -17,6 +17,7 @@ import {TranslateModule, TranslateLoader, TranslateService} from "@ngx-translate
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { TabsComponent } from './tabs/tabs.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -24,7 +25,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   declarations: [CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, CommingSoonComponent, SpinnerComponent,
-   AssesmentCardComponent],
+   AssesmentCardComponent,
+   TabsComponent],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -44,7 +46,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   })
   ], exports: [
     CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, SpinnerComponent,
-    TranslateModule,
+    TranslateModule, TabsComponent,
     MatFormFieldModule, SharedModuleModule, AssesmentCardComponent, MatProgressSpinnerModule
   ],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],

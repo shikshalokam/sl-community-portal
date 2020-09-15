@@ -1,5 +1,6 @@
 <div class="container-fluid">
 
+  <app-spinner *ngIf ="spin"></app-spinner>
   <div *ngIf ="criteriaForm" style="padding: 5% 0% 0% 5%;">
     <dynamic-form (clearing)="dataClear()" [fields]="criteriaForm">
     </dynamic-form>

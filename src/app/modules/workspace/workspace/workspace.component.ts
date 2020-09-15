@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -8,8 +7,6 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./workspace.component.scss']
 })
 export class WorkspaceComponent implements OnInit {
-  assesmentType: any;
-  frameworkId: any;
 
   tabData = [
       {
@@ -33,20 +30,11 @@ export class WorkspaceComponent implements OnInit {
         tooltip: 'Preview'
       }
   ]
-  constructor(private route:ActivatedRoute, private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      console.log('queryParams', params);
-      this.assesmentType = params['assesmentType'];
-      this.frameworkId = params['id'];
-  });
+    
   }
 
-  tabClick(tab){
-    console.log('tabclick', tab);
-    this.router.navigate(['/workspace/create/' + tab], { queryParams: { assesmentType: this.assesmentType, id: this.frameworkId } });
-    // this.router.navigate(['/workspace/create/'+ tab], { queryParams: { assesmentType: this.assesmentType, id: this.frameworkId } });
-  }
 
 }

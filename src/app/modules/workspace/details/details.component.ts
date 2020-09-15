@@ -18,8 +18,8 @@ export class DetailsComponent implements OnInit {
   criteriaForm: any[];
   frameworkId: any;
   assesmentType: any;
+  spin = false;
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
- 
 
   constructor(private communityService: CommunityService, private route:ActivatedRoute,
     private commonService: CommonService) { }
@@ -44,19 +44,27 @@ export class DetailsComponent implements OnInit {
 
   // To update the form
   updateMetaData(data){
+    this.spin = true;
     let obj = this.form.fields[4]['options'].find(o => o.value === data.entityType);
     data.entityType = obj;
     this.communityService.post(environment.workspace_url + WorkSpaceConfig.updateMetaData + '/' + this.frameworkId, data)
     .subscribe(data => {
+      this.spin = false;
       this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
+    }, err => {
+      this.commonService.commonSnackBar(err['message'], 'Dismiss', 'top', 10000);
     })
   }
 
   // To get the form
   getDetailsForm() {
+    this.spin = true;
     this.communityService.get(environment.workspace_url + WorkSpaceConfig.getDetailsForm + '/'+ this.frameworkId)
     .subscribe(data => {
      this.criteriaForm = data['result'];
+     this.spin = false;
+    }, err => {
+      this.commonService.commonSnackBar(err['message'], 'Dismiss', 'top', 10000);
     })
   }
 
