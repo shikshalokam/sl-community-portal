@@ -15,132 +15,7 @@ export class PrivateComponent implements OnInit {
   loggedInRoles: any;
   rolesArray: any;
   menudata: any;
-  observerData = [
-    {
-      "icon": "local_library",
-      "name": "Library",
-      "action": "library",
-      "url": "/library",
-      "subMenu": []
-    }
-    , {
-      "icon": "folder",
-      "name": "My Folder",
-      "action": "folder",
-      "url": "/myfolder",
-      "subMenu": []
-    },
-    {
-      "icon": "dashboard",
-      "name": "Portals",
-      "action": "portals",
-      "url": "/portals",
-      "subMenu": []
-    },
-    {
-      "icon": "edit",
-      "name": "Workspace",
-      "action": "workspace",
-      "url": "/workspace/create",
-      "subMenu": [
-        {
-          "name": "Create",
-          "url": "/workspace/create"
-        },
-        {
-          "name": "All Solutions",
-          "url": "/workspace/solutions"
-        },
-        {
-          "name": "Drafts",
-          "url": "/workspace/drafts"
-        },
-        {
-          "name": "Submitted for Review",
-          "url": "/workspace/submittedforreview"
-        },
-        {
-          "name": "Published",
-          "url": "/workspace/pulished"
-        }
-      ]
-    },
-    {
-      "icon": "rate_review",
-      "name": "Review",
-      "action": "review",
-      "url": "/review",
-      "subMenu": []
-    },
-    {
-      "icon": "assignment_late",
-      "name": "Support",
-      "action": "support",
-      "url": "/support",
-      "subMenu": []
-    },
-    {
-      "icon": "help",
-      "name": "Help",
-      "url": "/help",
-      "subMenu": []
-    },
-    {
-      "icon": "person",
-      "name": "Logout",
-      "url": "/logout",
-      "subMenu": []
-    }
-  ];
-  adminData = [
-    {
-      "icon": "local_library",
-      "name": "Library",
-      "action": "library",
-      "url": "/library",
-      "subMenu": []
-    }
-    , {
-      "icon": "folder",
-      "name": "My Folder",
-      "action": "folder",
-      "url": "/myfolder",
-      "subMenu": []
-    },
-    {
-      "icon": "dashboard",
-      "name": "Portals",
-      "action": "portals",
-      "url": "/portals",
-      "subMenu": []
-    },
-    {
-      "icon": "rate_review",
-      "name": "Review",
-      "action": "review",
-      "url": "/review",
-      "subMenu": []
-    },
-    {
-      "icon": "assignment_late",
-      "name": "Support",
-      "action": "support",
-      "url": "/support",
-      "subMenu": []
-    },
-    {
-      "icon": "help",
-      "name": "Help",
-      "url": "/help",
-      "subMenu": []
-    },
-    {
-      "icon": "person",
-      "name": "Logout",
-      "url": "/logout",
-      "subMenu": []
-    }
-  ];
+ 
   constructor(private authenticationService: AuthenticationService,
     private Keycloak: KeycloakService, private translate: TranslateService,
     private commonService: CommonService) {
@@ -155,9 +30,133 @@ export class PrivateComponent implements OnInit {
         this.rolesArray = this.loggedInRoles['result'].roles;
       }
       if (this.rolesArray.includes("DESIGNER")) {
-        this.menudata = this.observerData;
+        this.menudata = [
+          {
+            "icon": "local_library",
+            "name": "Library",
+            "action": "library",
+            "url": "/library",
+            "subMenu": []
+          }
+          , {
+            "icon": "folder",
+            "name": "My Folder",
+            "action": "folder",
+            "url": "/myfolder",
+            "subMenu": []
+          },
+          {
+            "icon": "dashboard",
+            "name": "Portals",
+            "action": "portals",
+            "url": "/portals",
+            "subMenu": []
+          },
+          {
+            "icon": "edit",
+            "name": "Workspace",
+            "action": "workspace",
+            "url": "/workspace/create",
+            "subMenu": [
+              {
+                "name": "Create",
+                "url": "/workspace/create"
+              },
+              {
+                "name": "All Solutions",
+                "url": "/workspace/solutions"
+              },
+              {
+                "name": "Drafts",
+                "url": "/workspace/drafts"
+              },
+              {
+                "name": "Submitted for Review",
+                "url": "/workspace/submittedforreview"
+              },
+              {
+                "name": "Published",
+                "url": "/workspace/pulished"
+              }
+            ]
+          },
+          {
+            "icon": "rate_review",
+            "name": "Review",
+            "action": "review",
+            "url": "/review",
+            "subMenu": []
+          },
+          {
+            "icon": "assignment_late",
+            "name": "Support",
+            "action": "support",
+            "url": "/support",
+            "subMenu": []
+          },
+          {
+            "icon": "help",
+            "name": "Help",
+            "url": "/help",
+            "subMenu": []
+          },
+          {
+            "icon": "person",
+            "name": "Logout",
+            "url": "/logout",
+            "subMenu": []
+          }
+        ];
       } else {
-        this.menudata = this.adminData;
+        this.menudata = [
+          {
+            "icon": "local_library",
+            "name": "Library",
+            "action": "library",
+            "url": "/library",
+            "subMenu": []
+          }
+          , {
+            "icon": "folder",
+            "name": "My Folder",
+            "action": "folder",
+            "url": "/myfolder",
+            "subMenu": []
+          },
+          {
+            "icon": "dashboard",
+            "name": "Portals",
+            "action": "portals",
+            "url": "/portals",
+            "subMenu": []
+          },
+          {
+            "icon": "rate_review",
+            "name": "Review",
+            "action": "review",
+            "url": "/review",
+            "subMenu": []
+          },
+          {
+            "icon": "assignment_late",
+            "name": "Support",
+            "action": "support",
+            "url": "/support",
+            "subMenu": []
+          },
+          {
+            "icon": "help",
+            "name": "Help",
+            "url": "/help",
+            "subMenu": []
+          },
+          {
+            "icon": "person",
+            "name": "Logout",
+            "url": "/logout",
+            "subMenu": []
+          }
+        ];
       }
   }
 

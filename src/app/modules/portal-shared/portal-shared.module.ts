@@ -36,6 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     SharedModuleModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
+    // We ever we use translate  home page not loading
     TranslateModule.forChild(),
     TranslateModule.forRoot({
       loader: {
@@ -49,6 +50,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TranslateModule, TabsComponent,
     MatFormFieldModule, SharedModuleModule, AssesmentCardComponent, MatProgressSpinnerModule
   ],
+  providers: [TranslateService],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
 })
 export class PortalSharedModule {

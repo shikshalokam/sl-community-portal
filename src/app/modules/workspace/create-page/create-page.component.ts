@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CommunityService } from 'shikshalokam';
 import { environment } from 'src/environments/environment';
 import { WorkSpaceConfig } from '../workspace.config';
+import { CommonService } from '../../portal-core';
 
 
 
@@ -16,34 +17,43 @@ export class CreatePageComponent implements OnInit {
   cardDetails = [
     {
       "title": "Create Learning Resources",
-      "description": "",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat auctor nibh. Curabitur malesuada dui uttellus tempus, vitae tristique erat ultrices. Suspendisse pulvinar nec nisi quis maximus.",
       "action": "Create",
       "redirect_url": "",
-      "endpoint": ""
+      "endpoint": "",
+      "name": "Resources",
+      "tooltip": "create Resources"
     },
     {
-      "title": "Create Learning Resources",
-      "description": "",
+      "title": "Create Observations",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat auctor nibh. Curabitur malesuada dui uttellus tempus, vitae tristique erat ultrices. Suspendisse pulvinar nec nisi quis maximus.",
       "action": "Create",
       "redirect_url": "",
-      "endpoint": ""
+      "endpoint": "",
+      "name": "Observations",
+      "tooltip": "Create Observations"
     },
     {
-      "title": "Create Learning Resources",
-      "description": "",
+      "title": "Create Assesment",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat auctor nibh. Curabitur malesuada dui uttellus tempus, vitae tristique erat ultrices. Suspendisse pulvinar nec nisi quis maximus.",
       "action": "Create",
       "redirect_url": "",
-      "endpoint": ""
+      "endpoint": "",
+      "name": "Assesment",
+      "tooltip": "Create Assesment"
     },
     {
-      "title": "Create Learning Resources",
-      "description": "",
+      "title": "Create Improvements",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat auctor nibh. Curabitur malesuada dui uttellus tempus, vitae tristique erat ultrices. Suspendisse pulvinar nec nisi quis maximus.",
       "action": "Create",
       "redirect_url": "",
-      "endpoint": ""
+      "endpoint": "",
+      "name": "Improvements",
+      "tooltip": "Create Improvements"
     }
   ]
-  constructor(private router: Router, private communityService: CommunityService) { }
+  constructor(private router: Router, private communityService: CommunityService,
+    private commonService: CommonService) { }
 
   ngOnInit() {
   }
@@ -54,7 +64,8 @@ export class CreatePageComponent implements OnInit {
     .subscribe(data => {
       this.frameworkId = data['result']['_id'];
       this.router.navigate(['/workspace/create/Details'], { queryParams: { assesmentType: assesmenttype, id: this.frameworkId } });
-      // this.router.navigateByUrl('/workspace/create/'+ assesmenttype + '/details/' + this.frameworkId);
+    }, error => {
+      this.commonService.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
     })
 
    

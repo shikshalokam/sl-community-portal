@@ -1,74 +1,18 @@
 <div class="row">
-<!-- <span> -->
-  <div class="col-md-4" style="padding-bottom:5%">
+<div *ngFor = "let data of cardDetails" class="col-md-4" style="padding-bottom:5%">
 <mat-card class="card-block custom-card-block create-card">
   <div class="row margin-5-perc">
       <div class="col-sm-12">
         <h4 class="card-title">
-          Create Learning Resources</h4>
+          {{data.title}}</h4>
         <div class="col-sm-12 desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat auctor nibh. Curabitur malesuada dui ut
-          tellus tempus, vitae tristique erat ultrices. Suspendisse pulvinar nec nisi quis maximus.
+        {{data.description}}
         </div>
-        <div class="col-sm-12 text-center c-button"><button class="m-top-10 _p-button" mat-flat-button
-          [routerLink]="['/workspace/create/details']">Create</button></div>
-        <!-- <div  class="btn btn-primary" style="margin:10px;text-align:center" (click)="create()" >  Create </div> -->
+        <div class="col-sm-12 text-center c-button"><button matTooltip={{data.tooltip}} class="m-top-10 _p-button" mat-flat-button
+          (click) = "create(data.name)">{{data.action}}</button></div>
       </div>
   </div>
 </mat-card>
 </div>
-<div class="col-md-4" style="padding-bottom:5%">
-<mat-card class="card-block custom-card-block create-card">
-  <div class="row margin-5-perc">
-      <div class="col-sm-12">
-        <h4 class="card-title">
-          Create Observations</h4>
-        <div class="col-sm-12 desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat auctor nibh. Curabitur malesuada dui ut
-          tellus tempus, vitae tristique erat ultrices. Suspendisse pulvinar nec nisi quis maximus.
-        </div>
-        <div class="col-sm-12 text-center c-button"><button class="m-top-10 _p-button" mat-flat-button 
-        (click) = "create('observations')">Create</button></div>
-          <!-- [routerLink]="['/workspace/create/details']" -->
-        <!-- <div  class="btn btn-primary" style="margin:10px;text-align:center" (click)="create()" >  Create </div> -->
-      </div>
-  </div>
-</mat-card>
-</div>
-<div class="col-md-4" style="padding-bottom:5%">
-<mat-card class="card-block custom-card-block create-card">
-  <div class="row margin-5-perc">
-      <div class="col-sm-12">
-        <h4 class="card-title">
-          Create Assesment</h4>
-        <div class="col-sm-12 desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat auctor nibh. Curabitur malesuada dui ut
-          tellus tempus, vitae tristique erat ultrices. Suspendisse pulvinar nec nisi quis maximus.
-        </div>
-        <div class="col-sm-12 text-center c-button"><button [routerLink]="['/workspace/create/details']" class="m-top-10 _p-button" mat-flat-button
-          (click) = "create('Assesment')" >Create</button></div>
-        <!-- <div  class="btn btn-primary" style="margin:10px;text-align:center" (click)="create()" >  Create </div> -->
-      </div>
-  </div>
-</mat-card>
-</div>
-<div class="col-md-4" style="padding-bottom:5%">
-<mat-card class="card-block custom-card-block create-card">
-  <div class="row margin-5-perc">
-      <div class="col-sm-12">
-        <h4 class="card-title">
-          Create Improvements</h4>
-        <div class="col-sm-12 desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat auctor nibh. Curabitur malesuada dui ut
-          tellus tempus, vitae tristique erat ultrices. Suspendisse pulvinar nec nisi quis maximus.
-        </div>
-        <div class="col-sm-12 text-center c-button"><button class="m-top-10 _p-button" mat-flat-button
-          [routerLink]="['/workspace/create/details']">Create</button></div>
-        <!-- <div  class="btn btn-primary" style="margin:10px;text-align:center" (click)="create()" >  Create </div> -->
-      </div>
-  </div>
-</mat-card>
-</div>
-<!-- </span> -->
 </div>
 
