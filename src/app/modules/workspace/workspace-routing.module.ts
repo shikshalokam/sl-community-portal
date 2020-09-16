@@ -14,13 +14,6 @@ import { DraftsComponent } from './drafts/drafts.component';
 import { PublishedComponent } from './published/published.component';
 import { SubmittedForReviewComponent } from './submitted-for-review/submitted-for-review.component';
 
-
-
-
-
-
-
-
 const routes: Routes = [
   { path: 'create', component: CreatePageComponent },
   { path: 'solutions', component: SolutionsComponent },

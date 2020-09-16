@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DynamicFormComponent, CommunityService } from 'shikshalokam';
 import { environment } from 'src/environments/environment';
-import { WorkSpaceConfig } from '../workspace.config';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CommonService } from '../../portal-core';
+import { CommonService, apiConfig } from '../../portal-core';
 
 
 
@@ -47,7 +46,7 @@ export class DetailsComponent implements OnInit {
     this.spin = true;
     let obj = this.form.fields[4]['options'].find(o => o.value === data.entityType);
     data.entityType = obj;
-    this.communityService.post(environment.workspace_url + WorkSpaceConfig.updateMetaData + '/' + this.frameworkId, data)
+    this.communityService.post(environment.workspace_url + apiConfig.updateMetaData + '/' + this.frameworkId, data)
     .subscribe(data => {
       this.spin = false;
       this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
@@ -59,7 +58,7 @@ export class DetailsComponent implements OnInit {
   // To get the form
   getDetailsForm() {
     this.spin = true;
-    this.communityService.get(environment.workspace_url + WorkSpaceConfig.getDetailsForm + '/'+ this.frameworkId)
+    this.communityService.get(environment.workspace_url + apiConfig.getDetailsForm + '/'+ this.frameworkId)
     .subscribe(data => {
      this.criteriaForm = data['result'];
      this.spin = false;

@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { KeycloakService } from 'keycloak-angular';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { apiConfig } from '../../constants/apiConstants';
 
 
 
@@ -33,7 +34,7 @@ export class CommonService {
 
   async getUserRoles() {
     return new Promise((resolve, reject) => {
-      this.Http.get(environment.main_url + 'user-management/api/v1/userExtension/getProfile')
+      this.Http.get(environment.main_url + apiConfig.userManagment.userprofile)
         .toPromise()
         .then(
           res => {

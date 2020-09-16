@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommunityService } from 'shikshalokam';
 import { environment } from 'src/environments/environment';
-import { WorkSpaceConfig } from '../workspace.config';
-import { CommonService } from '../../portal-core';
+import { CommonService, apiConfig } from '../../portal-core';
+
 
 
 
@@ -60,7 +60,7 @@ export class CreatePageComponent implements OnInit {
 
  
   create(assesmenttype) {
-    this.communityService.post(environment.workspace_url + WorkSpaceConfig.detailsCreate, '')
+    this.communityService.post(environment.workspace_url + apiConfig.detailsCreate, '')
     .subscribe(data => {
       this.frameworkId = data['result']['_id'];
       this.router.navigate(['/workspace/create/Details'], { queryParams: { assesmentType: assesmenttype, id: this.frameworkId } });

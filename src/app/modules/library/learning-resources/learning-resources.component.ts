@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommunityService } from 'shikshalokam';
-import { LibraryConfig } from '../library.config';
 import { environment } from 'src/environments/environment';
-import { CommonService } from '../../portal-core';
+import { CommonService, apiConfig } from '../../portal-core';
 
 
 
@@ -25,7 +24,7 @@ export class LearningResourcesComponent implements OnInit {
 
 
   getFilters() {
-    this.communityService.get(environment.base_url + LibraryConfig.filterList).subscribe(data => {
+    this.communityService.get(environment.base_url + apiConfig.filterList).subscribe(data => {
       this.filtersData = data['result'];
     }, error => {
       this.commonService.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
@@ -38,7 +37,7 @@ export class LearningResourcesComponent implements OnInit {
         filters: data
     }
     this.spin = true;
-    this.communityService.post(environment.base_url + LibraryConfig.learningResources + '?limit='+ 3 + '&page='+ 1, filterData).subscribe(data => {
+    this.communityService.post(environment.base_url + apiConfig.learningResources + '?limit='+ 3 + '&page='+ 1, filterData).subscribe(data => {
         this.resourceData = data['result'];
         this.spin = false;
       }, err => {
