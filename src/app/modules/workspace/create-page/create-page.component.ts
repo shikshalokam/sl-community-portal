@@ -16,40 +16,32 @@ export class CreatePageComponent implements OnInit {
   frameworkId: any;
   cardDetails = [
     {
-      "title": "Create Learning Resources",
+      "title": "create learning resources",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat auctor nibh. Curabitur malesuada dui uttellus tempus, vitae tristique erat ultrices. Suspendisse pulvinar nec nisi quis maximus.",
-      "action": "Create",
-      "redirect_url": "",
-      "endpoint": "",
-      "name": "Resources",
-      "tooltip": "create Resources"
+      "buttonText": 'create',
+      "type": 'resources',
+      "tooltip": "create resources"
     },
     {
-      "title": "Create Observations",
+      "title": "create observations",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat auctor nibh. Curabitur malesuada dui uttellus tempus, vitae tristique erat ultrices. Suspendisse pulvinar nec nisi quis maximus.",
-      "action": "Create",
-      "redirect_url": "",
-      "endpoint": "",
-      "name": "Observations",
-      "tooltip": "Create Observations"
+      "buttonText": 'create',
+      "type": "observations",
+      "tooltip": "create observations"
     },
     {
-      "title": "Create Assesment",
+      "title": "create assesment",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat auctor nibh. Curabitur malesuada dui uttellus tempus, vitae tristique erat ultrices. Suspendisse pulvinar nec nisi quis maximus.",
-      "action": "Create",
-      "redirect_url": "",
-      "endpoint": "",
-      "name": "Assesment",
-      "tooltip": "Create Assesment"
+      "buttonText": 'create',
+      "type": "assesment",
+      "tooltip": "create assesment"
     },
     {
       "title": "Create Improvements",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat auctor nibh. Curabitur malesuada dui uttellus tempus, vitae tristique erat ultrices. Suspendisse pulvinar nec nisi quis maximus.",
-      "action": "Create",
-      "redirect_url": "",
-      "endpoint": "",
-      "name": "Improvements",
-      "tooltip": "Create Improvements"
+      "buttonText": 'create',
+      "type": "improvements",
+      "tooltip": "create improvements"
     }
   ]
   constructor(private router: Router, private communityService: CommunityService,
@@ -58,12 +50,12 @@ export class CreatePageComponent implements OnInit {
   ngOnInit() {
   }
 
- 
-  create(assesmenttype) {
+ // To get the id to create the form 
+  create(assesmentType) {
     this.communityService.post(environment.workspace_url + apiConfig.detailsCreate, '')
     .subscribe(data => {
       this.frameworkId = data['result']['_id'];
-      this.router.navigate(['/workspace/create/Details'], { queryParams: { assesmentType: assesmenttype, id: this.frameworkId } });
+      this.router.navigate(['/workspace/create/Details'], { queryParams: { assesmentType: assesmentType, id: this.frameworkId } });
     }, error => {
       this.commonService.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
     })

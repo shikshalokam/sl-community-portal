@@ -14,7 +14,58 @@ export class PrivateComponent implements OnInit {
   sideData: any;
   loggedInRoles: any;
   rolesArray: any;
-  menudata: any;
+  workspace: any;
+
+  menudata = [
+    {
+      "icon": "local_library",
+      "name": "Library",
+      "action": "library",
+      "url": "/library",
+      "subMenu": []
+    }
+    , {
+      "icon": "folder",
+      "name": "My Folder",
+      "action": "folder",
+      "url": "/myfolder",
+      "subMenu": []
+    },
+    {
+      "icon": "dashboard",
+      "name": "Portals",
+      "action": "portals",
+      "url": "/portals",
+      "subMenu": []
+    },
+  
+    {
+      "icon": "rate_review",
+      "name": "Review",
+      "action": "review",
+      "url": "/review",
+      "subMenu": []
+    },
+    {
+      "icon": "assignment_late",
+      "name": "Support",
+      "action": "support",
+      "url": "/support",
+      "subMenu": []
+    },
+    {
+      "icon": "help",
+      "name": "Help",
+      "url": "/help",
+      "subMenu": []
+    },
+    {
+      "icon": "person",
+      "name": "Logout",
+      "url": "/logout",
+      "subMenu": []
+    }
+  ];
  
   constructor(private authenticationService: AuthenticationService,
     private Keycloak: KeycloakService, private translate: TranslateService,
@@ -25,138 +76,40 @@ export class PrivateComponent implements OnInit {
  async ngOnInit() {
   const user = this.Keycloak.getKeycloakInstance();
   this.userDetails = user['profile'];
+  this.workspace =   {
+    "icon": "edit",
+    "name": "Workspace",
+    "action": "workspace",
+    "url": "/workspace/create",
+    "subMenu": [
+      {
+        "name": "Create",
+        "url": "/workspace/create"
+      },
+      {
+        "name": "All Solutions",
+        "url": "/workspace/solutions"
+      },
+      {
+        "name": "Drafts",
+        "url": "/workspace/drafts"
+      },
+      {
+        "name": "Submitted for Review",
+        "url": "/workspace/submittedforreview"
+      },
+      {
+        "name": "Published",
+        "url": "/workspace/pulished"
+      }
+    ]
+  },
   this.loggedInRoles = await this.commonService.getUserRoles();
       if (this.loggedInRoles['result']) {
         this.rolesArray = this.loggedInRoles['result'].roles;
       }
       if (this.rolesArray.includes("DESIGNER")) {
-        this.menudata = [
-          {
-            "icon": "local_library",
-            "name": "Library",
-            "action": "library",
-            "url": "/library",
-            "subMenu": []
-          }
-          , {
-            "icon": "folder",
-            "name": "My Folder",
-            "action": "folder",
-            "url": "/myfolder",
-            "subMenu": []
-          },
-          {
-            "icon": "dashboard",
-            "name": "Portals",
-            "action": "portals",
-            "url": "/portals",
-            "subMenu": []
-          },
-          {
-            "icon": "edit",
-            "name": "Workspace",
-            "action": "workspace",
-            "url": "/workspace/create",
-            "subMenu": [
-              {
-                "name": "Create",
-                "url": "/workspace/create"
-              },
-              {
-                "name": "All Solutions",
-                "url": "/workspace/solutions"
-              },
-              {
-                "name": "Drafts",
-                "url": "/workspace/drafts"
-              },
-              {
-                "name": "Submitted for Review",
-                "url": "/workspace/submittedforreview"
-              },
-              {
-                "name": "Published",
-                "url": "/workspace/pulished"
-              }
-            ]
-          },
-          {
-            "icon": "rate_review",
-            "name": "Review",
-            "action": "review",
-            "url": "/review",
-            "subMenu": []
-          },
-          {
-            "icon": "assignment_late",
-            "name": "Support",
-            "action": "support",
-            "url": "/support",
-            "subMenu": []
-          },
-          {
-            "icon": "help",
-            "name": "Help",
-            "url": "/help",
-            "subMenu": []
-          },
-          {
-            "icon": "person",
-            "name": "Logout",
-            "url": "/logout",
-            "subMenu": []
-          }
-        ];
-      } else {
-        this.menudata = [
-          {
-            "icon": "local_library",
-            "name": "Library",
-            "action": "library",
-            "url": "/library",
-            "subMenu": []
-          }
-          , {
-            "icon": "folder",
-            "name": "My Folder",
-            "action": "folder",
-            "url": "/myfolder",
-            "subMenu": []
-          },
-          {
-            "icon": "dashboard",
-            "name": "Portals",
-            "action": "portals",
-            "url": "/portals",
-            "subMenu": []
-          },
-          {
-            "icon": "rate_review",
-            "name": "Review",
-            "action": "review",
-            "url": "/review",
-            "subMenu": []
-          },
-          {
-            "icon": "assignment_late",
-            "name": "Support",
-            "action": "support",
-            "url": "/support",
-            "subMenu": []
-          },
-          {
-            "icon": "help",
-            "name": "Help",
-            "url": "/help",
-            "subMenu": []
-          },
-          {
-            "icon": "person",
-            "name": "Logout",
-            "url": "/logout",
-            "subMenu": []
-          }
-        ];
+        this.menudata.splice(3, 0, this.workspace)
       }
   }
 

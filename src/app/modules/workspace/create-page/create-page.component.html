@@ -4,12 +4,12 @@
   <div class="row margin-5-perc">
       <div class="col-sm-12">
         <h4 class="card-title">
-          {{data.title}}</h4>
+          {{data.title | titlecase}}</h4>
         <div class="col-sm-12 desc">
         {{data.description}}
         </div>
         <div class="col-sm-12 text-center c-button"><button matTooltip={{data.tooltip}} class="m-top-10 _p-button" mat-flat-button
-          (click) = "create(data.name)">{{data.action}}</button></div>
+          (click) = "create(data.type)">{{data.buttonText | titlecase }}</button></div>
       </div>
   </div>
 </mat-card>
