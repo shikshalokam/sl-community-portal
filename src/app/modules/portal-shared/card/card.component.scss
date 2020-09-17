@@ -1,17 +1,16 @@
 @import "../../../../assets/scss/varibles.scss";
 .c-title {
   white-space: nowrap;
-  width: 200px;
+  width: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
   height: 30px;
 }
 
-
-
 .c-view {
   float: right;
   color: $green-color;
+  padding-right: 5%;
 }
 .no-image {
   height: 150px;
@@ -19,7 +18,7 @@
 }
 
 .c-description {
-  padding-left: 15px;
+  padding-left: 5%;
   font-size: 15px;
 }
 

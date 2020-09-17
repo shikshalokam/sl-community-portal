@@ -3,17 +3,17 @@
         <div class="col-md-1 col-sm-12 center">
           <img src="/assets/images/filter.svg"  alt="card Image" class="svg">
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 filters">
           <div class="row">
-            <dynamic-form  [fields]="filtersData">
+            <dynamic-form [fields]="filtersData">
             </dynamic-form>
           </div>
         </div>
-        <div class="col-md-2 col-sm-12 center">
-          <button class ="mb-2 mr-2" (click)="applyFilters()" matTooltip="Apply Filters" 
-          mat-flat-button color="primary">Apply</button>
+        <div class="col-md-2 col-sm-12 center f-buttons">
+          <button class ="mb-2 mr-2 _p-button" (click)="applyFilters()" matTooltip="Apply Filters" 
+          mat-flat-button>{{'BUTTONS.APPLY' | translate }}</button>
           <button (click)="clearFilters()" matTooltip="clear Filters"
-          mat-flat-button color="primary">Clear</button>
+          mat-flat-button class="_p-button">{{'BUTTONS.CLEAR' | translate }}</button>
         </div>
       </div>
 </div>

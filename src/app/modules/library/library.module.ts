@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LibraryRoutingModule } from './library-routing.module';
 import { LearningResourcesComponent } from './learning-resources/learning-resources.component';
-import { CoreModuleModule, SharedModuleModule } from 'shikshalokam';
+import { CoreModuleModule } from 'shikshalokam';
 import { ObservationsComponent } from './observations/observations.component';
 import { AssesmentsComponent } from './assesments/assesments.component';
 import { PortalSharedModule } from '../portal-shared/portal-shared.module';
@@ -18,7 +18,6 @@ import { ImprovementProjectsComponent } from './improvement-projects/improvement
     LibraryRoutingModule,
     CoreModuleModule,
     PortalSharedModule,
-    SharedModuleModule,
     MatIconModule
   ]
 })

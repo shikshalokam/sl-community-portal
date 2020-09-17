@@ -8,18 +8,20 @@
       </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
+      <a href="{{cardData?.url}}" target="_self">
       <div *ngIf="cardData?.appIcon else noImage" class="image-section">
         <img src="{{cardData?.appIcon}}" class="card-image">
       </div>
+    </a>
       <ng-template #noImage>
-        <div class="no-image">
-
-        </div>
+          <a href="{{cardData?.url}}" target="_self">
+            <div class="no-image"></div>
+          </a>
       </ng-template>
     </mat-card-content>
     <mat-card-actions>
       <span class="_text-color c-description" mat-button> {{cardData?.time}}</span>
-      <a href="{{cardData?.url}}" target="_blank"><span class="c-view">View</span></a>
+      <a href="{{cardData?.url}}" target="_self"><span class="c-view">View</span></a>
     </mat-card-actions>
   </mat-card>
 </div>

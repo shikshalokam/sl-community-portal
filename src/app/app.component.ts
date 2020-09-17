@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { keyCloakService } from './modules/portal-core';
-
 
 @Component({
   selector: 'app-root',
@@ -16,24 +14,12 @@ export class AppComponent {
   portalName;
   baseUrl;
 
-  constructor(private keycloakService: keyCloakService) {
+  constructor() {
     this.baseUrl = environment.base_url;
-    this.portalName = environment.portal_name;
   }
 
   ngOnInit() {
-    this.getBasicdetails();
   }
-
-
-
-  getBasicdetails() {
-    this.keycloakService.setToken();
-  }
-
-
-
-
 
 }
 

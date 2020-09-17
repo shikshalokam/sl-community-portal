@@ -1,6 +1,5 @@
 <app-filters *ngIf="filtersData" [filtersData]="filtersData" (sendFilters)="getSelected($event)"></app-filters>
-<app-spinner *ngIf = "spin" ></app-spinner>
-
+<app-spinner *ngIf="spin"></app-spinner>
 <div *ngFor="let data of resourceData" class="whole-card">
   <div class="container-fluid">
     <div class="row">
@@ -10,25 +9,26 @@
             <img src="/assets/images/{{data?.title}}.png" alt="title images" class="c-image">
           </div>
           <div>
-            <h4>{{data?.title}}</h4>
+            <div class="card-title">{{data?.title}}</div>
             <div class="_text-color description">
               {{data?.description}}
             </div>
           </div>
         </section>
       </div>
-      
+
       <div class="col-md-9 offset-md-1">
         <div class="row">
           <div class="col-md-4 col-sm-12 card-space" *ngFor="let rdata of data['resources']">
             <app-card [cardData]="rdata"></app-card>
           </div>
         </div>
+        <div style="margin-top: 5%;" class=" center col-md-12 col-sm-12 col-lg-12 col-xl-12">
+          <a href="{{data?.viewMoreUrl}}" target="_self"><button mat-button
+              class="_p-button col-md-4 col-xl-3 col-sm-4 col-lg-4">{{'BUTTONS.VIEWMORE' | translate}}</button></a>
+        </div>
       </div>
-      <div style="margin-top: 5%;" class=" center col-md-12 col-sm-12 col-lg-12 col-xl-12">
-        <a href="{{data?.viewMoreUrl}}" target="_blank"><button mat-button class="_p-button col-md-4 col-xl-2 col-sm-4 col-lg-4">View
-            More</button></a>
-      </div>
+
     </div>
   </div>
 </div>

@@ -3,12 +3,17 @@
 
 .icon-background {
   background-color: #e5f3fe;
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   border-radius: 35px;
   margin: auto;
   margin-bottom: 20px;
 
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .whole-card {
@@ -16,8 +21,8 @@
 }
 
 .c-image {
-  width: 30px;
-  margin-top: 25px;
+  width: 25px;
+  margin-top: 22px;
 }
 
 .description {
@@ -26,6 +31,9 @@
   line-height: 1.5em;
   height: 3em;
 }
+
+
+
 
 
 
