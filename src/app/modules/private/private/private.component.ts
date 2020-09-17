@@ -12,60 +12,105 @@ import { TranslateService } from '@ngx-translate/core';
 export class PrivateComponent implements OnInit {
   userDetails: any;
   sideData: any;
+  loggedInRoles: any;
+  rolesArray: any;
+  workspace: any;
+
   menudata = [
     {
       "icon": "local_library",
       "name": "Library",
       "action": "library",
-      "url": "/library"
+      "url": "/library",
+      "subMenu": []
     }
     , {
       "icon": "folder",
       "name": "My Folder",
       "action": "folder",
-      "url": "/myfolder"
+      "url": "/myfolder",
+      "subMenu": []
     },
     {
       "icon": "dashboard",
       "name": "Portals",
       "action": "portals",
-      "url": "/portals"
+      "url": "/portals",
+      "subMenu": []
     },
-    {
-      "icon": "edit",
-      "name": "Workspace",
-      "action": "workspace",
-      "url": "/workspace"
-    },
+  
     {
       "icon": "rate_review",
       "name": "Review",
       "action": "review",
-      "url": "/review"
+      "url": "/review",
+      "subMenu": []
     },
     {
       "icon": "assignment_late",
       "name": "Support",
       "action": "support",
-      "url": "/support"
+      "url": "/support",
+      "subMenu": []
     },
     {
       "icon": "help",
       "name": "Help",
-      "url": "/help"
+      "url": "/help",
+      "subMenu": []
     },
     {
       "icon": "person",
       "name": "Logout",
-      "url": "/logout"
+      "url": "/logout",
+      "subMenu": []
     }
   ];
+ 
   constructor(private authenticationService: AuthenticationService,
-    private Keycloak: KeycloakService, private translate: TranslateService) { }
+    private Keycloak: KeycloakService, private translate: TranslateService,
+    private commonService: CommonService) {
 
-  ngOnInit() {
+     }
+
+ async ngOnInit() {
   const user = this.Keycloak.getKeycloakInstance();
   this.userDetails = user['profile'];
+  this.workspace =   {
+    "icon": "edit",
+    "name": "Workspace",
+    "action": "workspace",
+    "url": "/workspace/create",
+    "subMenu": [
+      {
+        "name": "Create",
+        "url": "/workspace/create"
+      },
+      {
+        "name": "All Solutions",
+        "url": "/workspace/solutions"
+      },
+      {
+        "name": "Drafts",
+        "url": "/workspace/drafts"
+      },
+      {
+        "name": "Submitted for Review",
+        "url": "/workspace/submittedforreview"
+      },
+      {
+        "name": "Published",
+        "url": "/workspace/pulished"
+      }
+    ]
+  },
+  this.loggedInRoles = await this.commonService.getUserRoles();
+      if (this.loggedInRoles['result']) {
+        this.rolesArray = this.loggedInRoles['result'].roles;
+      }
+      if (this.rolesArray.includes("DESIGNER")) {
+        this.menudata.splice(3, 0, this.workspace)
+      }
   }
 
   logoutMethod(data) {

@@ -1,0 +1,12 @@
+<div class="row" style="justify-content: space-evenly;">
+
+  <!-- Desktop tab   -->
+  <div *ngFor="let data of tabData" class="desktop-tab">
+    <div class="col-md-12 col-lg-12 col-sm-12 col-xl-8">
+      <button [routerLink]="data.routerLink" (click) = "tabClick(data.label)" routerLinkActive="_p-button" [routerLinkActiveOptions]="{ exact: false }" mat-button
+        matTooltip="{{ data.label}}">
+        <span>{{data.label}}</span>
+      </button>
+    </div>
+  </div>
+</div>

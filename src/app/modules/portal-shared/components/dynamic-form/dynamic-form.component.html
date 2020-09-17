@@ -1,4 +1,0 @@
-<form autocomplete="off" class="dynamic-form row" [formGroup]="form" (submit)="onSubmit($event)">
-    <ng-container *ngFor="let field of fields;let i = index"  dynamicField [field]="field" [group]="form">
-    </ng-container>
-</form>

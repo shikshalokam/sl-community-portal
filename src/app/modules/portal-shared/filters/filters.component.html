@@ -5,15 +5,15 @@
         </div>
         <div class="col-md-9 filters">
           <div class="row">
-            <dynamic-form  [fields]="filtersData">
+            <dynamic-form [fields]="filtersData">
             </dynamic-form>
           </div>
         </div>
         <div class="col-md-2 col-sm-12 center f-buttons">
-          <button class ="mb-2 mr-2" (click)="applyFilters()" matTooltip="Apply Filters" 
-          mat-flat-button color="primary">{{'BUTTONS.APPLY' | translate }}</button>
+          <button class ="mb-2 mr-2 _p-button" (click)="applyFilters()" matTooltip="Apply Filters" 
+          mat-flat-button>{{'BUTTONS.APPLY' | translate }}</button>
           <button (click)="clearFilters()" matTooltip="clear Filters"
-          mat-flat-button color="primary">{{'BUTTONS.CLEAR' | translate }}</button>
+          mat-flat-button class="_p-button">{{'BUTTONS.CLEAR' | translate }}</button>
         </div>
       </div>
 </div>
