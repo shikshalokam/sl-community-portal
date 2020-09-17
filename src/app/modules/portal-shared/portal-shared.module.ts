@@ -37,14 +37,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatFormFieldModule,
     MatProgressSpinnerModule,
     // We ever we use translate  home page not loading
-    TranslateModule.forChild(),
-    TranslateModule.forRoot({
-      loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
-      }
-  })
+  //   TranslateModule.forChild(),
+  //   TranslateModule.forRoot({
+  //     loader: {
+  //         provide: TranslateLoader,
+  //         useFactory: HttpLoaderFactory,
+  //         deps: [HttpClient]
+  //     }
+  // })
   ], exports: [
     CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, SpinnerComponent,
     TranslateModule, TabsComponent,
