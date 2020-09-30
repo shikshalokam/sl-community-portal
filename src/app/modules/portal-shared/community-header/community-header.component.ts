@@ -21,7 +21,7 @@ export class CommunityHeaderComponent implements OnInit {
       this.communityPortal();
     }
   }
-
+  
   goTo(id) {
     this.linkClick.emit(id)
   }

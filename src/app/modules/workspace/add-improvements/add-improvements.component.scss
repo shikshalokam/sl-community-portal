@@ -1,0 +1,13 @@
+@import "../../../../assets/scss/varibles.scss";
+table {
+    width: 100%;
+  }
+
+    .active {
+    color: $white-color;
+    background-color: $primary-color;
+  }
+
+  .scrollhide {
+    overflow: hidden !important;
+  }

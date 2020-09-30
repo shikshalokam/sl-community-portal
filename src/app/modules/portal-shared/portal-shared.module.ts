@@ -18,15 +18,22 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { TabsComponent } from './tabs/tabs.component';
+import { OverlayComponent } from './models/overlay/overlay.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { ButtonLoadingComponent } from './button-loading/button-loading.component';
+import { DebounceDirective } from './directives/debounceDirective.directive';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
 @NgModule({
-  declarations: [CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, CommingSoonComponent, SpinnerComponent,
+  declarations: [DebounceDirective, CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, CommingSoonComponent, SpinnerComponent,
    AssesmentCardComponent,
-   TabsComponent],
+   TabsComponent,
+   ConfirmDialogComponent,
+   OverlayComponent,
+   ButtonLoadingComponent],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -46,8 +53,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   //     }
   // })
   ], exports: [
-    CommunityHeaderComponent, CommunityFooterComponent, CardComponent, FiltersComponent, SpinnerComponent,
-    TranslateModule, TabsComponent,
+    CommunityHeaderComponent, DebounceDirective, CommunityFooterComponent, CardComponent, FiltersComponent, SpinnerComponent,
+    TranslateModule, TabsComponent, ConfirmDialogComponent,ButtonLoadingComponent,
     MatFormFieldModule, SharedModuleModule, AssesmentCardComponent, MatProgressSpinnerModule
   ],
   providers: [TranslateService],

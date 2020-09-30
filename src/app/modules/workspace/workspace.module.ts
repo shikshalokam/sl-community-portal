@@ -4,7 +4,6 @@ import { WorkspaceRoutingModule } from './workspace-routing.module';
 import { PortalSharedModule } from '../portal-shared/portal-shared.module';
 import {MatChipsModule} from '@angular/material/chips';
 import { MatTabsModule, MatTab, MatTabChangeEvent, MatTabGroup, MatTabHeader } from '@angular/material/tabs';
-import { ObservationUtilitiesComponent } from './observation-utilities/observation-utilities.component';
 import { AddUpdateCriteriaComponent } from './add-update-criteria/add-update-criteria.component';
 import  { DynamicFormBuilderModule1,DynamicFormBuilderService } from 'dynamic-form-builder';
 import { CreatePageComponent } from './create-page/create-page.component';
@@ -18,10 +17,16 @@ import { SolutionsComponent } from './solutions/solutions.component';
 import { DraftsComponent } from './drafts/drafts.component';
 import { PublishedComponent } from './published/published.component';
 import { SubmittedForReviewComponent } from './submitted-for-review/submitted-for-review.component';
+import { AddImprovementsComponent } from './add-improvements/add-improvements.component';
+import { AddResourcesComponent } from './add-resources/add-resources.component';
+import { ViewDetailsComponent } from './view-details/view-details.component';
 
 
 @NgModule({
-  declarations: [ObservationUtilitiesComponent, AddUpdateCriteriaComponent, CreatePageComponent, CreateUtilitiesComponent, WorkspaceComponent, DetailsComponent, CriteriaComponent, QuestionsComponent, PreviewComponent, SolutionsComponent, DraftsComponent, PublishedComponent, SubmittedForReviewComponent],
+  declarations: [AddUpdateCriteriaComponent,
+     CreatePageComponent, CreateUtilitiesComponent, WorkspaceComponent, DetailsComponent,
+      CriteriaComponent, QuestionsComponent, PreviewComponent, SolutionsComponent, DraftsComponent,
+       PublishedComponent, SubmittedForReviewComponent, AddImprovementsComponent, AddResourcesComponent, ViewDetailsComponent],
   imports: [
     CommonModule,
     WorkspaceRoutingModule,

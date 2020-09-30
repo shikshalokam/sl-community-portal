@@ -1,0 +1,18 @@
+@import '../../../../assets/scss/varibles.scss';
+.actioncolor {
+    color: $primary-color;
+    font-size: 15px;
+   }
+
+   .cursor-pointer {
+    cursor: pointer;
+}
+
+
+.dialog-color {
+    background-color: $grey-color;
+}
+
+.card-height {
+    height: 130%;
+}

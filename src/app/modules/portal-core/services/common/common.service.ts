@@ -55,4 +55,8 @@ export class CommonService {
       verticalPosition: position
     });
   }
+
+  get windowRef() {
+    return window;
+  }
 }

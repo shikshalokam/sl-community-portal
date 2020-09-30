@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { CommunityService } from 'shikshalokam';
-import { environment } from 'src/environments/environment';
 import { CommonService } from '../services/common/common.service';
+
 
 
 
@@ -14,7 +13,8 @@ import { CommonService } from '../services/common/common.service';
 export class AuthGuard implements CanActivate {
   loggedInRoles: any;
   rolesArray: any;
-  constructor(private communityService: CommunityService, private commonService: CommonService){
+  constructor(private commonService: CommonService,
+    private router: Router){
 
   }
   async canActivate(
@@ -30,6 +30,7 @@ export class AuthGuard implements CanActivate {
       } else {
         const message = `You don't have right to access this page.`;
         this.commonService.commonSnackBar(message, 'Dismiss', 'top', 10000);
+        this.router.navigate(['/library/learning']);
         return false;
       }
   }
