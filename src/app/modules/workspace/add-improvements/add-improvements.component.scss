@@ -1,5 +1,5 @@
 @import "../../../../assets/scss/varibles.scss";
-table {
+mat-table {
     width: 100%;
   }
 
@@ -10,4 +10,24 @@ table {
 
   .scrollhide {
     overflow: hidden !important;
+  }
+  .b-action {
+    padding-right: 15px !important;
+  }
+
+  mat-dialog-actions {
+    padding-right: 15px !important;
+  }
+
+  .message {
+    text-align: center;
+    background-color: $white-color;
+    color: $text-color;
+    position: absolute;
+    top: 35%;
+    height: 50%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }

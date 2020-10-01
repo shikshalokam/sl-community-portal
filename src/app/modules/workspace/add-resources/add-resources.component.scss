@@ -1,9 +1,13 @@
-table {
-    width: 100%;
-  }
+mat-table {
+  width: 100%;
+}
 
-  .mat-table {
-    overflow: auto;
-    // height: 550px;
-    height: 50vh;
+  // .mat-table {
+  //   overflow: auto;
+  //   // height: 550px;
+  //   height: 50vh;
+  // }
+
+  mat-dialog-actions {
+    padding-right: 15px !important;
   }

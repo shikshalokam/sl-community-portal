@@ -14,5 +14,19 @@
 }
 
 .card-height {
-    height: 130%;
+    height: 49vh;
 }
+
+mat-dialog-actions {
+    padding-right: 15px !important;
+  }
+
+  .message {
+    position: absolute;
+    top: 25%;
+    height: 50%;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

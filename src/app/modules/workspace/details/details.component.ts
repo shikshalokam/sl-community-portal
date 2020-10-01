@@ -49,7 +49,7 @@ export class DetailsComponent implements OnInit {
     this.communityService.post(environment.workspace_url + apiConfig.updateMetaData + '/' + this.frameworkId, data)
       .subscribe(data => {
         this.spin = false;
-        this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
+        // this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
         this.router.navigate(['/workspace/create/' + 'criteria'], { queryParams: { assesmentType: this.assesmentType, id: this.frameworkId } });
       }, err => {
         this.commonService.commonSnackBar(err['message'], 'Dismiss', 'top', 10000);

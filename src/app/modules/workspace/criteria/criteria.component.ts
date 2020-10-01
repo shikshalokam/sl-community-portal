@@ -95,7 +95,7 @@ export class CriteriaComponent implements OnInit {
       , {
         disableClose: true,
         // width: '50%',
-        height: '85%',
+        // height: '80vh',
         data: { data }
       });
   }

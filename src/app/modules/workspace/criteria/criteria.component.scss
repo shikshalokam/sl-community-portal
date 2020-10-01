@@ -191,4 +191,15 @@ margin-top:20px;
   
   
   
- 
+ .message {
+  text-align: center;
+  background-color: $white-color;
+  color: $text-color;
+  position: absolute;
+  top: 20%;
+  height: 50%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

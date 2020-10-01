@@ -99,12 +99,12 @@ export class AddImprovementsComponent implements OnInit {
   //     this.dataSource.data.forEach(row => this.selection.select(row));
   // }
 
-  selectionChange(event: MatSelectChange) {
-    console.log('selectionChange',event.value)
+  selectionChange(row) {
+    row.isSelected = !row.isSelected;
 }
 
   checkboxLabel(row): string {
-    if (!row) {
+    if (!row) { 
       return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
     }
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
@@ -147,7 +147,7 @@ export class AddImprovementsComponent implements OnInit {
         this.dataSource.data.forEach(row => {
           this.previousImprovements.forEach(element => {
             if (row._id == element._id) {
-              this.selection.select(row)
+              this.selection.select(row);
             }
           });
         });

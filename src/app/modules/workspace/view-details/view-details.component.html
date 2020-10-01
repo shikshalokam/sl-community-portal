@@ -1,12 +1,12 @@
 <!-- <div style="background-color: lightgrey;"> -->
 <mat-dialog-content class="dialog-color" style="height: 80%;" *ngIf="criteriaDetails" class="mat-typography">
-  <div class="row" style="font-size: 12px;">
+  <div class="row" style="font-size: 12px; padding:25px;">
     <div class="col-md-4 col-sm-4 col-xl-4 col-lg-4">
       <div class="text-capital">
         <h3 mat-dialog-title>{{criteriaDetails?.name}}</h3>
       </div>
       <mat-card  class="card-block custom-card-block create-card card-height">
-        <div> {{criteriaDetails?.description}}</div>
+        <div class="text-capital"> {{criteriaDetails?.description}}</div>
       </mat-card>
     </div>
 
@@ -17,6 +17,7 @@
       </div>
 
       <mat-card  class="card-height card-block custom-card-block create-card">
+        <span class="message" *ngIf = "criteriaDetails['improvementProjects'].length < 1">No ImP's Added</span>
         <div *ngFor="let data of criteriaDetails['improvementProjects']">
           <li>{{data?.title}}
             <i style="float: right;" class="material-icons actioncolor cursor-pointer" matTooltip="Delete"
@@ -31,6 +32,7 @@
         <h4> Attached Learning Resources</h4>
       </div>
       <mat-card  class="card-height card-block custom-card-block create-card">
+      <span class="message" *ngIf = "criteriaDetails['learningResources'].length < 1">No Resourecs Added</span>
         <div *ngFor="let data of criteriaDetails['learningResources']">
           <li>{{data?.name}} <i style="float: right;" class="material-icons actioncolor cursor-pointer"
               matTooltip="Delete" (click)="confirmation(data, 'resources')">delete</i></li>
