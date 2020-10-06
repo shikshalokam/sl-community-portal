@@ -5,6 +5,8 @@ import { KeycloakService } from 'keycloak-angular';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { apiConfig } from '../../constants/apiConstants';
+import { CommunityService } from 'shikshalokam';
+import { MatDialog } from '@angular/material/dialog';
 
 
 
@@ -17,6 +19,7 @@ export class CommonService {
   details: any;
   onFormReset = new Subject<void>();
   constructor(private _snackBar: MatSnackBar, private keycloakAuth: KeycloakService,
+    private communityService: CommunityService, private dialog: MatDialog,
     private Http: HttpClient) { }
 
    // To set the data
@@ -56,7 +59,14 @@ export class CommonService {
     });
   }
 
-  get windowRef() {
-    return window;
-  }
+  criteriaUpdate(criteriaObj, data){
+  this.communityService.post(environment.workspace_url + apiConfig.draftCriteriaUpdate + criteriaObj._id, data)
+       .subscribe(data => {
+         this.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
+        this.dialog.closeAll();
+       }, error =>{
+         this.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
+       })
+      }
+
 }

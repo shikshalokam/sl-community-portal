@@ -52,11 +52,6 @@ export class AddResourcesComponent implements OnInit {
     return numSelected === numRows;
   }
 
-  masterToggle() {
-    this.isAllSelected() ?
-      this.selection.clear() :
-      this.dataSource.data.forEach(row => this.selection.select(row));
-  }
 
   checkboxLabel(row): string {
     if (!row) {
@@ -73,7 +68,7 @@ export class AddResourcesComponent implements OnInit {
   }
 
   
-  finalData() {
+  updateCriteria() {
     const selectedData = this.selection.selected
     this.criteriaUpdate(this.criteriaObj);
   }
@@ -113,13 +108,7 @@ export class AddResourcesComponent implements OnInit {
     }, []);
 
      data['learningResources'] = result;
-     this.communityService.post(environment.workspace_url + apiConfig.draftCriteriaUpdate + this.criteriaObj._id, data)
-       .subscribe(data => {
-         this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
-         this.dialogRef.close();
-       }, error =>{
-         this.commonService.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
-       })
+     this.commonService.criteriaUpdate(this.criteriaObj, data);
    }
 
     // To get the criteria details

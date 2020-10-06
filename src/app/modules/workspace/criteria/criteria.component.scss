@@ -1,61 +1,14 @@
 @import '../../../../assets/scss/varibles.scss';
-.flex-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
 
-.margin-top{
-margin-top:20px;
-}
-.folderIcon{
-    font-size: 70px;
-    color:$primary-color;
-    display: flex;
-    align-items: center;
-}
-.wrapper{
-    padding:0px 20px;
-}
-.box{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-
-.h3 {
-    margin-top: 0px ;
-}
-
-
-.card-header {
-    margin-bottom: 10px !important;
-}
-.dropItem {
-    background:#fff;color:#333;width:200px;height:200px;border:1px solid #ccc
-}
 .pull-right {
     float:right;
 }
 .pull-left {
     float:left;
 }
-.mat-radio-button ~ .mat-radio-button {
-    margin-left: 16px;
-  }
-  .dropItem {
-    background: #fff;
-    color: #333;
-    width: 200px;
-    height: 200px;
-    border: 1px solid #ccc
-  }
-  .padd-15 {
-      padding-bottom:10px;
-  }
+
+  
+ 
   .card-content {
     margin:15px 0px 15px 0px
   }
@@ -66,10 +19,6 @@ margin-top:20px;
     min-height: 450px;
 
   }
-
-  .m-top-10 {
-      margin-top: 15px;
-  }
   .material-icons {
       font-size: 24px;
       padding: 5px;
@@ -78,74 +27,31 @@ margin-top:20px;
   .plus-icon {
     font-size: 27px;
   }
-  .custom-card-block {
-    margin-top:15px;
-  }
-  .margin-5-perc {
-    margin-top: 5%
-  }
-  .margin-top-0 {
-      margin-top: 0px;
-      margin-bottom: 0px;
-      font-size: 16px;
-      font-weight: 600;
-  }
-  .add-keyword-block {
-    margin-bottom: 10px;
-  }
+
   .cursor-pointer {
       cursor: pointer;
   }
   .margin-right {
     margin-right: 10px;
   }
-  .toobar-spacer {
-    flex: 1 1 auto;
-  }
-
-  .custom-toolbar {
-    background: #fff;
-    min-height: 90px;
-  }
-
-  
+ 
 
   .add-criteria-icon {
      cursor: pointer;
     
   }
 
-  .add-criteria-lable {
-    font-size: 19px;
-    cursor: pointer;
-    color: royalblue;
-  }
+  
 
   button.m-top-10.mat-flat-button.mat-primary {
     cursor: pointer;
   }
-  .comingsoon-block {
-    float: left;
-            width: 98%;
-            margin: 15px;height: 300px;
-  }
+ 
 
   .mtable {
     margin-bottom: 40px;
   }
 
-  .mat-column-action {
-   text-align: right;
-   justify-content: flex-end;
-  }
-
-  .mat-column-no .mat-form-field{
-   width: 10%;
-  
-   }
-   .customWidthClass{
-    flex: 0 0 75px;
- }
    .mat-column-description .mat-form-field {
     width: 100%;
    }
@@ -175,31 +81,17 @@ margin-top:20px;
  .text-center {
    text-align: center;
  }
- .padd-bottom-5 {
-   padding-bottom: 5px;
- }
- .noPadd {
-   padding:0px;
- }
+
 
  .addbutton {
   margin-right: 15px;
   margin-bottom: 10px;
  }
-
-
-  
-  
   
  .message {
-  text-align: center;
-  background-color: $white-color;
-  color: $text-color;
-  position: absolute;
-  top: 20%;
-  height: 50%;
-  width: 90%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  width: 100%;
+  top: 50%;
+  position: absolute;
 }

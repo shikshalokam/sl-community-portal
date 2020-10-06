@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonService } from '../../portal-core';
+import { CommonService } from '../../../portal-core';
 
 
 

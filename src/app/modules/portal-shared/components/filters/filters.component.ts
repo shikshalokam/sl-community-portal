@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, Output, ViewChild, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
-import { FieldConfig } from '../field.interface';
-import { CommonService } from '../../portal-core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { DynamicFormComponent } from 'shikshalokam';
 
 
@@ -12,14 +10,12 @@ import { DynamicFormComponent } from 'shikshalokam';
 })
 export class FiltersComponent implements OnInit {
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
-  field: FieldConfig;
   filterForm: FormGroup
-
   @Input() filtersData: any;
   @Output() sendFilters = new EventEmitter();
 
 
-  constructor(private fb: FormBuilder, private commonService: CommonService) {
+  constructor() {
 
   }
 

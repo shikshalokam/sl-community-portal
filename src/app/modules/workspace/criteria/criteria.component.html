@@ -3,13 +3,13 @@
         <mat-card class="card-block">
             <div class="row">
                 <div class="col-md-3">
-                    <h4 style="padding-left: 20px;">List of Criteria</h4>
+                    <h4 style="padding-left: 20px;">{{'TITLE.CRITERIA_LIST' | translate}}</h4>
                 </div>
                
                 <div class="offset-md-6 col-md-3">
                     <button class="addbutton _p-button" mat-flat-button title="Add Criteria"
                         (click)="autoAddCriteria()">
-                        Add Criteria<i class="material-icons pull-right add-criteria-icon">add_circle_outline</i>
+                        {{'ACTIONS.ADD_CRITERIA' | translate}}<i class="material-icons pull-right add-criteria-icon">add_circle_outline</i>
                     </button>
                 </div>
 
@@ -47,13 +47,12 @@
                                 <button mat-raised-button (click)="getImprovementsCategories(element)"
                                     matTooltip="Add Improvements" class="actions">
                                     <i class="material-icons pull-left add-criteria-icon">add_circle_outline</i>
-                                    Add IMPS</button>&nbsp;
+                                    {{'ACTIONS.ADD_IMPS' | translate}}</button>&nbsp;
                                 <button (click)="getResources(element)" mat-raised-button matTooltip="Add Resources"
                                     class="actions">
-                                    <i class="material-icons pull-left add-criteria-icon">add_circle_outline</i>Add
-                                    Resources</button>&nbsp;
+                                    <i class="material-icons pull-left add-criteria-icon">add_circle_outline</i>{{'ACTIONS.ADD_RESOURCES' | translate}}</button>&nbsp;
                                 <button mat-raised-button (click)="viewCriteriaDetails(element)"
-                                    matTooltip="View Details" class="actions">View</button>&nbsp;
+                                    matTooltip="View Details" class="actions">{{'ACTIONS.VIEW' | translate}}</button>&nbsp;
                             </span>
                             <span class="pull-right">
                                 <!-- <button  mat-mini-fab> -->
@@ -77,7 +76,7 @@
                     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
                 </mat-table>
-                <div *ngIf="criteriaListCount == 0 || !criteriaList" class="message">No records found</div>
+                <div *ngIf="criteriaListCount == 0 || !criteriaList" class="message">{{'NO_DATA' | translate}}</div>
                 <mat-paginator [showFirstLastButtons]="true" [length]="this.criteriaListCount" #paginator
                     [pageSize]="criteriaListPageSize" [pageSizeOptions]="[5,10,20,50,100]"
                     (page)="onPaginateChange($event)">

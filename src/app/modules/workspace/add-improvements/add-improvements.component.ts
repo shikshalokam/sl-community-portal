@@ -35,7 +35,6 @@ export class AddImprovementsComponent implements OnInit {
   assesmentType: any;
   frameworkId: any;
   previousImprovements: any;
-  selected: any;
   @ViewChild('searchInput') searchInput: ElementRef;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -49,8 +48,6 @@ export class AddImprovementsComponent implements OnInit {
     this.categories = data['data'];
     this.criteriaobj = data['data']['criteria']
     this.category = this.categories[0]['type']
-    this.selected  = this.categories[0]['type']
-
     this.getCriteriaDetails(this.criteriaobj._id);
   }
 
@@ -61,7 +58,7 @@ export class AddImprovementsComponent implements OnInit {
     });
   }
 
-  finalData() {
+  updateCriteriaData() {
     const selectedData = this.selection.selected
     this.criteriaUpdate(this.criteriaobj);
 
@@ -69,6 +66,7 @@ export class AddImprovementsComponent implements OnInit {
 
 
   criteriaUpdate(data) {
+    this.finalIMPs = [];
     var result = this.selection.selected.reduce((unique, o) => {
       if (!unique.some(obj => obj._id === o._id)) {
         unique.push(o);
@@ -76,15 +74,14 @@ export class AddImprovementsComponent implements OnInit {
       return unique;
     }, []);
 
+    result.forEach(element => {
+      if (element.isSelected)
+        this.finalIMPs.push(element);
+    });
+
     data['draftFrameworkId'] = this.frameworkId;
-    data['improvementProjects'] = result;
-    this.communityService.post(environment.workspace_url + apiConfig.draftCriteriaUpdate + this.criteriaobj._id, data)
-      .subscribe(data => {
-        this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
-        this.dialogRef.close();
-      }, error => {
-        this.commonService.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
-      })
+    data['improvementProjects'] = this.finalIMPs;
+    this.commonService.criteriaUpdate(this.criteriaobj, data);
   }
 
   isAllSelected() {
@@ -93,18 +90,19 @@ export class AddImprovementsComponent implements OnInit {
     return numSelected === numRows;
   }
 
-  // masterToggle() {
-  //   this.isAllSelected() ?
-  //     this.selection.clear() :
-  //     this.dataSource.data.forEach(row => this.selection.select(row));
-  // }
+ 
 
   selectionChange(row) {
-    row.isSelected = !row.isSelected;
-}
+    if (row.isSelected) {
+      row.isSelected = false;
+      this.selection.deselect(row);
+    } else {
+      row.isSelected = true;
+    }
+  }
 
   checkboxLabel(row): string {
-    if (!row) { 
+    if (!row) {
       return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
     }
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
@@ -117,13 +115,12 @@ export class AddImprovementsComponent implements OnInit {
   }
 
   isActive(item) {
-    return this.selected === item;
+    return this.category === item;
   };
 
   // category selection 
   selectedCategory(data) {
-    this.selected = data;
-    this.category = data
+    this.category = data;
     this.search = '';
     this.paginator.firstPage();
     this.getImprovementsData();
@@ -137,9 +134,14 @@ export class AddImprovementsComponent implements OnInit {
         this.dataSource = new MatTableDataSource(data['result'].data);
         this.listCount = data['result'].count;
         this.dataSource.data.forEach(row => {
+          row.isSelected = false;
+        })
+
+        this.dataSource.data.forEach(row => {
           this.selection.selected.forEach(element => {
             if (row._id == element._id) {
-              this.selection.select(row)
+              this.selection.select(row);
+              row.isSelected = true;
             }
           });
         });
@@ -148,6 +150,7 @@ export class AddImprovementsComponent implements OnInit {
           this.previousImprovements.forEach(element => {
             if (row._id == element._id) {
               this.selection.select(row);
+              row.isSelected = true;
             }
           });
         });
@@ -159,6 +162,9 @@ export class AddImprovementsComponent implements OnInit {
     this.communityService.get(environment.workspace_url + apiConfig.criteriaDetails + criteriaID)
       .subscribe(data => {
         this.previousImprovements = data['result']['improvementProjects'];
+        this.previousImprovements.forEach(element => {
+          element.isSelected = true;
+        });
         this.getImprovementsData();
       })
   }

@@ -3,10 +3,8 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CommunityService } from 'shikshalokam';
 import { environment } from 'src/environments/environment';
 import { apiConfig, CommonService } from '../../portal-core';
-import { ConfirmDialogComponent } from '../../portal-shared/confirm-dialog/confirm-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-
-
+import { ConfirmDialogComponent } from '../../portal-shared/components';
 
 
 @Component({
@@ -50,8 +48,8 @@ export class ViewDetailsComponent implements OnInit {
   improvementConfirmDialog(data): void {
     this.criteriaObject = data;
     let confirmData = {
-      title: "Confirmation",
-      message: "Are you sure you want to do this action ?",
+      title: "CONFIRMATION_TITLE",
+      message: "CONFIRMATION_MSG",
       confirmButtonText: "YES",
       cancelButtonText: "NO"
     }
@@ -63,7 +61,8 @@ export class ViewDetailsComponent implements OnInit {
       this.confirmPopupResult = dialogResult;
       if (this.confirmPopupResult) {
         this.criteriaDetails['improvementProjects'] = this.criteriaDetails['improvementProjects'].filter(({ _id }) => _id !== this.criteriaObject._id);
-        this.updateCriteriaDetails();
+        delete this.criteriaDetails['createdAt'];
+        this.commonService.criteriaUpdate(this.data.data, this.criteriaDetails);
       } else {
         // this.dialog.closeAll();
       }
@@ -74,8 +73,8 @@ export class ViewDetailsComponent implements OnInit {
     this.criteriaObject = data;
     console.log('this.criteriaObject', this.criteriaObject);
     let confirmData = {
-      title: "Confirmation",
-      message: "Are you sure you want to do this action ?",
+      title: "CONFIRMATION_TITLE",
+      message: "CONFIRMATION_MSG",
       confirmButtonText: "YES",
       cancelButtonText: "NO"
     }
@@ -87,22 +86,12 @@ export class ViewDetailsComponent implements OnInit {
       this.confirmPopupResult = dialogResult;
       if (this.confirmPopupResult) {
         this.criteriaDetails['learningResources'] = this.criteriaDetails['learningResources'].filter(({ _id }) => _id !== this.criteriaObject._id);
-        this.updateCriteriaDetails();
+        delete this.criteriaDetails['createdAt'];
+        this.commonService.criteriaUpdate(this.data.data, this.criteriaDetails);
       } else {
-        // this.dialog.closeAll();
       }
     });
   }
-
-  updateCriteriaDetails() {
-    delete this.criteriaDetails['createdAt'];
-    this.communityService.post(environment.workspace_url + apiConfig.draftCriteriaUpdate
-      + this.data.data._id, this.criteriaDetails)
-      .subscribe(data => {
-        this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
-      }, error => {
-        this.commonService.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
-      })
-  }
+  
 
 }

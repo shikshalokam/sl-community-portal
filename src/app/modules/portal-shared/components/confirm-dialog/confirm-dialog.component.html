@@ -1,8 +1,8 @@
 <mat-toolbar role="toolbar" class="task-header">
-  <div class="title">{{data?.title}}</div>
+  <div class="title">{{data?.title | translate }}</div>
 </mat-toolbar>
 <mat-dialog-content class="mat-typography" style="padding-top: 30px">
-  <p>{{data?.message}}</p>
+  <p>{{data?.message | translate }}</p>
 
 </mat-dialog-content>
 <mat-dialog-actions class="custom-dialog-actions" align="center">

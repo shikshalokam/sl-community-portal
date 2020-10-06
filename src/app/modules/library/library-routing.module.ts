@@ -4,8 +4,8 @@ import { LearningResourcesComponent } from './learning-resources/learning-resour
 import { ObservationsComponent } from './observations/observations.component';
 import { AssesmentsComponent } from './assesments/assesments.component';
 import { LibraryComponent } from './library/library.component';
-import { CommingSoonComponent } from '../portal-shared/comming-soon/comming-soon.component';
 import { ImprovementProjectsComponent } from './improvement-projects/improvement-projects.component';
+import { CommingSoonComponent } from '../portal-shared/components';
 
 
 const routes: Routes = [{

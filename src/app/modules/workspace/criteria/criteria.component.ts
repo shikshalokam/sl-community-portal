@@ -5,10 +5,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { CommunityService } from 'shikshalokam';
 import { environment } from 'src/environments/environment';
 import { ActivatedRoute } from '@angular/router';
-import { ConfirmDialogComponent } from '../../portal-shared/confirm-dialog/confirm-dialog.component';
 import { AddImprovementsComponent } from '../add-improvements/add-improvements.component';
 import { AddResourcesComponent } from '../add-resources/add-resources.component';
 import { ViewDetailsComponent } from '../view-details/view-details.component';
+import { ConfirmDialogComponent } from '../../portal-shared/components';
 
 
 
@@ -29,7 +29,7 @@ export class CriteriaComponent implements OnInit {
   confirmPopupResult: any;
   criteriaObject: any;
   criteriaForm: any;
-  IMPCategories: any;
+  impCategories: any;
 
   constructor(private commonService: CommonService, private dialog: MatDialog,
     private communityService: CommunityService, private route: ActivatedRoute,) { }
@@ -83,9 +83,9 @@ export class CriteriaComponent implements OnInit {
   getImprovementsCategories(criteria){
     this.communityService.post(environment.workspace_url + apiConfig.getImprovementCategories, '')
     .subscribe(data => {
-      this.IMPCategories = data['result'];
-      this.IMPCategories.criteria = criteria;
-      this.addImprovements(this.IMPCategories)
+      this.impCategories = data['result'];
+      this.impCategories.criteria = criteria;
+      this.addImprovements(this.impCategories);
     })
   }
 
@@ -94,8 +94,6 @@ export class CriteriaComponent implements OnInit {
     const dialogRef = this.dialog.open(AddImprovementsComponent
       , {
         disableClose: true,
-        // width: '50%',
-        // height: '80vh',
         data: { data }
       });
   }
@@ -170,8 +168,8 @@ export class CriteriaComponent implements OnInit {
   confirmDialog(data): void {
     this.criteriaObject = data;
     let confirmData = {
-      title: "Confirmation",
-      message: "Are you sure you want to do this action ?",
+      title: "CONFIRMATION_TITLE",
+      message: "CONFIRMATION_MSG",
       confirmButtonText: "YES",
       cancelButtonText: "NO"
     }

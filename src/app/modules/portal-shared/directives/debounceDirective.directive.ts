@@ -1,5 +1,5 @@
-import { Directive, ViewChild, HostListener, Input, ElementRef, Output,
-   DoCheck, EventEmitter,  AfterViewInit, Renderer2 } from '@angular/core';
+import { Directive, Input, ElementRef, Output,
+    EventEmitter, Renderer2 } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { distinctUntilChanged, map, filter, debounceTime } from 'rxjs/operators';
 import { Subject } from 'rxjs';

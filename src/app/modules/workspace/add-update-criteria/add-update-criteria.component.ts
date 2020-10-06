@@ -1,11 +1,10 @@
 import { Component, OnInit, Optional, Inject, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DynamicFormComponent, CommunityService } from 'shikshalokam';
+import { DynamicFormComponent, CommunityService, SharedModuleModule } from 'shikshalokam';
 import { environment } from 'src/environments/environment';
 import { apiConfig, CommonService } from '../../portal-core';
 import { ActivatedRoute } from '@angular/router';
-
 
 
 @Component({
@@ -22,7 +21,7 @@ export class AddUpdateCriteriaComponent implements OnInit {
   frameworkId: any;
   criteriaID: any;
   onload = {
-    buttonName: 'ADD CRITERIA',
+    buttonName: 'Add Criteria',
     submitClick: false
   }
   constructor(private formBuilder: FormBuilder,
@@ -36,12 +35,12 @@ export class AddUpdateCriteriaComponent implements OnInit {
     this.criteriaID = this.formdata?.criteriaID;
     if(this.formdata.action == 'Add') {
      this.onload = {
-        buttonName: 'ADD CRITERIA',
+        buttonName: 'Add Criteria',
         submitClick: false
       }
     } else {
       this.onload = {
-        buttonName: 'UPDATE CRITERIA',
+        buttonName: 'Update Criteria',
         submitClick: false
       }
     }
@@ -72,6 +71,7 @@ export class AddUpdateCriteriaComponent implements OnInit {
 
   criteriaCreate(data) {
     data.draftFrameworkId = this.frameworkId;
+    this.onload.submitClick = true;
     this.communityService.post(environment.workspace_url + apiConfig.draftCriteriaCreate, data)
       .subscribe(data => {
         this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
@@ -86,6 +86,7 @@ export class AddUpdateCriteriaComponent implements OnInit {
 
   criteriaUpdate(data) {
     data.draftFrameworkId = this.frameworkId;
+    this.onload.submitClick = true;
     this.communityService.post(environment.workspace_url + apiConfig.draftCriteriaUpdate + this.criteriaID, data)
       .subscribe(data => {
         this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);

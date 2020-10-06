@@ -1,6 +1,6 @@
 <div class="row" style="padding:25px;">
   <mat-form-field class="custom-form-field col-lg-12 col-xl-12 col-sm-12">
-    <mat-label>Search for Resource</mat-label>
+    <mat-label>{{'MESSAGES.SEARCH_RESOURCES' | translate}}</mat-label>
     <input [(ngModel)]="search" [appDebounceDirective]="search" (onValueChange)="getResourcesData()" #searchInput
       matInput>
     <button mat-icon-button matPrefix>
@@ -15,11 +15,6 @@
     <!-- Checkbox Column -->
     <ng-container matColumnDef="select">
       <th mat-header-cell *matHeaderCellDef>
-        <!-- <mat-checkbox (change)="$event ? masterToggle() : null"
-                      [checked]="selection.hasValue() && isAllSelected()"
-                      [indeterminate]="selection.hasValue() && !isAllSelected()"
-                      [aria-label]="checkboxLabel()">
-        </mat-checkbox> -->
       </th>
       <td mat-cell *matCellDef="let row">
         <mat-checkbox (click)="$event.stopPropagation()"
@@ -55,6 +50,6 @@
   
 <!-- </mat-dialog-content> -->
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-raised-button (click) = "finalData()" cdkFocusInitial>Save</button>
+  <button mat-button mat-dialog-close>{{'BUTTONS.CANCEL' | translate}}</button>
+  <button mat-raised-button (click) = "updateCriteria()" cdkFocusInitial>{{'BUTTONS.SAVE' | translate}}</button>
 </mat-dialog-actions>
