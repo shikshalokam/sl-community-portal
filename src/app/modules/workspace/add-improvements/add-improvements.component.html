@@ -8,11 +8,11 @@
     </div>
   </div>
   <mat-form-field class="custom-form-field col-lg-12 col-xl-12 col-sm-12">
-    <mat-label>{{ 'SEARCH_IMP' | translate }}</mat-label>
+    <mat-label>{{ 'MESSAGES.SEARCH_IMP' | translate }}</mat-label>
     <input [(ngModel)]="search" [appDebounceDirective]="search" (onValueChange)="getImprovementsData()" #searchInput
       matInput>
     <button mat-icon-button matPrefix>
-      <mat-icon>{{ 'ICONS.SEARCH' | translate }}</mat-icon>
+      <mat-icon>search</mat-icon>
     </button>
   </mat-form-field>
 </div>
@@ -55,13 +55,13 @@
         (click)="selection.toggle(row)">
     </mat-row>>
   </mat-table>
-  <div *ngIf="listCount == 0" class="message">{{'NO_DATA' | translate}}</div>
+  <div *ngIf="listCount == 0" class="message">{{'MESSAGES.NO_DATA' | translate}}</div>
   <mat-paginator [showFirstLastButtons]="true" [length]="listCount" #paginator
   [pageSize]="pageSize" [pageSizeOptions]="[5,10,20,50,100]"
   (page)="onPaginateChange($event)">
 </mat-paginator>
   
 <mat-dialog-actions align="end" class="b-action">
-  <button mat-button mat-dialog-close>{{'BUTTONS.CANCEL' | translate}}</button>
-  <button mat-raised-button (click) = "updateCriteriaData()" cdkFocusInitial>{{'BUTTONS.SAVE' | translate}}</button>
+  <button mat-button mat-dialog-close>{{'ACTIONS.CANCEL' | translate}}</button>
+  <button mat-raised-button (click) = "updateCriteriaData()" cdkFocusInitial>{{'ACTIONS.SAVE' | translate}}</button>
 </mat-dialog-actions>

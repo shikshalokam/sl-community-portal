@@ -76,7 +76,7 @@
                     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
                 </mat-table>
-                <div *ngIf="criteriaListCount == 0 || !criteriaList" class="message">{{'NO_DATA' | translate}}</div>
+                <div *ngIf="criteriaListCount == 0 || !criteriaList" class="message">{{'MESSAGES.NO_DATA' | translate}}</div>
                 <mat-paginator [showFirstLastButtons]="true" [length]="this.criteriaListCount" #paginator
                     [pageSize]="criteriaListPageSize" [pageSizeOptions]="[5,10,20,50,100]"
                     (page)="onPaginateChange($event)">

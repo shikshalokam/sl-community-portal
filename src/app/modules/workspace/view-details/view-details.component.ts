@@ -48,8 +48,8 @@ export class ViewDetailsComponent implements OnInit {
   improvementConfirmDialog(data): void {
     this.criteriaObject = data;
     let confirmData = {
-      title: "CONFIRMATION_TITLE",
-      message: "CONFIRMATION_MSG",
+      title: "TITLE.CONFIRMATION_TITLE",
+      message: "MESSAGES.CONFIRMATION_MSG",
       confirmButtonText: "YES",
       cancelButtonText: "NO"
     }
@@ -73,8 +73,8 @@ export class ViewDetailsComponent implements OnInit {
     this.criteriaObject = data;
     console.log('this.criteriaObject', this.criteriaObject);
     let confirmData = {
-      title: "CONFIRMATION_TITLE",
-      message: "CONFIRMATION_MSG",
+      title: "TITLE.CONFIRMATION_TITLE",
+      message: "MESSAGES.CONFIRMATION_MSG",
       confirmButtonText: "YES",
       cancelButtonText: "NO"
     }

@@ -42,7 +42,7 @@
         (click)="selection.toggle(row)">
     </mat-row>>
 </mat-table>
-
+<div *ngIf="listCount == 0" class="message">{{'MESSAGES.NO_DATA' | translate}}</div>
   <mat-paginator [showFirstLastButtons]="true" [length]="listCount" #paginator
   [pageSize]="pageSize" [pageSizeOptions]="[5,10,20,50,100]"
   (page)="onPaginateChange($event)">
@@ -50,6 +50,6 @@
   
 <!-- </mat-dialog-content> -->
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>{{'BUTTONS.CANCEL' | translate}}</button>
-  <button mat-raised-button (click) = "updateCriteria()" cdkFocusInitial>{{'BUTTONS.SAVE' | translate}}</button>
+  <button mat-button mat-dialog-close>{{'ACTIONS.CANCEL' | translate}}</button>
+  <button mat-raised-button (click) = "updateCriteria()" cdkFocusInitial>{{'ACTIONS.SAVE' | translate}}</button>
 </mat-dialog-actions>
