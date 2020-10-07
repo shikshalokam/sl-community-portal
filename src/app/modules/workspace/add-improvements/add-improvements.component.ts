@@ -21,7 +21,6 @@ export class AddImprovementsComponent implements OnInit {
   improvementProjects: any;
   categories: any;
   displayedColumns: string[] = ['select', 'name', 'description', 'rating'];
-  // selection = new SelectionModel;
   selection = new SelectionModel(true, []);
   dataSource: MatTableDataSource<any>;
   nextPage: any = 1;
@@ -66,6 +65,8 @@ export class AddImprovementsComponent implements OnInit {
 
 
   criteriaUpdate(data) {
+    console.log('ddddddddd0', this.selection.selected);
+   
     this.finalIMPs = [];
     var result = this.selection.selected.reduce((unique, o) => {
       if (!unique.some(obj => obj._id === o._id)) {
@@ -74,6 +75,7 @@ export class AddImprovementsComponent implements OnInit {
       return unique;
     }, []);
 
+    console.log('rrrrrrrrrr',result)
     result.forEach(element => {
       if (element.isSelected)
         this.finalIMPs.push(element);
@@ -81,7 +83,13 @@ export class AddImprovementsComponent implements OnInit {
 
     data['draftFrameworkId'] = this.frameworkId;
     data['improvementProjects'] = this.finalIMPs;
-    this.commonService.criteriaUpdate(this.criteriaobj, data);
+    this.commonService.criteriaUpdate(this.criteriaobj, data)
+    .subscribe(data => {
+      this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
+     this.dialogRef.close();
+    }, error =>{
+      this.commonService.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
+    });
   }
 
   isAllSelected() {
@@ -93,6 +101,7 @@ export class AddImprovementsComponent implements OnInit {
  
 
   selectionChange(row) {
+    console.log('selectionChange', row);
     if (row.isSelected) {
       row.isSelected = false;
       this.selection.deselect(row);

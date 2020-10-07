@@ -2,8 +2,8 @@
     "ACTIONS": {
         "ADD_IMPS": " Add IMPS",
         "ADD_RESOURCES": "Add Resources",
-        "EDIT": "edit",
-        "VIEW": "view",
+        "EDIT": "Edit",
+        "VIEW": "View",
         "ADD_CRITERIA": "Add Criteria",
         "LEARNING": "Learning Resources",
         "OBSERVATION": "Observations",

@@ -8,7 +8,7 @@
                
                 <div class="offset-md-6 col-md-3">
                     <button class="addbutton _p-button" mat-flat-button title="Add Criteria"
-                        (click)="autoAddCriteria()">
+                        (click)="addCriteria()">
                         {{'ACTIONS.ADD_CRITERIA' | translate}}<i class="material-icons pull-right add-criteria-icon">add_circle_outline</i>
                     </button>
                 </div>
@@ -17,7 +17,7 @@
             </div>
             <div class="col-sm-12 mat-elevation-z8">
 
-                <mat-table [dataSource]="criteriaList" style="height: 45vh;" matSort>
+                <mat-table [dataSource]="criteriaList" style="height: 47vh;" matSort>
 
                     <!-- ID Column -->
                     <!-- <ng-container matColumnDef="no">
@@ -29,14 +29,14 @@
                     <ng-container matColumnDef="name">
                         <mat-header-cell style="max-width: 25%;" *matHeaderCellDef mat-sort-header> Criteria Name
                         </mat-header-cell>
-                        <mat-cell style="max-width: 25%;" class="text-capital" *matCellDef="let row"> {{row.name}}
+                        <mat-cell style="max-width: 25%;" class="text-capital long-text" *matCellDef="let row"> {{row.name}}
                         </mat-cell>
                     </ng-container>
 
                     <!-- Description Column -->
                     <ng-container matColumnDef="description">
                         <mat-header-cell *matHeaderCellDef mat-sort-header> Description </mat-header-cell>
-                        <mat-cell *matCellDef="let row" class="text-capital"> {{row.description}} </mat-cell>
+                        <mat-cell *matCellDef="let row" class="text-capital long-text"> {{row.description}} </mat-cell>
                     </ng-container>
 
                     <ng-container matColumnDef="actions">

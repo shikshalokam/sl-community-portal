@@ -50,13 +50,9 @@ export class CriteriaComponent implements OnInit {
       })
   }
 
-  autoAddCriteria() {
-    this.communityService.post(environment.workspace_url + apiConfig.getCriteriaForm, '')
-    .subscribe(data => {
-      this.criteriaForm = data['result'];
-      this.openDialog(this.criteriaForm);
-    })
-   
+
+  addCriteria() {
+    this.openDialog(this.criteriaForm);
   }
 
   onPaginateChange(event) {
@@ -146,7 +142,9 @@ export class CriteriaComponent implements OnInit {
         data: { fieldsForCriteria }
       });
     dialogRef.afterClosed().subscribe(result => {
+      if(result) {
         this.draftCriteriaList(this.frameworkId, '');
+     }
     });
   }
 
