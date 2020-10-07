@@ -65,8 +65,6 @@ export class AddImprovementsComponent implements OnInit {
 
 
   criteriaUpdate(data) {
-    console.log('ddddddddd0', this.selection.selected);
-   
     this.finalIMPs = [];
     var result = this.selection.selected.reduce((unique, o) => {
       if (!unique.some(obj => obj._id === o._id)) {
@@ -75,7 +73,6 @@ export class AddImprovementsComponent implements OnInit {
       return unique;
     }, []);
 
-    console.log('rrrrrrrrrr',result)
     result.forEach(element => {
       if (element.isSelected)
         this.finalIMPs.push(element);
@@ -101,7 +98,6 @@ export class AddImprovementsComponent implements OnInit {
  
 
   selectionChange(row) {
-    console.log('selectionChange', row);
     if (row.isSelected) {
       row.isSelected = false;
       this.selection.deselect(row);
