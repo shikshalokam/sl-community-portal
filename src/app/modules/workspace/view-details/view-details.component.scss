@@ -1,0 +1,38 @@
+@import '../../../../assets/scss/varibles.scss';
+.actioncolor {
+    color: $primary-color;
+    font-size: 15px;
+   }
+
+   .cursor-pointer {
+    cursor: pointer;
+}
+
+
+.dialog-color {
+    background-color: $grey-color;
+}
+
+.card-height {
+    height: 49vh;
+}
+
+.details {
+    font-size: 12px;
+     padding:25px;
+}
+
+mat-dialog-actions {
+    padding-right: 15px !important;
+  }
+
+  .message {
+    position: absolute;
+    top: 25%;
+    height: 50%;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-color;
+  }

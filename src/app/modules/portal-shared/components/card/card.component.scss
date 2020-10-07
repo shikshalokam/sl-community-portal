@@ -1,0 +1,32 @@
+@import "../../../../../assets/scss/varibles.scss";
+.c-title {
+  white-space: nowrap;
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 30px;
+}
+
+.c-view {
+  float: right;
+  color: $green-color;
+  padding-right: 5%;
+}
+.no-image {
+  height: 150px;
+  background-color: #e5f3fe;
+}
+
+.c-description {
+  padding-left: 5%;
+  font-size: 15px;
+}
+
+.image-section {
+  height: 150px;
+  overflow: hidden;
+}
+.card-image {
+  width: 100%;
+}
+
