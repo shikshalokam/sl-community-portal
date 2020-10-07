@@ -1,0 +1,97 @@
+@import '../../../../assets/scss/varibles.scss';
+
+.pull-right {
+    float:right;
+}
+.pull-left {
+    float:left;
+}
+
+  
+ 
+  .card-content {
+    margin:15px 0px 15px 0px
+  }
+
+  .card-block {
+    float: left;
+    width:100%;
+    min-height: 450px;
+
+  }
+  .material-icons {
+      font-size: 24px;
+      padding: 5px;
+      vertical-align: middle;
+  }
+  .plus-icon {
+    font-size: 27px;
+  }
+
+  .cursor-pointer {
+      cursor: pointer;
+  }
+  .margin-right {
+    margin-right: 10px;
+  }
+ 
+
+  .add-criteria-icon {
+     cursor: pointer;
+    
+  }
+
+  
+
+  button.m-top-10.mat-flat-button.mat-primary {
+    cursor: pointer;
+  }
+ 
+
+  .mtable {
+    margin-bottom: 40px;
+  }
+
+   .mat-column-description .mat-form-field {
+    width: 100%;
+   }
+  .mat-column-description{
+    flex: 0 0 20% !important;
+   }
+   .mat-form-field-description {
+     width: 100%;
+   }
+ .mat-form-field-infix-description {
+   width: 100%
+ }
+ .mat-column-no .mat-header-cell {
+   max-width: 10%;
+ }
+
+.actioncolor {
+  color: #a63936;
+  font-size: 15px;
+ }
+ .cspin {
+  background-color: "rgba(51,51,51,0.8)";
+   size: "medium";
+  color: "#fff";
+  
+ }
+ .text-center {
+   text-align: center;
+ }
+
+
+ .addbutton {
+  margin-right: 15px;
+  margin-bottom: 10px;
+ }
+  
+ .message {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  top: 50%;
+  position: absolute;
+}

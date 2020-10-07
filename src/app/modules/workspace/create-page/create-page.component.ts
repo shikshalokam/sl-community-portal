@@ -55,7 +55,7 @@ export class CreatePageComponent implements OnInit {
     this.communityService.post(environment.workspace_url + apiConfig.detailsCreate, '')
     .subscribe(data => {
       this.frameworkId = data['result']['_id'];
-      this.router.navigate(['/workspace/create/Details'], { queryParams: { assesmentType: assesmentType, id: this.frameworkId } });
+      this.router.navigate(['/workspace/create/details'], { queryParams: { assesmentType: assesmentType, id: this.frameworkId } });
     }, error => {
       this.commonService.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
     })

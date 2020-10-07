@@ -4,8 +4,8 @@
   <div *ngFor="let data of tabData" class="desktop-tab">
     <div class="col-md-12 col-lg-12 col-sm-12 col-xl-8">
       <button [routerLink]="data.routerLink"  routerLinkActive="_p-button" mat-button
-        matTooltip="{{ 'TAB.' + data.label | translate}}">
-        <span>{{'TAB.' + data.label | translate }}</span>
+        matTooltip="{{ 'ACTIONS.' + data.label | translate}}">
+        <span>{{'ACTIONS.' + data.label | translate }}</span>
       </button>
     </div>
   </div>
@@ -16,7 +16,7 @@
       <div mat-tab-link *ngFor="let data of tabData"
        [routerLink]="data.routerLink" (click)="activeLink = data.label"
         [active]="activeLink == data.label">
-        <span>{{ 'TAB.' + data.label | translate }}</span>
+        <span>{{ 'ACTIONS.' + data.label | translate }}</span>
     </div>
     </nav>
   </div>

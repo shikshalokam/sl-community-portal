@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CommingSoonComponent } from '../portal-shared/comming-soon/comming-soon.component';
+import { CommingSoonComponent } from '../portal-shared/components';
 
 const routes: Routes = [{
   path: '', component: CommingSoonComponent

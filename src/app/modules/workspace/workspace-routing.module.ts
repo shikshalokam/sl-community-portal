@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CommingSoonComponent } from '../portal-shared/comming-soon/comming-soon.component';
-import { ObservationUtilitiesComponent } from './observation-utilities/observation-utilities.component';
 import { CreatePageComponent } from './create-page/create-page.component';
-import { CreateUtilitiesComponent } from './create-utilities/create-utilities.component';
 import { DetailsComponent } from './details/details.component';
 import { CriteriaComponent } from './criteria/criteria.component';
 import { QuestionsComponent } from './questions/questions.component';
@@ -22,12 +19,10 @@ const routes: Routes = [
   { path: 'submittedforreview', component: SubmittedForReviewComponent },
   { path: '', component: WorkspaceComponent,
   children: [
-    { path: 'edit/:id', component: ObservationUtilitiesComponent },
-    // { path: 'utilities/create', component: CreateUtilitiesComponent},
-    { path : 'create/Details', component: DetailsComponent},
-    { path : 'create/Criteria', component: CriteriaComponent},
-    { path : 'create/Questions', component: QuestionsComponent},
-    { path : 'create/Preview', component: PreviewComponent}
+    { path : 'create/details', component: DetailsComponent},
+    { path : 'create/criteria', component: CriteriaComponent},
+    { path : 'create/questions', component: QuestionsComponent},
+    { path : 'create/preview', component: PreviewComponent}
   ]
  },
  

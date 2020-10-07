@@ -1,22 +1,35 @@
 {
-"TAB": {  
-"LEARNING" : "Learning Resources",
-"OBSERVATION": "Observations",
-"ASSESMENTS": "Assesments",
-"IMPROVEMENT": "Improvement Projects"
-},
-"BUTTONS": {
-    "APPLY": "Apply",
-    "CLEAR": "Clear",
-    "VIEWMORE": "View More"
-},
-"SIDEMENU": {
-    "LIBRARY": "Library",
-    "MYFOLDER": "My Folder"
-},
-"SIDE_1": "side1",
-"SIDE_2": "side2",
-"SIDE_3": "side3"
+    "ACTIONS": {
+        "ADD_IMPS": " Add IMPS",
+        "ADD_RESOURCES": "Add Resources",
+        "EDIT": "edit",
+        "VIEW": "view",
+        "ADD_CRITERIA": "Add Criteria",
+        "LEARNING": "Learning Resources",
+        "OBSERVATION": "Observations",
+        "ASSESMENTS": "Assesments",
+        "IMPROVEMENT": "Improvement Projects",
+        "APPLY": "Apply",
+        "CLEAR": "Clear",
+        "VIEWMORE": "View More",
+        "CANCEL": "Cancel",
+        "SAVE": "Save",
+        "CLOSE": "Close"
+    },
+    "TITLE": {
+        "CRITERIA_LIST": "List of Criteria",
+        "CONFIRMATION_TITLE": "Confirmation"
+    },
+
+    "MESSAGES": {
+        "NO_IMP": "No ImP's Added",
+        "NO_RESOURCES": "No Resourecs Added",
+        "ATTACHED_IMPS": "Attached Improvement Projects",
+        "ATTACHED_RESOURCES": "Attached Learning Resources",
+        "OVERLAP_MSG": "This page doesn't have view for this screen resolution",
+        "SEARCH_RESOURCES": "Search for Resource",
+        "SEARCH_IMP": "Search for IMP",
+        "NO_DATA": "No Records Found",
+        "CONFIRMATION_MSG": "Are you sure you want to do this action ?"
+    }
 }
-
-

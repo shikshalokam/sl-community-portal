@@ -127,6 +127,13 @@ span:focus {
   content: " *";
 }
 
+.actions {
+  color: $primary-color;
+  background-color: #f3f4f5;
+  
+}
+
+
 
 mat-icon {
   background-repeat: no-repeat;
@@ -135,6 +142,39 @@ mat-icon {
   height: 20px;
   width: 24px;
   font-size: 30px;
+}
+.mat-dialog-container {
+  padding: 0px !important;
+  overflow: hidden !important;
+}
+
+.mat-dialog-content {
+  margin: 0px !important;
+  overflow: hidden !important;
+}
+
+th.mat-header-cell {
+  border-bottom-style: none !important;
+}
+td.mat-cell {
+  border-bottom-style: none !important;
+}
+
+.mat-dialog-actions {
+      padding: 0px !important; 
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 50px;
+      //  align-items: center; 
+       margin-bottom: 0px !important;
+}
+.mat-button {
+  font-weight: 600;
+  color: $primary-color;
+}
+.mat-raised-button {
+  font-weight: 600;
+  color: $primary-color;
 }
 
 .mat-drawer-side {
@@ -198,6 +238,12 @@ mat-icon {
 // }
 mat-card {
   word-break: break-word;
+}
+
+
+
+.text-capital {
+  text-transform: capitalize;
 }
 
 *:focus {
