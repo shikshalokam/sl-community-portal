@@ -153,6 +153,14 @@ mat-icon {
   overflow: hidden !important;
 }
 
+.long-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  padding: 12px 0px 10px 0px;
+}
+
 th.mat-header-cell {
   border-bottom-style: none !important;
 }

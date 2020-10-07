@@ -76,7 +76,7 @@ export class AddUpdateCriteriaComponent implements OnInit {
       .subscribe(data => {
         this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
         this.form.form.reset();
-        this.dialogRef.close();
+        this.dialogRef.close(true);
         this.onload.submitClick = false;
       }, error =>{
         this.commonService.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
@@ -91,12 +91,17 @@ export class AddUpdateCriteriaComponent implements OnInit {
       .subscribe(data => {
         this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
         this.form.form.reset();
-        this.dialogRef.close();
+        this.dialogRef.close(true);
         this.onload.submitClick = false;
       }, error =>{
         this.commonService.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
       this.onload.submitClick = false;
       })
+  }
+
+  onDismiss(): void {
+    // Close the dialog, return false
+    this.dialogRef.close(false);
   }
 
 }

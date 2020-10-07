@@ -62,7 +62,12 @@ export class ViewDetailsComponent implements OnInit {
       if (this.confirmPopupResult) {
         this.criteriaDetails['improvementProjects'] = this.criteriaDetails['improvementProjects'].filter(({ _id }) => _id !== this.criteriaObject._id);
         delete this.criteriaDetails['createdAt'];
-        this.commonService.criteriaUpdate(this.data.data, this.criteriaDetails);
+        this.commonService.criteriaUpdate(this.data.data, this.criteriaDetails)
+        .subscribe(data => {
+          this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
+        }, error =>{
+          this.commonService.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
+        });
       } else {
         // this.dialog.closeAll();
       }
@@ -87,11 +92,16 @@ export class ViewDetailsComponent implements OnInit {
       if (this.confirmPopupResult) {
         this.criteriaDetails['learningResources'] = this.criteriaDetails['learningResources'].filter(({ _id }) => _id !== this.criteriaObject._id);
         delete this.criteriaDetails['createdAt'];
-        this.commonService.criteriaUpdate(this.data.data, this.criteriaDetails);
+        this.commonService.criteriaUpdate(this.data.data, this.criteriaDetails)
+        .subscribe(data => {
+          this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
+        }, error =>{
+          this.commonService.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
+        });
       } else {
       }
     });
   }
-  
+
 
 }

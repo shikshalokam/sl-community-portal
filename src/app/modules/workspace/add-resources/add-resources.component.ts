@@ -107,7 +107,13 @@ export class AddResourcesComponent implements OnInit {
     }, []);
 
      data['learningResources'] = result;
-     this.commonService.criteriaUpdate(this.criteriaObj, data);
+     this.commonService.criteriaUpdate(this.criteriaObj, data)
+       .subscribe(data => {
+         this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
+        this.dialogRef.close();
+       }, error =>{
+         this.commonService.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
+       });
    }
 
     // To get the criteria details

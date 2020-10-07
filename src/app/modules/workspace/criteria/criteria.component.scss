@@ -56,7 +56,7 @@
     width: 100%;
    }
   .mat-column-description{
-    flex: 0 0 20% !important;
+    flex: 0 0 25% !important;
    }
    .mat-form-field-description {
      width: 100%;
@@ -94,4 +94,5 @@
   width: 100%;
   top: 50%;
   position: absolute;
+  color: $text-color;
 }

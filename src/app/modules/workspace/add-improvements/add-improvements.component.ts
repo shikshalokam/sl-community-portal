@@ -21,7 +21,6 @@ export class AddImprovementsComponent implements OnInit {
   improvementProjects: any;
   categories: any;
   displayedColumns: string[] = ['select', 'name', 'description', 'rating'];
-  // selection = new SelectionModel;
   selection = new SelectionModel(true, []);
   dataSource: MatTableDataSource<any>;
   nextPage: any = 1;
@@ -81,7 +80,13 @@ export class AddImprovementsComponent implements OnInit {
 
     data['draftFrameworkId'] = this.frameworkId;
     data['improvementProjects'] = this.finalIMPs;
-    this.commonService.criteriaUpdate(this.criteriaobj, data);
+    this.commonService.criteriaUpdate(this.criteriaobj, data)
+    .subscribe(data => {
+      this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
+     this.dialogRef.close();
+    }, error =>{
+      this.commonService.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
+    });
   }
 
   isAllSelected() {

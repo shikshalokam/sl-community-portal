@@ -60,13 +60,6 @@ export class CommonService {
   }
 
   criteriaUpdate(criteriaObj, data){
-  this.communityService.post(environment.workspace_url + apiConfig.draftCriteriaUpdate + criteriaObj._id, data)
-       .subscribe(data => {
-         this.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
-        this.dialog.closeAll();
-       }, error =>{
-         this.commonSnackBar(error['message'], 'Dismiss', 'top', 10000);
-       })
-      }
-
+  return this.communityService.post(environment.workspace_url + apiConfig.draftCriteriaUpdate + criteriaObj._id, data);
+}
 }
