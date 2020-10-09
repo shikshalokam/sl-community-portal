@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener, OnDestroy } from '@angular/core';
 import { DynamicFormComponent, CommunityService } from 'shikshalokam';
 import { environment } from 'src/environments/environment';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -30,6 +30,11 @@ export class DetailsComponent implements OnInit {
       this.frameworkId = data['id'];
     });
     this.getDetailsForm();
+  }
+
+  // for auto save purpose 
+  ngOnDestroy(){
+    this.validateForm();
   }
 
   // validate the form

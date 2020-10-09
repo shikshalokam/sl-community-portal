@@ -69,7 +69,8 @@ export class CriteriaComponent implements OnInit {
       , {
         disableClose: true,
         width: '40vw',
-        data: { fieldsForCriteria }
+        data: { fieldsForCriteria },
+        panelClass: 'custom-modalbox'
       });
     dialogRef.afterClosed().subscribe(result => {
         this.draftCriteriaList(this.frameworkId, '');
@@ -104,7 +105,6 @@ export class CriteriaComponent implements OnInit {
       , {
         disableClose: true,
         width: '60%',
-        height: '75%',
         data: { data }
       });
   }
@@ -114,8 +114,7 @@ export class CriteriaComponent implements OnInit {
     const dialogRef = this.dialog.open(AddResourcesComponent
       , {
         disableClose: true,
-        width: '50%',
-        height: '85%',
+        width: '60%',
         data: { data }
       });
   }
@@ -139,7 +138,8 @@ export class CriteriaComponent implements OnInit {
       , {
         disableClose: true,
         width: '40%',
-        data: { fieldsForCriteria }
+        data: { fieldsForCriteria },
+        panelClass: 'custom-modalbox'
       });
     dialogRef.afterClosed().subscribe(result => {
       if(result) {
@@ -173,6 +173,8 @@ export class CriteriaComponent implements OnInit {
     }
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: confirmData,
+      width: '25%',
+      panelClass: 'custom-modalbox'
     });
 
     dialogRef.afterClosed().subscribe(dialogResult => {

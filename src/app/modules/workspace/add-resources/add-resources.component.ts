@@ -28,6 +28,7 @@ export class AddResourcesComponent implements OnInit {
   frameworkId: any;
   criteriaObj: any;
   criteriaDetails: any;
+  finalResources: any;
   constructor(private communityService: CommunityService,
     private commonService: CommonService,
     private dialogRef: MatDialogRef<AddResourcesComponent>,
@@ -49,6 +50,15 @@ export class AddResourcesComponent implements OnInit {
     const numSelected = this.selection.selected.length;
     const numRows = this.dataSource.data.length;
     return numSelected === numRows;
+  }
+
+  selectionChange(row) {
+    if (row.isSelected) {
+      row.isSelected = false;
+      this.selection.deselect(row);
+    } else {
+      row.isSelected = true;
+    }
   }
 
 
@@ -80,11 +90,15 @@ export class AddResourcesComponent implements OnInit {
       .subscribe(data => {
         this.dataSource = new MatTableDataSource(data['result'].content);
         this.listCount = data['result'].count;
+        this.dataSource.data.forEach(row => {
+          row.isSelected = false;
+        })
         if( this.criteriaDetails) {
         this.dataSource.data.forEach(row => {
           this.criteriaDetails.forEach(element => {
             if(row._id == element._id) {
-              this.selection.select(row)
+              this.selection.select(row);
+              row.isSelected = true;
             }
           });
           });
@@ -98,6 +112,7 @@ export class AddResourcesComponent implements OnInit {
 
 
   criteriaUpdate(data) {
+    this.finalResources = []
     data['draftFrameworkId'] = this.frameworkId;
     var result = this.selection.selected.reduce((unique, o) => {
       if (!unique.some(obj => obj._id === o._id)) {
@@ -106,7 +121,12 @@ export class AddResourcesComponent implements OnInit {
       return unique;
     }, []);
 
-     data['learningResources'] = result;
+    result.forEach(element => {
+      if (element.isSelected)
+        this.finalResources.push(element);
+    });
+
+     data['learningResources'] = this.finalResources;
      this.commonService.criteriaUpdate(this.criteriaObj, data)
        .subscribe(data => {
          this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
@@ -121,6 +141,9 @@ export class AddResourcesComponent implements OnInit {
       this.communityService.get(environment.workspace_url + apiConfig.criteriaDetails + criteriaID)
       .subscribe(data =>{
         this.criteriaDetails =  data['result']['learningResources'];
+        // this.criteriaDetails.forEach(element => {
+        //   element.isSelected = true;
+        // });
         this.getResourcesData();
       })
     }

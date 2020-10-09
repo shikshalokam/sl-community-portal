@@ -12,8 +12,7 @@
 <div *ngIf = "!dataSource" class="load">
   <mat-spinner [diameter]="70"></mat-spinner>
 </div>
-<!-- <mat-dialog-content style="height: 75%;" class="mat-typography"> -->
-
+  <mat-dialog-content>
   <mat-table *ngIf = "dataSource" style="height: 48vh;" [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!-- Checkbox Column -->
@@ -21,7 +20,7 @@
       <th mat-header-cell *matHeaderCellDef>
       </th>
       <td mat-cell *matCellDef="let row" style="padding-top: 1%;">
-        <mat-checkbox (click)="$event.stopPropagation()"
+        <mat-checkbox (change)="selectionChange(row)" (click)="$event.stopPropagation()"
                       (change)="$event ? selection.toggle(row) : null"
                       [checked]="selection.isSelected(row)"
                       [aria-label]="checkboxLabel(row)">
@@ -43,16 +42,16 @@
   
     <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"
-        (click)="selection.toggle(row)">
+        (click)="selection.toggle(row);selectionChange(row)">
     </mat-row>>
 </mat-table>
 <div *ngIf="listCount == 0" class="message">{{'MESSAGES.NO_DATA' | translate}}</div>
+</mat-dialog-content>
   <mat-paginator [showFirstLastButtons]="true" [length]="listCount" #paginator
   [pageSize]="pageSize" [pageSizeOptions]="[5,10,20,50,100]"
   (page)="onPaginateChange($event)">
 </mat-paginator>
   
-<!-- </mat-dialog-content> -->
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>{{'ACTIONS.CANCEL' | translate}}</button>
   <button mat-raised-button (click) = "updateCriteria()" cdkFocusInitial>{{'ACTIONS.SAVE' | translate}}</button>

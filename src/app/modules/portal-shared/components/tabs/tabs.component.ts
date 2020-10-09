@@ -16,7 +16,6 @@ export class TabsComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      console.log('queryParams', params);
       this.assesmentType = params['assesmentType'];
       this.frameworkId = params['id'];
   });
