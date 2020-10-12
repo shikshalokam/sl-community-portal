@@ -20,7 +20,7 @@
       </div>
 
       <mat-card  class="card-height card-block custom-card-block create-card">
-        <span class="message" *ngIf = "criteriaDetails['improvementProjects'].length < 1">{{'MESSAGES.NO_IMP' | translate}}</span>
+        <span class="message" *ngIf = "criteriaDetails['improvementProjects']?.length < 1">{{'MESSAGES.NO_IMP' | translate}}</span>
         <div *ngFor="let data of criteriaDetails['improvementProjects']">
           <li class="data-long">{{data?.title}}
             <i style="float: right;" class="material-icons actioncolor cursor-pointer" matTooltip="Delete"
@@ -35,7 +35,7 @@
         <h4> {{'MESSAGES.ATTACHED_RESOURCES' | translate}}</h4>
       </div>
       <mat-card  class="card-height card-block custom-card-block create-card">
-      <span class="message" *ngIf = "criteriaDetails['learningResources'].length < 1">{{'MESSAGES.NO_RESOURCES' | translate}}</span>
+      <span class="message" *ngIf = "criteriaDetails['learningResources']?.length < 1">{{'MESSAGES.NO_RESOURCES' | translate}}</span>
         <div *ngFor="let data of criteriaDetails['learningResources']">
           <li class="data-long">{{data?.name}} <i style="float: right;" class="material-icons actioncolor cursor-pointer"
               matTooltip="Delete" (click)="confirmation(data, 'resources')">delete</i></li>

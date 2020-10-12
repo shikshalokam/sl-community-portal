@@ -15,5 +15,6 @@ export const apiConfig = {
     getImprovementCategories: 'v1/observations/impCategoryList',
     getImprovements: 'v1/observations/improvementProjects/',
     criteriaDetails: 'v1/observations/criteriaDetails/',
-    getResourcesList: 'v1/observations/learningResoucesList'
+    getResourcesList: 'v1/observations/learningResoucesList',
+    getDraftsList: "v1/draftFrameworks/list"
 }
