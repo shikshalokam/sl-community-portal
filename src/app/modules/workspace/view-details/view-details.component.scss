@@ -36,3 +36,17 @@ mat-dialog-actions {
     justify-content: center;
     color: $text-color;
   }
+
+  .load {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .data-long {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    width: 200px;
+  }

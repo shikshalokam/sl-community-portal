@@ -55,6 +55,8 @@ export class ViewDetailsComponent implements OnInit {
     }
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: confirmData,
+      width: '25%',
+      panelClass: 'custom-modalbox'
     });
 
     dialogRef.afterClosed().subscribe(dialogResult => {
@@ -76,7 +78,6 @@ export class ViewDetailsComponent implements OnInit {
 
   resourcesConfirmDialog(data): void {
     this.criteriaObject = data;
-    console.log('this.criteriaObject', this.criteriaObject);
     let confirmData = {
       title: "TITLE.CONFIRMATION_TITLE",
       message: "MESSAGES.CONFIRMATION_MSG",
@@ -85,6 +86,8 @@ export class ViewDetailsComponent implements OnInit {
     }
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: confirmData,
+      width: '25%',
+      panelClass: 'custom-modalbox'
     });
 
     dialogRef.afterClosed().subscribe(dialogResult => {
