@@ -8,11 +8,11 @@
                 <mat-icon>search</mat-icon>
             </button>
         </mat-form-field>
-        <div class="col-sm-12 mat-elevation-z8 table-container table-responsive" style="height: 55vh;">
+        <div class="col-sm-12 mat-elevation-z8 table-container table-responsive" style="height: 60vh;">
         <div *ngFor = "let data of draftsList" >
-            <mat-card style="margin-top: 2%;">
+            <mat-card class="c-card">
                 <div class="row card-design">
-                    <div style="padding-left: 10px;">
+                    <div class="c-name">
                        {{data?.name}}
                     </div>
                     <div style="padding-right: 10px;">
