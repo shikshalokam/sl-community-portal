@@ -1,9 +1,15 @@
 .create-card {
     border-radius: 20px;
+    min-height: 100%;
   }
 .card-title {
     text-align: center;
+    font-size: 15px;
+    font-weight: 600;
 }
 .c-button {
     padding: 10px;
+}
+.desc {
+height: 100px;
 }
