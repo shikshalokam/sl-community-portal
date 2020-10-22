@@ -1,0 +1,28 @@
+@import '../../../../assets/scss/varibles.scss';
+.card-design {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    top: 50%;
+    position: absolute;
+    color: $text-color;
+  }
+
+  .c-card {
+    margin-top: 2%;
+    background-color: $background-color;
+    color: $text-color;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .c-name {
+    padding-left: 10px;padding-top: 10px;
+  }

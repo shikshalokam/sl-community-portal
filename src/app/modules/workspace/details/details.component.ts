@@ -33,8 +33,25 @@ export class DetailsComponent implements OnInit {
   }
 
   // for auto save purpose 
-  ngOnDestroy(){
-    this.validateForm();
+  ngOnDestroy() {
+    if (this.form.form.valid) {
+      this.autoUpdateMetaData(this.form.form.value);
+    } else {
+      this.form.validateAllFormFields(this.form.form);
+    }
+  }
+
+  // To autoupdate the form
+  autoUpdateMetaData(data) {
+    this.spin = true;
+    let obj = this.form.fields[4]['options'].find(o => o.value === data.entityType);
+    data.entityType = obj;
+    this.communityService.post(environment.workspace_url + apiConfig.updateMetaData + '/' + this.frameworkId, data)
+      .subscribe(data => {
+        this.spin = false;
+      }, err => {
+        this.commonService.commonSnackBar(err['message'], 'Dismiss', 'top', 10000);
+      })
   }
 
   // validate the form
@@ -54,7 +71,6 @@ export class DetailsComponent implements OnInit {
     this.communityService.post(environment.workspace_url + apiConfig.updateMetaData + '/' + this.frameworkId, data)
       .subscribe(data => {
         this.spin = false;
-        // this.commonService.commonSnackBar(data['message'], 'Dismiss', 'top', 10000);
         this.router.navigate(['/workspace/create/' + 'criteria'], { queryParams: { assesmentType: this.assesmentType, id: this.frameworkId } });
       }, err => {
         this.commonService.commonSnackBar(err['message'], 'Dismiss', 'top', 10000);

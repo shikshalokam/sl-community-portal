@@ -1,6 +1,33 @@
 <div class="container-fluid">
     <mat-card>
-        dsfgfgbrsgbrgrhr
+        <mat-form-field class="col-lg-12 col-xl-12 col-sm-12">
+            <mat-label>{{ 'MESSAGES.SEARCH_DRAFTS' | translate }}</mat-label>
+            <input [(ngModel)]="search" [appDebounceDirective]="search" (onValueChange)="draftsListing()"
+                #searchInput matInput>
+            <button mat-icon-button matPrefix>
+                <mat-icon>search</mat-icon>
+            </button>
+        </mat-form-field>
+        <div class="col-sm-12 mat-elevation-z8 table-container table-responsive" style="height: 60vh;">
+        <div *ngFor = "let data of draftsList" >
+            <mat-card class="c-card">
+                <div class="row card-design">
+                    <div class="c-name">
+                       {{data?.name}}
+                    </div>
+                    <div style="padding-right: 10px;">
+                        <button mat-raised-button (click)="goToDetails(data._id)"
+                            matTooltip="Add Improvements" class="actions">
+                            {{'ACTIONS.CONTINUE' | translate}}</button>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div *ngIf="draftListCount == 0 || !draftsList" class="message">{{'MESSAGES.NO_DATA' | translate}}</div>
+        </div>
+        <mat-paginator [showFirstLastButtons]="true" [length]="this.draftListCount" #paginator
+        [pageSize]="draftListPageSize" [pageSizeOptions]="[5,10,20,50,100]"
+        (page)="onPaginateChange($event)">
+    </mat-paginator>
     </mat-card>
-
 </div>

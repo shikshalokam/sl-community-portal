@@ -14,7 +14,8 @@
         "VIEWMORE": "View More",
         "CANCEL": "Cancel",
         "SAVE": "Save",
-        "CLOSE": "Close"
+        "CLOSE": "Close",
+        "CONTINUE": "Continue Creating"
     },
     "TITLE": {
         "CRITERIA_LIST": "List of Criteria",
@@ -29,6 +30,7 @@
         "OVERLAP_MSG": "This page doesn't have view for this screen resolution",
         "SEARCH_RESOURCES": "Search for Resource",
         "SEARCH_IMP": "Search for IMP",
+        "SEARCH_DRAFTS": "Search for Draft",
         "NO_DATA": "No Records Found",
         "CONFIRMATION_MSG": "Are you sure you want to do this action ?"
     }
