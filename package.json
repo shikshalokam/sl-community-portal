@@ -34,7 +34,7 @@
     "html2canvas": "^1.0.0-rc.3",
     "http-server": "^0.11.1",
     "jquery": "^3.4.1",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "jwt-decode": "^2.2.0",
     "keycloak-angular": "^4.0.2",
     "keycloak-js": "^4.6.0",
